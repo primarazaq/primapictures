@@ -72,46 +72,92 @@
 
                     </div>
                 </div>
-                <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quos rem vero nihil eius velit, error
-                    aliquid officia iste odit esse dicta debitis illum amet quas mollitia voluptas dolor itaque, saepe
-                    blanditiis laborum non. Dolorum, laborum eaque, ipsum corrupti eius at amet error vel necessitatibus
-                    reiciendis a repellendus blanditiis, aliquam veritatis facilis assumenda accusamus sunt ab id libero
-                    et ratione officia vitae. Tempora tenetur enim velit dolore et perspiciatis reiciendis, placeat
-                    itaque veniam doloremque, odit eligendi sint quod earum quaerat magnam voluptatem inventore omnis
-                    ratione optio voluptatibus? Nesciunt mollitia at sint, dignissimos impedit id earum quaerat dolore
-                    reprehenderit cumque dolor eaque ad quia similique nulla corrupti atque necessitatibus nihil hic
-                    animi sit adipisci quas consectetur. Excepturi quasi, doloremque omnis maiores ut, ex cupiditate,
-                    dolor neque ipsam reprehenderit eaque! Facere recusandae enim mollitia optio velit odio, est officia
-                    quisquam molestiae ipsum illum, eos aut odit, aliquid quibusdam possimus voluptate quae! Repellat
-                    odit, fugiat hic quis rerum alias repellendus enim aspernatur perspiciatis quae optio. Natus, esse
-                    et. Dolorem architecto neque distinctio porro rerum illo quidem vero quo ratione, tempora
-                    perferendis explicabo. Voluptatibus neque deleniti maiores molestias aliquam aut autem saepe
-                    excepturi molestiae sapiente asperiores quaerat quidem at eveniet illum nulla dignissimos, nihil
-                    laudantium odio repellendus ipsam, ipsa eligendi impedit! Eaque libero nobis molestias doloremque
-                    est. Odio eaque iste tempora, eligendi nobis incidunt aliquam voluptate accusamus aut a esse
-                    dolores? Error nemo consequuntur, eveniet similique maxime animi ducimus quisquam ad odio libero
-                    perferendis fugiat quos corporis aspernatur ab recusandae quia veniam neque perspiciatis amet
-                    mollitia eos aut unde? Incidunt, ducimus ipsam asperiores porro laboriosam amet inventore magni
-                    labore odit numquam dignissimos enim veniam maiores iste aperiam itaque quibusdam, facilis id nisi
-                    nobis sit. Blanditiis fuga incidunt illo animi culpa minus molestias libero, laboriosam sit velit
-                    natus perspiciatis hic voluptatum nihil consequatur non autem molestiae corrupti maiores dicta
-                    numquam labore? Vel, delectus. Exercitationem at repudiandae tempore repellat harum velit
-                    reprehenderit, soluta fuga veritatis quo dolorum dicta, non eveniet et eos asperiores, aliquid
-                    consequatur voluptates nam reiciendis illo numquam nesciunt. Quo laborum vero quidem deleniti omnis
-                    animi aperiam illo maxime? Delectus ab, blanditiis alias quibusdam, voluptatem soluta deserunt ad
-                    neque iure eius a debitis. Exercitationem soluta tempora consectetur eveniet excepturi nihil minima
-                    necessitatibus unde, reiciendis nobis ratione doloribus ad optio dicta eaque iusto delectus ipsum
-                    placeat. Libero corporis, blanditiis dolore fugit aliquid ut iste accusantium maxime accusamus.
-                    Incidunt similique eaque sit quis, obcaecati, blanditiis vitae facilis rerum ipsum excepturi quidem
-                    quo odit et quisquam. A sunt provident consequuntur harum sequi eos vel impedit, nobis aperiam
-                    laboriosam in cupiditate saepe odio similique fuga magnam ea! Corporis veritatis suscipit aut
-                    accusamus quis eligendi animi architecto ad nulla, similique quo vel laudantium sequi saepe illum
-                    aspernatur accusantium cum laboriosam placeat ab illo. Numquam, et! Consequuntur saepe ab
-                    accusantium hic asperiores neque repellendus totam, commodi alias quia aliquam id rerum! Eum
-                    provident dolore tempora atque nam praesentium nisi asperiores, id vero veritatis optio sapiente,
-                    nesciunt at accusantium? Nemo fuga corrupti ad magni alias aliquam quisquam vel aspernatur beatae
-                    totam.
+            </div>
+        </div>
+    </section>
+    <section id="about" class="mt-14 mb-14">
+        <div class="container">
+            <div class="flex flex-wrap pr-5">
+                <div class="w-full h-80 self-center px-4 relative z-0">
+                    <div class="absolute w-full h-full overflow-hidden">
+                        <p class="relative text-2xl font-bold text-left text-primary mb-10">
+                            Tentang Primapictures
+                        </p>
+                        <p class="absolute text-md text-left text-black">
+                            <span>Kami merupakan penyedia jasa di bidang</span>
+                            <span class="font-bold">Photography &#x26; Videography </span>
+                            <span>profesional yang siap
+                                mengabadikan
+                                momen-momen spesialmu dengan indah.
+                            </span><br /><br />
+                            <span>Kemi selalu berusaha untuk memahami
+                                kebutuhan dan
+                                harapan pelanggan untuk mendapatkan hasil
+                                akhir yang sesuai dengan yang dingiinkan.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col relative">
+                <div class="w-full h-40 self-center relative z-0">
+                    <div class="w-full h-full overflow-hidden relative">
+                        <img src="image/foto1.png" alt="">
+                    </div>
+                    <div class="w-full h-full overflow-hidden relative">
+                        <img src="image/foto2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about2" class="mt-52">
+        <div class="container">
+            <div class="flex flex-wrap mt-14 pr-5">
+                <div class="w-full h-80 self-center px-4 relative z-0">
+                    <div class="absolute w-full h-full overflow-hidden">
+                        <p class="relative text-2xl font-bold text-left text-primary mb-10">
+                            Mengapa harus kami
+                        </p>
+                        <p class="absolute text-md text-left text-black">
+                            <span>Tim kami memiliki pengalaman yang luas dalam setiap bidangnya dan selalu siap
+                                memberikan
+                                hasil terbaik untuk pelanggan.
+                            </span><br /><br />
+                            <span>Kami melayani berbagai acara seperti pernikahan, ulang tahun, acara keluarga, event
+                                perusahaan, bahkan layanan pengeditan foto dan video profesional.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col -mt-5">
+                <div class="w-full h-40 self-center relative z-0">
+                    <div class="w-full h-full overflow-hidden">
+                        <img src="image/foto1.png" alt="">
+                    </div>
+                    <div class="w-full h-full overflow-hidden">
+                        <img src="image/foto2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="banner" class="mt-[11.5rem]">
+        <div class="container">
+            <div class="relative w-[300px] h-full self-center z-0 scale-150">
+                <img src="image/foto5.png" class="absolute object-cover" />
+                <div class="relative text-center text-white pt-5 self-center">
+                    <p class="text-xs font-bold ml-11">
+                        <span>Segera abadikan momen indah</span><br />
+                        <span>anda bersama kami</span>
+                    </p>
+                    <p class="text-[6px] px-4 pt-4 font-light helvetica ml-11">
+                        Hal terbaik mengenai sebuah gambar adalah gambar itu tidak pernah berubah, bahkan ketika
+                        orang-orang di dalamnya sudah berubah. Itulah momen yang menjadikannya abadi
+                    </p>
+                    <button
+                        class="w-fit mt-4 ml-11 bg-white text-primary px-3 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-2xl">
+                        ORDER SEKARANG
+                    </button>
                 </div>
             </div>
         </div>
