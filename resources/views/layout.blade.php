@@ -75,7 +75,7 @@
             </div>
         </div>
     </section>
-    <section id="about" class="mt-14 mb-14">
+    <section id="about" class="mt-10 mb-14">
         <div class="container">
             <div class="flex flex-wrap pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
@@ -141,25 +141,114 @@
             </div>
         </div>
     </section>
-    <section id="banner" class="mt-[11.5rem]">
+    <section id="banner" class="mt-48">
         <div class="container">
-            <div class="relative w-[300px] h-full self-center z-0 scale-150">
+            <div class="relative w-[300px] h-full scale-150 self-center z-0">
                 <img src="image/foto5.png" class="absolute object-cover" />
-                <div class="relative text-center text-white pt-5 self-center">
-                    <p class="text-xs font-bold ml-11">
+                <div class="relative text-center ml-11 text-white pt-5 self-center">
+                    <p class="text-xs font-bold">
                         <span>Segera abadikan momen indah</span><br />
                         <span>anda bersama kami</span>
                     </p>
-                    <p class="text-[6px] px-4 pt-4 font-light helvetica ml-11">
+                    <p class="text-[5px] tracking-widest px-8 pt-5 pb-2 font-extralight helvetica">
                         Hal terbaik mengenai sebuah gambar adalah gambar itu tidak pernah berubah, bahkan ketika
                         orang-orang di dalamnya sudah berubah. Itulah momen yang menjadikannya abadi
                     </p>
                     <button
-                        class="w-fit mt-4 ml-11 bg-white text-primary px-3 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-2xl">
+                        class="w-fit mt-3 ml-2 bg-white text-primary px-3 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md hover:scale-110 hover:transition-all hover:ease-out hover:duration-300 shadow-black">
                         ORDER SEKARANG
                     </button>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="services" class="mt-24">
+        <div class="container">
+            <p class="relative text-2xl font-bold text-center text-primary mb-5">
+                Layanan Kami
+            </p>
+            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
+                <img src="image/vector1.png" alt="" class="inline-block pb-3">
+
+                <p class="relative text-xl font-medium text-cemter uppercase text-black mb-4">
+                    Wedding
+                </p>
+                <p class="relative text-sm text-left lowercase text-black">
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </p>
+
+            </div>
+            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
+                <img src="image/vector2.png" alt="" class="inline-block pb-3">
+
+                <p class="relative text-xl font-medium text-cemter uppercase text-black mb-4">
+                    Event
+                </p>
+                <p class="relative text-sm text-left lowercase text-black">
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </p>
+
+            </div>
+
+            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-16 h-16 inline-block relative" preserveAspectRatio="none">
+                    <path
+                        d="M54.7719 23.2312L50.6125 16.6594C49.7359 15.6375 48.5344 15 47.1875 15H32.8125C31.4656 15 30.2641 15.6375 29.3875 16.6594L25.2281 23.2312C24.3516 24.2547 23.2219 25 21.875 25H12.5C11.1739 25 9.90215 25.5268 8.96447 26.4645C8.02678 27.4021 7.5 28.6739 7.5 30V60C7.5 61.3261 8.02678 62.5979 8.96447 63.5355C9.90215 64.4732 11.1739 65 12.5 65H67.5C68.8261 65 70.0979 64.4732 71.0355 63.5355C71.9732 62.5979 72.5 61.3261 72.5 60V30C72.5 28.6739 71.9732 27.4021 71.0355 26.4645C70.0979 25.5268 68.8261 25 67.5 25H58.2812C56.9297 25 55.6484 24.2547 54.7719 23.2312Z"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </path>
+                    <path
+                        d="M40 55C46.9036 55 52.5 49.4036 52.5 42.5C52.5 35.5964 46.9036 30 40 30C33.0964 30 27.5 35.5964 27.5 42.5C27.5 49.4036 33.0964 55 40 55Z"
+                        stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+                    <path d="M19.375 24.6875V21.25H15.625V24.6875" stroke="black" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+
+                <p class="relative text-xl font-medium text-cemter uppercase text-black mb-4">
+                    Personal
+                </p>
+                <p class="relative text-sm text-left lowercase text-black">
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </p>
+
+            </div>
+
+            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
+                <img src="image/vector3.png" alt="" class="inline-block pb-3">
+
+                <p class="relative text-xl font-medium text-cemter uppercase text-black mb-4">
+                    Photo Product
+                </p>
+                <p class="relative text-sm text-left lowercase text-black">
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </p>
+
+            </div>
+
+            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
+                <img src="image/vector4.png" alt="" class="inline-block pb-3">
+
+                <p class="relative text-xl font-medium text-cemter uppercase text-black mb-4">
+                    Design
+                </p>
+                <p class="relative text-sm text-left lowercase text-black">
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </p>
+
+            </div>
+
+            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
+                <img src="image/vector5.png" alt="" class="inline-block pb-3">
+
+                <p class="relative text-xl font-medium text-cemter uppercase text-black mb-4">
+                    Editing
+                </p>
+                <p class="relative text-sm text-left lowercase text-black">
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </p>
+
+            </div>
+
         </div>
     </section>
 </body>
