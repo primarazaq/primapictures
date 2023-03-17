@@ -15,19 +15,30 @@
             </button>
 
             <nav id="nav-menu"
-                class="hidden absolute py-5 bg-white shadow-2xl rounded-lg max-w-[250px] w-full right-4 top-20 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                class="hidden absolute py-5 bg-white shadow-2xl rounded-lg max-w-[175px] w-full right-4 top-20 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
                 <ul class="block lg:flex transition">
                     <li class="group">
                         <a href="#home"
-                            class="text-base text-black py-2 mx-8 flex lg:text-white group-hover:text-primary">Beranda</a>
+                            class="text-base text-black py-2 mx-8 flex lg:text-white group-hover:text-primary">Home</a>
+                    </li>
+                    <li class="group">
+                        <a href="#about"
+                            class="text-base text-black py-2 mx-8 flex lg:text-white group-hover:text-primary">About</a>
+                    </li>
+                    <li class="group">
+                        <a href="#services"
+                            class="text-base text-black py-2 mx-8 flex lg:text-white group-hover:text-primary">Services</a>
                     </li>
                     <li class="group">
                         <a href="#gallery"
                             class="text-base text-black py-2 mx-8 flex lg:text-white group-hover:text-primary">Gallery</a>
                     </li>
-                    <li class="group">
-                        <a href="#contact"
-                            class="text-base text-black py-2 mx-8 flex lg:text-white group-hover:text-primary">Contact</a>
+                    <li class="group flex justify-center items-center relative">
+                        <button
+                            class="w-fit mt-3 animate-bounce bg-primary text-white px-6 py-[2px] font-semibold inline-block tracking-[2px] text-[13px] uppercase rounded-full shadow-sm hover:shadow-md hover:scale-110 hover:transition-all hover:ease-out hover:duration-300 shadow-black">
+                            ORDER NOW!
+                        </button>
+
                     </li>
                 </ul>
             </nav>

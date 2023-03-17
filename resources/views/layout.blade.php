@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primapictures</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.cdnfonts.com/css/times-new-roman" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href="//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/didot" rel="stylesheet">
@@ -17,6 +18,10 @@
         /*Overrides for Tailwind CSS */
         body {
             font-family: 'Poppins', sans-serif;
+        }
+
+        .tnr {
+            font-family: 'Times New Roman', sans-serif;
         }
 
         .gilroy {
@@ -75,22 +80,22 @@
             </div>
         </div>
     </section>
-    <section id="about" class="mt-10 mb-14">
+    <section id="about" class="-mt-10 mb-14 pt-20">
         <div class="container">
             <div class="flex flex-wrap pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
                     <div class="absolute w-full h-full overflow-hidden">
-                        <p class="relative text-2xl font-bold text-left text-primary mb-10">
+                        <p class="relative text-2xl font-bold text-left gilroy text-primary mb-10">
                             Tentang Primapictures
                         </p>
-                        <p class="absolute text-md text-left text-black">
+                        <p class="absolute helvetica tracking-widest text-xs text-left text-gray-800">
                             <span>Kami merupakan penyedia jasa di bidang</span>
                             <span class="font-bold">Photography &#x26; Videography </span>
                             <span>profesional yang siap
                                 mengabadikan
                                 momen-momen spesialmu dengan indah.
                             </span><br /><br />
-                            <span>Kemi selalu berusaha untuk memahami
+                            <span>Kami selalu berusaha untuk memahami
                                 kebutuhan dan
                                 harapan pelanggan untuk mendapatkan hasil
                                 akhir yang sesuai dengan yang dingiinkan.</span>
@@ -98,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col relative">
+            <div class="flex flex-col -mt-20">
                 <div class="w-full h-40 self-center relative z-0">
                     <div class="w-full h-full overflow-hidden relative">
                         <img src="image/foto1.png" alt="">
@@ -115,10 +120,10 @@
             <div class="flex flex-wrap mt-14 pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
                     <div class="absolute w-full h-full overflow-hidden">
-                        <p class="relative text-2xl font-bold text-left text-primary mb-10">
+                        <p class="relative text-2xl font-bold gilroy text-left text-primary mb-10">
                             Mengapa harus kami
                         </p>
-                        <p class="absolute text-md text-left text-black">
+                        <p class="absolute text-xs helvetica tracking-widest text-left text-gray-800">
                             <span>Tim kami memiliki pengalaman yang luas dalam setiap bidangnya dan selalu siap
                                 memberikan
                                 hasil terbaik untuk pelanggan.
@@ -129,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col -mt-5">
+            <div class="flex flex-col -mt-20">
                 <div class="w-full h-40 self-center relative z-0">
                     <div class="w-full h-full overflow-hidden">
                         <img src="image/foto1.png" alt="">
@@ -162,9 +167,9 @@
             </div>
         </div>
     </section>
-    <section id="services" class="mt-24">
+    <section id="services" class="pt-24 bg-secondary">
         <div class="container">
-            <p class="relative text-2xl font-bold text-center text-primary mb-5">
+            <p class="relative gilroy text-2xl font-bold text-center text-primary mb-5">
                 Layanan Kami
             </p>
             <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
@@ -237,7 +242,8 @@
 
             </div>
 
-            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5">
+            <div
+                class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 pb-5">
                 <img src="image/vector5.png" alt="" class="inline-block pb-3">
 
                 <p class="relative text-xl font-medium text-cemter uppercase text-black mb-4">
@@ -251,6 +257,55 @@
 
         </div>
     </section>
+    <section id="gallery" class="pt-2">
+        <div class="container">
+            <p class="relative gilroy text-2xl font-bold text-center text-primary mb-5">
+                Gallery
+            </p>
+            <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 mb-5">
+                <img src="image/galeri.png" alt="" class="inline-block pb-3">
+                <button
+                    class="w-fit mt-3 ml-2 bg-primary text-white px-3 py-[2px] font-medium inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md hover:scale-110 hover:transition-all hover:ease-out hover:duration-300 shadow-black">
+                    Lihat Selengkapnya
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary">
+        <div class="container">
+
+            <div class="flex relative w-full h-40 self-center px-4 pt-14">
+                <div>
+                    <img src="image/logoputih.png" alt="" class="w-36 h-fit">
+                    <p class="relative w-48 mt-4 text-[9px] text-left text-white">
+                        Jl. Rumah Sakit No.48A, Kota Bandung, Jawa Barat, Indonesia.
+                    </p>
+                </div>
+                <div class="text-white text-[9px] text-left ml-10 pt-10">
+                    <p class="font-bold">Contact</p>
+                    <span>
+                        +62 896-7649-3653
+                    </span>
+                    <p class="font-bold mt-4">Social Media</p>
+                    <div class="flex space-x-1">
+                        <img src="image/ig.png" alt="" class="w-[15px] h-[15px]">
+                        <span>
+                            @primapictures.bdg
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center relative h-20 pt-10 text-white">
+                <hr class="w-72 border-1 border-white drop-shadow-xl rounded-full">
+                <p class="text-[8px] mt-1">© Copyright 2023 Primapictures. All Rights Reserved</p>
+            </div>
+
+
+
+        </div>
+    </footer>
+
 </body>
 <script>
     // navbbar fixed
