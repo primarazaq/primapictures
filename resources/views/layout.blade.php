@@ -20,8 +20,30 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .tnr {
-            font-family: 'Times New Roman', sans-serif;
+        .nav-text {
+            color: #fff;
+            font-size: 20px;
+            margin: 0px 30px 0px 30px;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-text:after {
+            bottom: -4px;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 0;
+            position: absolute;
+            background: #fff;
+            opacity: 0.6;
+            transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+            width: 0;
+        }
+
+        .nav-text:hover:after {
+            width: 100%;
+            opacity: 0.9;
         }
 
         .gilroy {
@@ -64,16 +86,16 @@
         @include('components/navbar')
     </header>
     <section id="home">
-        <div class="container">
+        <div class="container-xl">
             <div class="flex flex-wrap">
-                <div class="w-full h-80 self-center px-4 relative z-0">
+                <div class="w-full h-80 lg:h-screen self-center px-4 relative z-0">
                     <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
                         <video class="min-w-full min-h-full absolute object-cover" src="video/video.mp4"
                             type="video/mp4" autoplay muted loop></video>
                     </div>
-                    <div class="video-content relative space-y-0 text-center mt-36">
-                        <h1 class="text-white gilroy text-2xl">Primapictures.</h1>
-                        <p class="text-white helvetica text-xs">Capture your moment's beautifully</p>
+                    <div class="video-content relative space-y-0 text-center mt-36 lg:mt-96 lg:space-y-5">
+                        <h1 class="text-white gilroy text-2xl lg:text-4xl">Primapictures.</h1>
+                        <p class="text-white helvetica text-xs lg:text-lg">Capture your moment's beautifully</p>
 
                     </div>
                 </div>
@@ -81,7 +103,7 @@
         </div>
     </section>
     <section id="about" class="-mt-10 mb-14 pt-20">
-        <div class="container">
+        <div class="container-xl">
             <div class="flex flex-wrap pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
                     <div class="absolute w-full h-full overflow-hidden">
@@ -116,7 +138,7 @@
         </div>
     </section>
     <section id="about2" class="mt-52">
-        <div class="container">
+        <div class="container-xl">
             <div class="flex flex-wrap mt-14 pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
                     <div class="absolute w-full h-full overflow-hidden">
@@ -146,9 +168,29 @@
             </div>
         </div>
     </section>
-    <section id="banner" class="mt-48">
-        <div class="container">
-            <div class="relative w-[300px] h-full scale-150 self-center z-0">
+    <section id="banner" class="mt-40">
+        <div class="container-xl">
+            <div class="absolute text-center text-white py-7 self-center z-50">
+                <p class="text-md font-bold">
+                    <span>Segera abadikan momen indah</span><br />
+                    <span>anda bersama kami</span>
+                </p>
+                <p class="text-[8px] tracking-widest px-4 py-5 mt-5 pb-2 font-extralight helvetica">
+                    Hal terbaik mengenai sebuah gambar adalah gambar itu tidak pernah berubah, bahkan ketika
+                    orang-orang di dalamnya sudah berubah. Itulah momen yang menjadikannya abadi
+                </p>
+                <button
+                    class="w-fit mt-8 bg-white text-primary px-3 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black">
+                    ORDER SEKARANG
+                </button>
+            </div>
+            <div class="overflow-hidden">
+                <div class="absolute bg-primary w-full h-60 opacity-60 z-40"></div>
+                <div class="relative w-full h-60 self-center z-0">
+                    <img src="image/foto6.jpg" />
+                </div>
+            </div>
+            {{-- <div class="relative w-[300px] h-full scale-150 self-center z-0">
                 <img src="image/foto5.png" class="absolute object-cover" />
                 <div class="relative text-center ml-11 text-white pt-5 self-center">
                     <p class="text-xs font-bold">
@@ -164,11 +206,11 @@
                         ORDER SEKARANG
                     </button>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
-    <section id="services" class="pt-24 bg-secondary">
-        <div class="container">
+    <section id="services" class="pt-14 bg-secondary">
+        <div class="container-xl">
             <p class="relative gilroy text-2xl font-bold text-center text-primary mb-5">
                 Layanan Kami
             </p>
@@ -258,21 +300,21 @@
         </div>
     </section>
     <section id="gallery" class="pt-2">
-        <div class="container">
+        <div class="container-xl">
             <p class="relative gilroy text-2xl font-bold text-center text-primary mb-5">
                 Gallery
             </p>
             <div class="relative w-full h-full justify-between px-5 text-center items-center z-0 mb-5">
                 <img src="image/galeri.png" alt="" class="inline-block pb-3">
                 <button
-                    class="w-fit mt-3 ml-2 bg-primary text-white px-3 py-[2px] font-medium inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md hover:scale-110 hover:transition-all hover:ease-out hover:duration-300 shadow-black">
+                    class="w-fit mt-3 ml-2 bg-primary text-white px-3 py-[2px] font-medium inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black">
                     Lihat Selengkapnya
                 </button>
             </div>
         </div>
     </section>
     <footer class="bg-primary">
-        <div class="container">
+        <div class="container-xl">
 
             <div class="flex relative w-full h-40 self-center px-4 pt-14">
                 <div>
@@ -322,8 +364,7 @@
 
         if (window.pageYOffset > fixedNav) {
             header.classList.add('navbar-fixed');
-            // textNav.classList.remove('text-white');
-            // textNav.classList.add('text-primary');
+
             hambchild1.classList.remove('bg-white');
             hambchild2.classList.remove('bg-white');
             hambchild3.classList.remove('bg-white');
@@ -331,10 +372,12 @@
             hambchild2.classList.add('bg-black');
             hambchild3.classList.add('bg-black');
             $(".logo").attr("src", logo2);
+            $(".nav-text").removeClass("lg:text-white");
+            $(".nav-text").addClass("lg:text-black");
+            $(".nav-text").addClass("lg:hover:text-primary");
         } else {
             header.classList.remove('navbar-fixed');
-            // textNav.classList.remove('text-primary');
-            // textNav.classList.add('text-white');
+
             hambchild1.classList.add('bg-white');
             hambchild2.classList.add('bg-white');
             hambchild3.classList.add('bg-white');
@@ -342,6 +385,9 @@
             hambchild2.classList.remove('bg-black');
             hambchild3.classList.remove('bg-black');
             $(".logo").attr("src", logo1);
+            $(".nav-text").removeClass("lg:text-black");
+            $(".nav-text").addClass("lg:text-white");
+            $(".nav-text").removeClass("lg:hover:text-primary");
         }
     }
 
