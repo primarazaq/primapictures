@@ -33,7 +33,7 @@
                     </li>
                     <li class="group flex justify-center items-center relative">
                         <button
-                            class="w-fit mt-3 animate-bounce bg-primary text-white px-6 py-[2px] font-semibold inline-block tracking-[2px] text-[13px] uppercase rounded-full shadow-sm hover:shadow-md hover:bg-slate-200 hover:text-primary transform hover:scale-110 duration-500 ease-in-out shadow-black">
+                            class="w-fit mt-3 animate-bounce bg-primary text-white px-6 py-[2px] font-semibold inline-block tracking-[2px] text-[13px] uppercase rounded-full shadow-sm hover:shadow-md hover:bg-white hover:text-primary transform hover:scale-110 duration-500 ease-in-out shadow-black">
                             ORDER NOW!
                         </button>
 

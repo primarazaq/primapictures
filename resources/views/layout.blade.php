@@ -46,6 +46,32 @@
             opacity: 0.9;
         }
 
+        .underlink {
+            color: #38573e;
+            font-size: 20px;
+            margin: 0px 30px 0px 30px;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .underlink:after {
+            bottom: -4px;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 0;
+            position: absolute;
+            background: #38573e;
+            opacity: 0.6;
+            transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+            width: 0;
+        }
+
+        .underlink:hover:after {
+            width: 100%;
+            opacity: 0.9;
+        }
+
         .gilroy {
             font-family: 'Gilroy ExtraBold';
         }
@@ -82,7 +108,7 @@
 
 <body>
     <header
-        class="bg-transparent absolute top-0 left-0 w-full h-[69px] flex items-center z-10 transition duration-300 ease-in-out">
+        class="bg-transparent absolute top-0 left-0 w-full h-[69px] flex items-center z-10 transition duration-500 ease-in-out">
         @include('components/navbar')
     </header>
     <section id="home">
@@ -102,15 +128,16 @@
             </div>
         </div>
     </section>
-    <section id="about" class="-mt-10 mb-14 pt-20">
-        <div class="container-xl">
-            <div class="flex flex-wrap pr-5">
+    <section id="about" class="-mt-10 mb-14 pt-20 lg:-mt-0">
+        <div class="container-xl lg:flex lg:flex-row">
+            <div class="flex flex-wrap lg:basis-1/2 pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
-                    <div class="absolute w-full h-full overflow-hidden">
-                        <p class="relative text-2xl font-bold text-left gilroy text-primary mb-10">
+                    <div class="absolute w-full h-full lg:px-10 lg:-mt-28">
+                        <p class="relative text-2xl lg:text-4xl font-bold text-left gilroy text-primary mb-10 lg:mb-20">
                             Tentang Primapictures
                         </p>
-                        <p class="absolute helvetica tracking-widest text-xs text-left text-gray-800">
+                        <p
+                            class="absolute helvetica tracking-widest text-xs lg:text-lg text-left text-gray-800 lg:pr-28 leading-loose lg:leading-10">
                             <span>Kami merupakan penyedia jasa di bidang</span>
                             <span class="font-bold">Photography &#x26; Videography </span>
                             <span>profesional yang siap
@@ -125,27 +152,37 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col -mt-20">
-                <div class="w-full h-40 self-center relative z-0">
+            <div class="flex flex-col lg:basis-1/2 -mt-7 lg:-mt-20 ">
+
+                <img src="image/foto1.png"
+                    class="w-full h-40 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover"
+                    alt="">
+
+                <img src="image/foto2.png"
+                    class="w-full h-40 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover"
+                    alt="">
+
+                {{-- <div class="w-full h-40 lg:h-[350px] self-center relative z-0">
                     <div class="w-full h-full overflow-hidden relative">
-                        <img src="image/foto1.png" alt="">
+                        <img src="image/foto1.png" class="lg:object-cover" alt="">
                     </div>
                     <div class="w-full h-full overflow-hidden relative">
-                        <img src="image/foto2.png" alt="">
+                        <img src="image/foto2.png" class="lg:object-cover" alt="">
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
-    <section id="about2" class="mt-52">
-        <div class="container-xl">
-            <div class="flex flex-wrap mt-14 pr-5">
+    <section id="about2" class="mt-20">
+        <div class="container-xl lg:flex lg:flex-row-reverse">
+            <div class="flex flex-wrap lg:basis-1/2 mt-14 pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
-                    <div class="absolute w-full h-full overflow-hidden">
-                        <p class="relative text-2xl font-bold gilroy text-left text-primary mb-10">
+                    <div class="absolute w-full h-full lg:px-10 -mt-10 lg:-mt-28">
+                        <p class="relative text-2xl lg:text-4xl font-bold gilroy text-left text-primary mb-10 lg:mb-20">
                             Mengapa harus kami
                         </p>
-                        <p class="absolute text-xs helvetica tracking-widest text-left text-gray-800">
+                        <p
+                            class="absolute text-xs helvetica tracking-widest text-left text-gray-800 lg:pr-28 leading-loose lg:leading-10 lg:text-lg">
                             <span>Tim kami memiliki pengalaman yang luas dalam setiap bidangnya dan selalu siap
                                 memberikan
                                 hasil terbaik untuk pelanggan.
@@ -156,15 +193,16 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col -mt-20">
-                <div class="w-full h-40 self-center relative z-0">
-                    <div class="w-full h-full overflow-hidden">
-                        <img src="image/foto1.png" alt="">
-                    </div>
-                    <div class="w-full h-full overflow-hidden">
-                        <img src="image/foto2.png" alt="">
-                    </div>
-                </div>
+            <div class="flex flex-col lg:basis-1/2 -mt-7 lg:-mt-20 ">
+
+                <img src="image/foto1.png"
+                    class="w-full h-40 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover"
+                    alt="">
+
+                <img src="image/foto2.png"
+                    class="w-full h-40 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover"
+                    alt="">
+
             </div>
         </div>
     </section>
@@ -375,6 +413,7 @@
             $(".nav-text").removeClass("lg:text-white");
             $(".nav-text").addClass("lg:text-black");
             $(".nav-text").addClass("lg:hover:text-primary");
+            $(".nav-text").addClass("underlink");
         } else {
             header.classList.remove('navbar-fixed');
 
@@ -388,6 +427,7 @@
             $(".nav-text").removeClass("lg:text-black");
             $(".nav-text").addClass("lg:text-white");
             $(".nav-text").removeClass("lg:hover:text-primary");
+            $(".nav-text").removeClass("underlink");
         }
     }
 
