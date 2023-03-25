@@ -20,6 +20,27 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* Firefox */
+        * {
+            scrollbar-width: auto;
+            scrollbar-color: #38573e #ffffff;
+        }
+
+        /* Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 13px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #38573e;
+            border-radius: 0px;
+            border: -10px solid #ffffff;
+        }
+
         .nav-text {
             color: #fff;
             font-size: 20px;
