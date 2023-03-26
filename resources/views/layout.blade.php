@@ -12,10 +12,16 @@
     <link href="https://fonts.cdnfonts.com/css/didot" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playfair+Display&display=swap"
         rel="stylesheet">
-    {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
     <style>
+        html,
+        body {
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
         /*Overrides for Tailwind CSS */
         body {
             font-family: 'Poppins', sans-serif;
@@ -125,7 +131,7 @@
     </style>
     <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
         integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
-    {{-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     @vite('resources/css/app.css')
 </head>
 
@@ -417,7 +423,8 @@
 
 </body>
 <script>
-    // AOS.init();
+    AOS.init();
+
     // navbbar fixed
     window.onscroll = function() {
         const header = document.querySelector('header');

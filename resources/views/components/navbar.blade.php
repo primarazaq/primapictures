@@ -1,4 +1,4 @@
-<div class="container lg:container-lg">
+<div class="container lg:container-xl">
     <div class="flex items-center lg:w-screen lg:max-w-[1900px] justify-between relative">
         <div class="px-4 -mt-10">
             {{-- <a id="title" href="#home" class="text-lg font-bold block py-6 text-white gilroy">Primapictures</a> --}}
