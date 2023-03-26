@@ -159,7 +159,7 @@
             </div>
         </div>
     </section>
-    <section id="about" class="-mt-10 mb-14 pt-20 lg:-mt-0">
+    <section id="about" class="-mt-10 mb-14 pt-20 lg:-mt-0 scroll-mt-5 lg:scroll-mt-16">
         <div class="container-xl lg:flex lg:flex-row">
             <div class="flex flex-wrap lg:basis-1/2 pr-5">
                 <div class="w-full h-80 self-center px-4 relative z-0">
@@ -265,111 +265,127 @@
             </div>
         </div>
     </section>
-    <section id="services" class="pt-14 bg-secondary">
+    <section id="services" class="pt-14 bg-secondary scroll-mt-10 lg:scroll-mt-16">
         <div class="container-xl">
             <p data-aos="fade-down" data-aos-duration="2000"
                 class="relative gilroy text-2xl font-bold text-center text-primary mb-5 lg:text-4xl lg:py-3">
                 Layanan Kami
             </p>
             <div class="lg:grid lg:grid-cols-3 lg:gap-10 lg:p-20">
-                <div data-aos="zoom-out" data-aos-duration="500"
-                    class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:text-left">
-                    <img src="image/vector1.png" alt=""
-                        class="inline-block pb-3 lg:-translate-y-4 transition-transform hover:scale-110 hover:rotate-12 hover:transition hover:duration-300 hover:ease-in-out">
+                <div
+                    class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
+                    <div data-aos="zoom-out" data-aos-duration="500"
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:text-left">
+                        <img src="image/vector1.png" alt=""
+                            class="inline-block pb-3 lg:-translate-y-4 transition-transform hover:scale-110 hover:rotate-12 hover:transition hover:duration-300 hover:ease-in-out">
 
-                    <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
-                        Wedding
-                    </p>
-                    <p class="relative text-sm text-left lowercase text-black">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
+                        <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
+                            Wedding
+                        </p>
+                        <p class="relative text-sm text-left lowercase text-black">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        </p>
 
+                    </div>
                 </div>
-                <div data-aos="zoom-out" data-aos-duration="600"
-                    class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-8 lg:text-left">
-                    <img src="image/vector2.png" alt=""
-                        class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
+                <div
+                    class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
+                    <div data-aos="zoom-out" data-aos-duration="600"
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-8 lg:text-left">
+                        <img src="image/vector2.png" alt=""
+                            class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
 
-                    <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
-                        Event
-                    </p>
-                    <p class="relative text-sm text-left lowercase text-black">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
+                        <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
+                            Event
+                        </p>
+                        <p class="relative text-sm text-left lowercase text-black">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        </p>
 
-                </div>
-
-                <div data-aos="zoom-out" data-aos-duration="700"
-                    class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-1 lg:text-left">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-16 h-16 inline-block relative lg:w-20 lg:h-20 lg:-translate-y-4 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out"
-                        preserveAspectRatio="none">
-                        <path
-                            d="M54.7719 23.2312L50.6125 16.6594C49.7359 15.6375 48.5344 15 47.1875 15H32.8125C31.4656 15 30.2641 15.6375 29.3875 16.6594L25.2281 23.2312C24.3516 24.2547 23.2219 25 21.875 25H12.5C11.1739 25 9.90215 25.5268 8.96447 26.4645C8.02678 27.4021 7.5 28.6739 7.5 30V60C7.5 61.3261 8.02678 62.5979 8.96447 63.5355C9.90215 64.4732 11.1739 65 12.5 65H67.5C68.8261 65 70.0979 64.4732 71.0355 63.5355C71.9732 62.5979 72.5 61.3261 72.5 60V30C72.5 28.6739 71.9732 27.4021 71.0355 26.4645C70.0979 25.5268 68.8261 25 67.5 25H58.2812C56.9297 25 55.6484 24.2547 54.7719 23.2312Z"
-                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                        <path
-                            d="M40 55C46.9036 55 52.5 49.4036 52.5 42.5C52.5 35.5964 46.9036 30 40 30C33.0964 30 27.5 35.5964 27.5 42.5C27.5 49.4036 33.0964 55 40 55Z"
-                            stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
-                        <path d="M19.375 24.6875V21.25H15.625V24.6875" stroke="black" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-
-                    <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
-                        Personal
-                    </p>
-                    <p class="relative text-sm text-left lowercase text-black">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
-
+                    </div>
                 </div>
 
-                <div data-aos="zoom-out" data-aos-duration="800"
-                    class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:text-left">
-                    <img src="image/vector3.png" alt=""
-                        class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
+                <div
+                    class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
+                    <div data-aos="zoom-out" data-aos-duration="700"
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-1 lg:text-left">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-16 h-16 inline-block relative lg:w-20 lg:h-20 lg:-translate-y-4 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out"
+                            preserveAspectRatio="none">
+                            <path
+                                d="M54.7719 23.2312L50.6125 16.6594C49.7359 15.6375 48.5344 15 47.1875 15H32.8125C31.4656 15 30.2641 15.6375 29.3875 16.6594L25.2281 23.2312C24.3516 24.2547 23.2219 25 21.875 25H12.5C11.1739 25 9.90215 25.5268 8.96447 26.4645C8.02678 27.4021 7.5 28.6739 7.5 30V60C7.5 61.3261 8.02678 62.5979 8.96447 63.5355C9.90215 64.4732 11.1739 65 12.5 65H67.5C68.8261 65 70.0979 64.4732 71.0355 63.5355C71.9732 62.5979 72.5 61.3261 72.5 60V30C72.5 28.6739 71.9732 27.4021 71.0355 26.4645C70.0979 25.5268 68.8261 25 67.5 25H58.2812C56.9297 25 55.6484 24.2547 54.7719 23.2312Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path
+                                d="M40 55C46.9036 55 52.5 49.4036 52.5 42.5C52.5 35.5964 46.9036 30 40 30C33.0964 30 27.5 35.5964 27.5 42.5C27.5 49.4036 33.0964 55 40 55Z"
+                                stroke="black" stroke-width="2" stroke-miterlimit="10"></path>
+                            <path d="M19.375 24.6875V21.25H15.625V24.6875" stroke="black" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
 
-                    <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
-                        Photo Product
-                    </p>
-                    <p class="relative text-sm text-left lowercase text-black">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
+                        <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
+                            Personal
+                        </p>
+                        <p class="relative text-sm text-left lowercase text-black">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        </p>
 
+                    </div>
                 </div>
 
-                <div data-aos="zoom-out" data-aos-duration="900"
-                    class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-4 lg:text-left">
-                    <img src="image/vector4.png" alt=""
-                        class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
+                <div
+                    class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
+                    <div data-aos="zoom-out" data-aos-duration="800"
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:text-left">
+                        <img src="image/vector3.png" alt=""
+                            class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
 
-                    <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
-                        Design
-                    </p>
-                    <p class="relative text-sm text-left lowercase text-black">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
+                        <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
+                            Photo Product
+                        </p>
+                        <p class="relative text-sm text-left lowercase text-black">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        </p>
 
+                    </div>
                 </div>
 
-                <div data-aos="zoom-out" data-aos-duration="1000"
-                    class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 pb-5 lg:mt-2 lg:text-left">
-                    <img src="image/vector5.png" alt=""
-                        class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
+                <div
+                    class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
+                    <div data-aos="zoom-out" data-aos-duration="900"
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-4 lg:text-left">
+                        <img src="image/vector4.png" alt=""
+                            class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
 
-                    <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
-                        Editing
-                    </p>
-                    <p class="relative text-sm text-left lowercase text-black">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
+                        <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
+                            Design
+                        </p>
+                        <p class="relative text-sm text-left lowercase text-black">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        </p>
+                    </div>
+                </div>
 
+                <div
+                    class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
+                    <div data-aos="zoom-out" data-aos-duration="1000"
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 pb-5 lg:mt-2 lg:text-left">
+                        <img src="image/vector5.png" alt=""
+                            class="inline-block pb-3 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
+
+                        <p class="relative text-xl font-medium uppercase text-black mb-4 lg:text-2xl">
+                            Editing
+                        </p>
+                        <p class="relative text-sm text-left lowercase text-black">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="gallery" class="pt-2 lg:py-14">
+    <section id="gallery" class="pt-2 lg:py-14 lg:scroll-mt-16">
         <div class="container-xl">
             <p data-aos="fade-down" data-aos-duration="2000"
                 class="relative gilroy text-2xl font-bold text-center text-primary mb-5 lg:text-4xl">
