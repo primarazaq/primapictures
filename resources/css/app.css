@@ -21,3 +21,113 @@
 .hamburger-active > span:nth-child(3){
     @apply -rotate-45;
 }
+
+.video-docker video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-docker::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.video-content {
+    z-index: 2;
+}
+
+html,body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/*Overrides for Tailwind CSS */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #38573e #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 13px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #38573e;
+    border-radius: 0px;
+    border: -10px solid #ffffff;
+}
+
+.nav-text {
+    color: #fff;
+    margin: 0px 30px 0px 30px;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-text:after {
+    bottom: -4px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    background: #fff;
+    opacity: 0.6;
+    transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+    width: 0;
+}
+
+.nav-text:hover:after {
+    width: 100%;
+    opacity: 0.9;
+}
+
+.underlink {
+    color: #38573e;
+    margin: 0px 30px 0px 30px;
+    text-decoration: none;
+    position: relative;
+}
+
+.underlink:after {
+    bottom: -4px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    background: #38573e;
+    opacity: 0.6;
+    transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+    width: 0;
+}
+
+.underlink:hover:after {
+    width: 100%;
+    opacity: 0.9;
+}
+
+.gilroy {
+    font-family: 'Gilroy ExtraBold';
+}
+
+.helvetica {
+    font-family: 'Libre Baskerville', serif;
+}

@@ -1,5 +1,5 @@
 <div class="container lg:container-xl">
-    <div class="flex items-center lg:w-screen lg:max-w-[1900px] justify-between relative">
+    <div class="flex items-center md:w-screen md:max-w-auto lg:w-screen lg:max-w-[1900px] justify-between relative">
         <div class="px-4 -mt-10">
             {{-- <a id="title" href="#home" class="text-lg font-bold block py-6 text-white gilroy">Primapictures</a> --}}
             <a id="title" href="" class="block py-6 w-32 mt-11"> <img src="image/logoputih.png" class="logo"
