@@ -107,7 +107,7 @@
         <div class="container-xl">
             <div
                 class="absolute text-center text-white py-7 self-center z-50 lg:inset-x-0 lg:translate-y-36 lg:space-y-20 sm:space-y-8 sm:translate-y-8">
-                <p data-aos="fade-down" data-aos-duration="2000" class="text-md sm:text-lg font-bold lg:text-4xl">
+                <p data-aos="fade-down" data-aos-duration="3000" class="text-md sm:text-lg font-bold lg:text-4xl">
                     <span>Segera abadikan momen indah</span><br />
                     <span>anda bersama kami</span>
                 </p>
