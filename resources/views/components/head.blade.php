@@ -12,4 +12,13 @@
 <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
     integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 @vite('resources/css/app.css')
+
+<style>
+    html,
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+</style>
