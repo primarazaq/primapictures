@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 Route::get('/booking', function () {
     return view('book');
 });
+
+Route::post('/checkout', [OrderController::class, 'checkout']);

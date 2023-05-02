@@ -311,7 +311,7 @@
             $(".nav-text").removeClass("lg:text-black");
             $(".nav-text").addClass("lg:text-white");
             $(".nav-text").removeClass("lg:hover:text-primary");
-            $(".nav-text").removeClass("underlink");
+            // $(".nav-text").removeClass("underlink");
         }
     }
 

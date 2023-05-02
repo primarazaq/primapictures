@@ -3,6 +3,8 @@
 
 <head>
     @include('components/head')
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="{{ config('midtrans.client_key') }}"></script>
 </head>
 
 <body>
@@ -83,8 +85,120 @@
         </div>
     </section>
     <section>
+        {{-- <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
+            <div
+                class="bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+                <figure class="mb-2">
+                    <img src="https://srv-cdn.onedio.com/store/bf2cbc886120f284ef46fd92a48f5fb58c62e6a50fbdf8fa796d057dd0ddc242.png"
+                        alt="" class="h-64 ml-auto mr-auto" />
+                </figure>
+                <div class="rounded-lg p-4 bg-primary flex flex-col">
+                    <div>
+                        <h5 class="text-white text-2xl font-bold leading-none">
+                            iPhone 11 Pro Max
+                        </h5>
+                        <span class="text-xs text-gray-400 leading-none">And then there was Pro.</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="text-lg text-white font-light">
+                            $1099,00
+                        </div>
+                        <button href="javascript:;"
+                            class="rounded-full bg-green-700 text-white hover:bg-white hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="stroke-current m-auto">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
 
+        <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
+            <div
+                class="bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+                <figure class="mb-2">
+                    <img src="image/foto1.png" alt="" class="h-64 ml-auto mr-auto" />
+                </figure>
+                <div class="rounded-lg p-4 bg-primary flex flex-col">
+                    <div>
+                        <h5 class="text-white text-2xl font-bold leading-none">
+                            Content Making
+                        </h5>
+                        <span class="text-xs text-gray-400 leading-none">Membuat konten video untuk anda</span>
+                        <hr>
+                        {{-- <form action="/checkout" method="POST">
+                            @csrf --}}
+                        <div>
+                            <label for="qty" class="text-white text-xs">Jumlah pesan</label>
+                            <input type="number" name="qty" class="w-max h-3 rounded-md">
+                        </div>
+                        <div>
+                            <label for="name" class="text-white text-xs">Nama</label>
+                            <input type="text" name="name" class="w-max h-3 rounded-md">
+                        </div>
+                        <div>
+                            <label for="phone" class="text-white text-xs">No Telp.</label>
+                            <input type="number" name="phone" class="w-max h-3 rounded-md">
+                        </div>
+                        <div>
+                            <label for="address" class="text-white text-xs">Alamat</label>
+                            <textarea name="address" class="w-max rounded-md"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center">
+                        <div class="text-lg text-white font-light">
+                            Rp.750.000
+                        </div>
+
+                        <button id="pay-button"
+                            class="rounded-full bg-green-700 text-white hover:bg-white hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        {{-- </form> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <script type="text/javascript">
+        // For example trigger on button clicked, or any time you need
+        var payButton = document.getElementById('pay-button');
+        payButton.addEventListener('click', function() {
+            // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+            window.snap.pay('{{ $snapToken }}', {
+                onSuccess: function(result) {
+                    /* You may add your own implementation here */
+                    alert("payment success!");
+                    console.log(result);
+                },
+                onPending: function(result) {
+                    /* You may add your own implementation here */
+                    alert("wating your payment!");
+                    console.log(result);
+                },
+                onError: function(result) {
+                    /* You may add your own implementation here */
+                    alert("payment failed!");
+                    console.log(result);
+                },
+                onClose: function() {
+                    /* You may add your own implementation here */
+                    alert('you closed the popup without finishing the payment');
+                }
+            })
+        });
+    </script>
 </body>
 <script>
     AOS.init();
