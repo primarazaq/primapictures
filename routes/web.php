@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main');
 });
-Route::get('/booking', function () {
-    return view('book');
+Route::get('/order', function () {
+    return view('order');
 });
 
 Route::post('/checkout', [OrderController::class, 'checkout']);

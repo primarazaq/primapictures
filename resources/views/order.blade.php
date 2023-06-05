@@ -10,7 +10,7 @@
 <body>
     <header
         class="bg-white fixed top-0 left-0 w-full h-[69px] flex items-center border-b-2 z-50 transition duration-500 ease-in-out">
-        @include('components/navbar-book')
+        @include('components/navbar-order')
     </header>
     <section class="container my-20 mx-auto">
 
@@ -85,6 +85,23 @@
         </div>
     </section>
     <section>
+        <div class="w-64 bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="relative">
+                <img class="h-40 w-full object-cover" src="gambar.jpg" alt="Gambar">
+                <div
+                    class="absolute inset-0 flex items-center justify-end transition-all duration-300 transform translate-x-full group-hover:translate-x-0">
+                    <div class="p-4 bg-white text-black">
+                        <h3 class="text-lg font-semibold">Deskripsi</h3>
+                        <p class="mt-2">Deskripsi singkat tentang konten ini.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-semibold">Judul</h3>
+                <p class="mt-2">Deskripsi singkat tentang konten ini.</p>
+            </div>
+        </div>
+
         {{-- <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
             <div
                 class="bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
@@ -171,7 +188,7 @@
         </div>
     </section>
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         // For example trigger on button clicked, or any time you need
         var payButton = document.getElementById('pay-button');
         payButton.addEventListener('click', function() {
@@ -198,62 +215,9 @@
                 }
             })
         });
-    </script>
+    </script> --}}
+    @include('components/footer')
 </body>
-<script>
-    AOS.init();
 
-    // navbbar fixed
-    // window.onscroll = function() {
-    //     const header = document.querySelector('header');
-    //     const fixedNav = header.offsetTop;
-    //     const textNav = document.querySelector('#title');
-    //     const hambchild1 = document.querySelector('#l1');
-    //     const hambchild2 = document.querySelector('#l2');
-    //     const hambchild3 = document.querySelector('#l3');
-
-    //     var logo1 = "image/logoputih.png";
-    //     var logo2 = "image/logohitam.png";
-
-    //     if (window.pageYOffset > fixedNav) {
-    //         header.classList.add('navbar-fixed');
-
-    //         hambchild1.classList.remove('bg-white');
-    //         hambchild2.classList.remove('bg-white');
-    //         hambchild3.classList.remove('bg-white');
-    //         hambchild1.classList.add('bg-black');
-    //         hambchild2.classList.add('bg-black');
-    //         hambchild3.classList.add('bg-black');
-    //         $(".logo").attr("src", logo2);
-    //         $(".nav-text").removeClass("lg:text-white");
-    //         $(".nav-text").addClass("lg:text-black");
-    //         $(".nav-text").addClass("lg:hover:text-primary");
-    //         $(".nav-text").addClass("underlink");
-    //     } else {
-    //         header.classList.remove('navbar-fixed');
-
-    //         hambchild1.classList.add('bg-white');
-    //         hambchild2.classList.add('bg-white');
-    //         hambchild3.classList.add('bg-white');
-    //         hambchild1.classList.remove('bg-black');
-    //         hambchild2.classList.remove('bg-black');
-    //         hambchild3.classList.remove('bg-black');
-    //         $(".logo").attr("src", logo1);
-    //         $(".nav-text").removeClass("lg:text-black");
-    //         $(".nav-text").addClass("lg:text-white");
-    //         $(".nav-text").removeClass("lg:hover:text-primary");
-    //         $(".nav-text").removeClass("underlink");
-    //     }
-    // }
-
-    // // hamburger
-    // const hamburger = document.querySelector('#hamburger');
-    // const navMenu = document.querySelector('#nav-menu');
-
-    // hamburger.addEventListener('click', function() {
-    //     hamburger.classList.toggle('hamburger-active');
-    //     navMenu.classList.toggle('hidden');
-    // })
-</script>
 
 </html>
