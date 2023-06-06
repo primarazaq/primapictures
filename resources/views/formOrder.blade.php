@@ -97,7 +97,7 @@
             </div>
             <div class="lg:basis-1/2 w-full h-80 self-center px-4 relative z-0 lg:flex lg:flex-col">
                 <div class="absolute w-full h-full sm:px-6 lg:px-4 -mt-10 lg:-mt-24">
-                    <div class="listJasa" id="Jasa-default">
+                    <div class="listJasa h-96" id="Jasa-default">
                         <p data-aos="fade-down" data-aos-duration="2000"
                             class="relative sm:text-2xl lg:text-4xl font-bold gilroy text-left text-black mb-2 lg:mb-0 sm:pt-5 sm:mb-16">
 
@@ -113,7 +113,7 @@
                         </p>
                     </div>
                     @foreach ($jasa as $item)
-                        <div class="hidden listJasa" id="Jasa-{{ $item->id }}">
+                        <div class="hidden listJasa h-96" id="Jasa-{{ $item->id }}">
                             <p data-aos="fade-down" data-aos-duration="2000"
                                 class="relative sm:text-2xl lg:text-4xl font-bold gilroy text-left text-black mb-2 lg:mb-0 sm:pt-5 sm:mb-16">
 
@@ -152,8 +152,6 @@
                                     });
                                 </script>
                             </div>
-                        </div>
-                        <div>
                         </div>
                         <div class="relative">
                             <button
