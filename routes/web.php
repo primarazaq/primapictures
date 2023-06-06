@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PesananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main');
 });
-Route::get('/order', function () {
-    return view('order');
-});
+Route::get('/order', [PesananController::class, 'index']);
+Route::get('/order/formorder/{id}', [PesananController::class, 'show']);
 
 Route::post('/checkout', [OrderController::class, 'checkout']);

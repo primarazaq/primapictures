@@ -85,102 +85,50 @@
         </div>
     </section>
     <section>
-        {{-- <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
-            <div
-                class="bg-white rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
-                <figure class="mb-2">
-                    <img src="https://srv-cdn.onedio.com/store/bf2cbc886120f284ef46fd92a48f5fb58c62e6a50fbdf8fa796d057dd0ddc242.png"
-                        alt="" class="h-64 ml-auto mr-auto" />
-                </figure>
-                <div class="rounded-lg p-4 bg-primary flex flex-col">
-                    <div>
-                        <h5 class="text-white text-2xl font-bold leading-none">
-                            iPhone 11 Pro Max
-                        </h5>
-                        <span class="text-xs text-gray-400 leading-none">And then there was Pro.</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="text-lg text-white font-light">
-                            $1099,00
-                        </div>
-                        <button href="javascript:;"
-                            class="rounded-full bg-green-700 text-white hover:bg-white hover:text-purple-900 hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="stroke-current m-auto">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
 
         <div class="lg:grid lg:grid-cols-3 lg:gap-10 lg:p-20 sm:grid sm:grid-cols-2 sm:gap-5 sm:p-10">
-            <div class="rounded-full m-h-64 p-2">
-                <div x-data="{ open: false }"
-                    class="w-full bg-white shadow-md shadow-slate-600 rounded-lg overflow-hidden">
-                    <div @mouseover="open = true" class="relative">
-                        <img :class="{
-                            'transform': open,
-                            '-translate-x-16': open,
-                            'scale-110': open
-                        }"
-                            class="h-full w-full object-cover transition-transform duration-500" src="image/foto6.jpg"
-                            alt="Gambar">
+            @foreach ($kategori as $item)
+                <div class="rounded-full m-h-64 p-2">
+                    <div x-data="{ open: false }"
+                        class="w-full bg-white shadow-md shadow-slate-600 rounded-lg overflow-hidden">
+                        <div @mouseover="open = true" class="relative">
+                            <img :class="{
+                                'transform': open,
+                                '-translate-x-16': open,
+                                'scale-110': open
+                            }"
+                                class="h-full w-full object-cover transition-transform duration-500"
+                                src="image/foto6.jpg" alt="Gambar">
 
-                        <div x-show="open"
-                            x-transition:enter="transition-transform transition-opacity ease-out duration-300"
-                            x-transition:enter-start="opacity-0 translate-x-56"
-                            x-transition:enter-end="opacity-100 transform"
-                            x-transition:leave="transition ease-in duration-300"
-                            x-transition:leave-end="opacity-0 transform translate-x-56" @mouseout="open = false"
-                            class="absolute inset-0 flex items-center justify-end">
-                            <div class="p-4 bg-white h-full ml-56 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="text-sm font-semibold">Deskripsi</h3>
-                                    <p class="mt-2">Deskripsi singkat tentang konten ini.</p>
+                            <div x-show="open"
+                                x-transition:enter="transition-transform transition-opacity ease-out duration-300"
+                                x-transition:enter-start="opacity-0 translate-x-56"
+                                x-transition:enter-end="opacity-100 transform"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-end="opacity-0 transform translate-x-56"
+                                @mouseover.away="open = false" class="absolute inset-0 flex items-center justify-end">
+                                <div class="p-4 bg-white h-full ml-56 flex flex-col justify-between">
+                                    <div>
+                                        <h3 class="text-sm font-semibold">{{ $item->nama }}</h3>
+                                        <p class="mt-2 text-xs">{{ $item->deskripsi }}</p>
+                                    </div>
+                                    <div class="self-end">
+                                        <a href="/order/formorder/{{ $item->id }}">
+                                            <button
+                                                class="w-fit bg-primary text-white px-16 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black lg:w-60 lg:h-8 lg:text-lg">
+                                                Pesan
+                                            </button></a>
+                                    </div>
                                 </div>
-                                <div class="self-end">
-                                    <button
-                                        class="w-fit bg-primary text-white px-16 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black lg:w-60 lg:h-8 lg:text-lg">
-                                        Pesan
-                                    </button>
-                                </div>
+
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-            </div>
+            @endforeach
         </div>
 
-        {{-- <div class="container-xl">
-            <div
-                class="absolute text-center text-black bg-white bg-opacity-50 opacity-0 ml-56 transform transition-all duration-300 py-7 self-center z-50 lg:inset-x-0 lg:translate-y-36 lg:space-y-20 sm:space-y-8 sm:translate-y-8 hover:ml-44 hover:opacity-100">
-                <p class="text-md sm:text-lg font-bold lg:text-4xl">
-                    <span>Wedding</span>
-                </p>
-                <p
-                    class="text-[8px] tracking-widest px-4 py-5 mt-5 pb-2 font-extralight helvetica lg:text-[17px] lg:px-96 sm:text-[10px] sm:px-20">
-                    Hal terbaik mengenai sebuah gambar adalah gambar itu tidak pernah berubah, bahkan ketika
-                    orang-orang di dalamnya sudah berubah. Itulah momen yang menjadikannya abadi
-                </p>
-                <div data-aos="fade" data-aos-duration="3000">
-                    <button
-                        class="w-fit mt-8 bg-white text-primary px-3 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black lg:w-60 lg:h-8 lg:text-lg">
-                        ORDER SEKARANG
-                    </button>
-                </div>
-            </div>
-            <div class="overflow-hidden">
-                <div class="absolute bg-primary w-full h-60 opacity-60 z-40 lg:h-[700px] sm:h-80"></div>
-                <img src="image/foto6.jpg"
-                    class="relative w-full h-60 self-center z-0 object-cover lg:h-[700px] sm:h-80" />
-            </div>
-        </div> --}}
+
     </section>
 
     {{-- <script type="text/javascript">

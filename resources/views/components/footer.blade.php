@@ -3,7 +3,7 @@
          <div
              class="flex relative w-full h-40 self-center items-center px-4 pt-14 lg:px-32 lg:justify-between lg:pt-0 sm:px-14">
              <div>
-                 <img src="image/logoputih.png" alt="" class="w-36 h-fit lg:w-52">
+                 <img src="/../image/logoputih.png" alt="" class="w-36 h-fit lg:w-52">
                  <p class="relative w-48 mt-4 text-[9px] text-left text-white lg:text-[14px]">
                      Jl. Rumah Sakit No.48A, Kota Bandung, Jawa Barat, Indonesia.
                  </p>
@@ -15,7 +15,7 @@
                  </span>
                  <p class="font-bold mt-4 lg:text-sm lg:mb-2">Social Media</p>
                  <div class="flex space-x-1">
-                     <img src="image/ig.png" alt="" class="w-[15px] h-[15px]">
+                     <img src="/../image/ig.png" alt="" class="w-[15px] h-[15px]">
                      <span class="lg:text-xs">
                          @primapictures.bdg
                      </span>
