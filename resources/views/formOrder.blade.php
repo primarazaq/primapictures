@@ -199,65 +199,33 @@
     @include('components/footer')
     <script>
         var images = [{
-                url: "https://source.unsplash.com/gKXKBY-C-Dk/1920x1080",
-                thumb: "https://source.unsplash.com/gKXKBY-C-Dk/400x400",
-                original: "https://source.unsplash.com/gKXKBY-C-Dk"
+                url: "/image/wedding/1080/wedding (1).jpg", 
+                thumb: "/image/wedding/400/wedding (1).jpg" 
             },
             {
-                url: "https://source.unsplash.com/9UUoGaaHtNE/1920x1080",
-                thumb: "https://source.unsplash.com/9UUoGaaHtNE/400x400",
-                original: "https://source.unsplash.com/9UUoGaaHtNE"
+                url: "/image/wedding/1080/wedding (2).jpg", 
+                thumb: "/image/wedding/400/wedding (2).jpg" 
             },
             {
-                url: "https://source.unsplash.com/w2DsS-ZAP4U/1920x1080",
-                thumb: "https://source.unsplash.com/w2DsS-ZAP4U/400x400",
-                original: "https://source.unsplash.com/w2DsS-ZAP4U"
+                url: "/image/wedding/1080/wedding (3).jpg", 
+                thumb: "/image/wedding/400/wedding (3).jpg" 
             },
             {
-                url: "https://source.unsplash.com/cWOzOnSoh6Q/1920x1080",
-                thumb: "https://source.unsplash.com/cWOzOnSoh6Q/400x400",
-                original: "https://source.unsplash.com/cWOzOnSoh6Q"
+                url: "/image/wedding/1080/wedding (4).jpg", 
+                thumb: "/image/wedding/400/wedding (4).jpg" 
             },
             {
-                url: "https://source.unsplash.com/NodtnCsLdTE/1920x1080",
-                thumb: "https://source.unsplash.com/NodtnCsLdTE/400x400",
-                original: "https://source.unsplash.com/NodtnCsLdTE"
+                url: "/image/wedding/1080/wedding (5).jpg", 
+                thumb: "/image/wedding/400/wedding (5).jpg" 
             },
             {
-                url: "https://source.unsplash.com/eMzblc6JmXM/1920x1080",
-                thumb: "https://source.unsplash.com/eMzblc6JmXM/400x400",
-                original: "https://source.unsplash.com/eMzblc6JmXM"
+                url: "/image/wedding/1080/wedding (6).jpg", 
+                thumb: "/image/wedding/400/wedding (6).jpg" 
             },
             {
-                url: "https://source.unsplash.com/so5nsYDOdxw/1920x1080",
-                thumb: "https://source.unsplash.com/so5nsYDOdxw/400x400",
-                original: "https://source.unsplash.com/so5nsYDOdxw"
+                url: "/image/wedding/1080/wedding (7).jpg", 
+                thumb: "/image/wedding/400/wedding (7).jpg" 
             },
-            {
-                url: "https://source.unsplash.com/GtwiBmtJvaU/1920x1080",
-                thumb: "https://source.unsplash.com/GtwiBmtJvaU/400x400",
-                original: "https://source.unsplash.com/GtwiBmtJvaU"
-            },
-            {
-                url: "https://source.unsplash.com/YCPkW_r_6uA/1920x1080",
-                thumb: "https://source.unsplash.com/YCPkW_r_6uA/400x400",
-                original: "https://source.unsplash.com/YCPkW_r_6uA"
-            },
-            {
-                url: "https://source.unsplash.com/IbPxGLgJiMI/1920x1080",
-                thumb: "https://source.unsplash.com/IbPxGLgJiMI/400x400",
-                original: "https://source.unsplash.com/IbPxGLgJiMI"
-            },
-            {
-                url: "https://source.unsplash.com/Hd7vwFzZpH0/1920x1080",
-                thumb: "https://source.unsplash.com/Hd7vwFzZpH0/400x400",
-                original: "https://source.unsplash.com/Hd7vwFzZpH0"
-            },
-            {
-                url: "https://source.unsplash.com/0F7GRXNOG7g/1920x1080",
-                thumb: "https://source.unsplash.com/0F7GRXNOG7g/400x400",
-                original: "https://source.unsplash.com/0F7GRXNOG7g"
-            }
         ];
 
         window.ProductGallery = function($el) {
@@ -336,12 +304,21 @@
                     }
                 },
 
+                // getImageMeta(url) {
+                //     return new Promise((resolve, reject) => {
+                //         const img = new Image();
+                //         img.onload = () => resolve(img);
+                //         img.onerror = (err) => reject(err);
+                //         img.src = url;
+                //     });
+                // }
+
                 getImageMeta(url) {
                     return new Promise((resolve, reject) => {
                         const img = new Image();
                         img.onload = () => resolve(img);
                         img.onerror = (err) => reject(err);
-                        img.src = url;
+                        img.src = require('./' + url);
                     });
                 }
             };

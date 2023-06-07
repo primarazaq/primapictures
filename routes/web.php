@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PesananController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +21,6 @@ Route::get('/', function () {
 Route::get('/order', [PesananController::class, 'index']);
 Route::get('/order/{id}', [PesananController::class, 'show']);
 Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
-
 Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
 
-Route::post('/order', [OrderController::class, 'checkout']);
+

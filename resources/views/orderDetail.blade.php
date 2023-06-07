@@ -68,88 +68,6 @@
     <section class="container my-40 mx-auto">
         <div class=" flex lg:flex-row">
             <div class="lg:basis-1/2 -mt-24 sm:mt-10 lg:-mt-20 overflow-hidden">
-
-                {{-- <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                    <!-- Carousel wrapper -->
-                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 mx-2">
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Item 4 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Item 5 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                    </div>
-                    <!-- Slider indicators -->
-                    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                            data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                            data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                            data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                            data-carousel-slide-to="3"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                            data-carousel-slide-to="4"></button>
-                    </div>
-                    <!-- Slider controls -->
-                    <button type="button"
-                        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-6 cursor-pointer group focus:outline-none"
-                        data-carousel-prev>
-                        <span
-                            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 19l-7-7 7-7">
-                                </path>
-                            </svg>
-                            <span class="sr-only">Previous</span>
-                        </span>
-                    </button>
-                    <button type="button"
-                        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-6 cursor-pointer group focus:outline-none"
-                        data-carousel-next>
-                        <span
-                            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                                </path>
-                            </svg>
-                            <span class="sr-only">Next</span>
-                        </span>
-                    </button>
-                </div> --}}
-
-                {{-- test --}}
-                {{-- <div class="relative grid grid-cols-12 w-full lg:max-w-7xl mx-auto md:p-4"> --}}
                 <div class="col-span-12 md:col-span-6 md:mr-2">
 
                     <div class="transition-all duration-100 ease-in-out w-full" x-data="ProductGallery($el)"
@@ -167,13 +85,13 @@
                             <template x-for="(image, i) in images" :key="image">
                                 <li class="relative w-full h-full flex-shrink-0 snap-start">
                                     <span href="#">
-                                        <img :src="image.url" class="m-auto max-h-full max-w-full">
+                                        <img :src="image.url" class="m-auto max-h-[600px] max-w-96">
                                     </span>
                                 </li>
                             </template>
                         </ul>
 
-                        <div class="m-auto max-w-full">
+                        <div class="m-auto max-w-96">
                             <div class="flex" x-show="images.length>1" x-cloak>
                                 <a class="h-28 flex-grow-0 text-primary inline-flex items-center text-xl bg-white p-4"
                                     href="#" @click.prevent="prevImage">
@@ -182,7 +100,7 @@
                                 <ul
                                     class="flex flex-grow-1 flex-nowrap overflow-x-scroll whitespace-nowrap snap snap-x snap-mandatory no-scrollbar scroll-behavior-smooth">
                                     <template x-for="(image, i) in images" :key="image">
-                                        <li class="w-28 flex-shrink-0 snap-start mx-1" @wheel="mousewheelEvent($event)">
+                                        <li class="w-40 flex-shrink-0 snap-start mx-1" @wheel="mousewheelEvent($event)">
                                             <a class="inline-block border-4" href="#"
                                                 @click.prevent="activeImage=i"
                                                 :class="{
@@ -201,14 +119,6 @@
                                 </a>
                             </div>
                         </div>
-
-                        <div data-zoom
-                            class="absolute h-full w-full z-40 top-full left-0 -mt-36 md:left-full md:top-0 md:mt-0 transition-all ease-out duration-300 bg-indigo-500"
-                            x-show="zoomIsActive && !isFullScreen"></div>
-                        <div data-lens
-                            class="absolute top-0 left-0 transition-transform ease-out duration-75 shadow z-50 transform-gpu pointer-events-none border-2"
-                            x-show="zoomIsActive && !isFullScreen"></div>
-
                     </div>
                 </div>
             </div>
@@ -290,65 +200,33 @@
     @include('components/footer')
     <script>
         var images = [{
-                url: "https://source.unsplash.com/gKXKBY-C-Dk/1920x1080",
-                thumb: "https://source.unsplash.com/gKXKBY-C-Dk/400x400",
-                original: "https://source.unsplash.com/gKXKBY-C-Dk"
+                url: "/image/wedding/1080/wedding (1).jpg", 
+                thumb: "/image/wedding/400/wedding (1).jpg" 
             },
             {
-                url: "https://source.unsplash.com/9UUoGaaHtNE/1920x1080",
-                thumb: "https://source.unsplash.com/9UUoGaaHtNE/400x400",
-                original: "https://source.unsplash.com/9UUoGaaHtNE"
+                url: "/image/wedding/1080/wedding (2).jpg", 
+                thumb: "/image/wedding/400/wedding (2).jpg" 
             },
             {
-                url: "https://source.unsplash.com/w2DsS-ZAP4U/1920x1080",
-                thumb: "https://source.unsplash.com/w2DsS-ZAP4U/400x400",
-                original: "https://source.unsplash.com/w2DsS-ZAP4U"
+                url: "/image/wedding/1080/wedding (3).jpg", 
+                thumb: "/image/wedding/400/wedding (3).jpg" 
             },
             {
-                url: "https://source.unsplash.com/cWOzOnSoh6Q/1920x1080",
-                thumb: "https://source.unsplash.com/cWOzOnSoh6Q/400x400",
-                original: "https://source.unsplash.com/cWOzOnSoh6Q"
+                url: "/image/wedding/1080/wedding (4).jpg", 
+                thumb: "/image/wedding/400/wedding (4).jpg" 
             },
             {
-                url: "https://source.unsplash.com/NodtnCsLdTE/1920x1080",
-                thumb: "https://source.unsplash.com/NodtnCsLdTE/400x400",
-                original: "https://source.unsplash.com/NodtnCsLdTE"
+                url: "/image/wedding/1080/wedding (5).jpg", 
+                thumb: "/image/wedding/400/wedding (5).jpg" 
             },
             {
-                url: "https://source.unsplash.com/eMzblc6JmXM/1920x1080",
-                thumb: "https://source.unsplash.com/eMzblc6JmXM/400x400",
-                original: "https://source.unsplash.com/eMzblc6JmXM"
+                url: "/image/wedding/1080/wedding (6).jpg", 
+                thumb: "/image/wedding/400/wedding (6).jpg" 
             },
             {
-                url: "https://source.unsplash.com/so5nsYDOdxw/1920x1080",
-                thumb: "https://source.unsplash.com/so5nsYDOdxw/400x400",
-                original: "https://source.unsplash.com/so5nsYDOdxw"
+                url: "/image/wedding/1080/wedding (7).jpg", 
+                thumb: "/image/wedding/400/wedding (7).jpg" 
             },
-            {
-                url: "https://source.unsplash.com/GtwiBmtJvaU/1920x1080",
-                thumb: "https://source.unsplash.com/GtwiBmtJvaU/400x400",
-                original: "https://source.unsplash.com/GtwiBmtJvaU"
-            },
-            {
-                url: "https://source.unsplash.com/YCPkW_r_6uA/1920x1080",
-                thumb: "https://source.unsplash.com/YCPkW_r_6uA/400x400",
-                original: "https://source.unsplash.com/YCPkW_r_6uA"
-            },
-            {
-                url: "https://source.unsplash.com/IbPxGLgJiMI/1920x1080",
-                thumb: "https://source.unsplash.com/IbPxGLgJiMI/400x400",
-                original: "https://source.unsplash.com/IbPxGLgJiMI"
-            },
-            {
-                url: "https://source.unsplash.com/Hd7vwFzZpH0/1920x1080",
-                thumb: "https://source.unsplash.com/Hd7vwFzZpH0/400x400",
-                original: "https://source.unsplash.com/Hd7vwFzZpH0"
-            },
-            {
-                url: "https://source.unsplash.com/0F7GRXNOG7g/1920x1080",
-                thumb: "https://source.unsplash.com/0F7GRXNOG7g/400x400",
-                original: "https://source.unsplash.com/0F7GRXNOG7g"
-            }
         ];
 
         window.ProductGallery = function($el) {
@@ -427,12 +305,21 @@
                     }
                 },
 
+                // getImageMeta(url) {
+                //     return new Promise((resolve, reject) => {
+                //         const img = new Image();
+                //         img.onload = () => resolve(img);
+                //         img.onerror = (err) => reject(err);
+                //         img.src = url;
+                //     });
+                // }
+
                 getImageMeta(url) {
                     return new Promise((resolve, reject) => {
                         const img = new Image();
                         img.onload = () => resolve(img);
                         img.onerror = (err) => reject(err);
-                        img.src = url;
+                        img.src = require('./' + url);
                     });
                 }
             };

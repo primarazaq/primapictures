@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Jasa;
 use App\Models\Kategori;
 use App\Models\User;
+use App\Models\Status;
 
 class DatabaseSeeder extends Seeder
 {
@@ -54,6 +55,30 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Paket Prewed Only',
             'deskripsi' => 'Paket jasa ini akan menyediakan jasa hanya untuk prewedding anda saja. anda dapat menghemat biaya hanya dengan preweddingnya saja',
             'harga' => 2500000
+        ]);
+        Status::create([
+            'id' => '1',
+            'status' => 'success'
+        ]);
+        Status::create([
+            'id' => '2',
+            'status' => 'settlement'
+        ]);
+        Status::create([
+            'id' => '3',
+            'status' => 'pending'
+        ]);
+        Status::create([
+            'id' => '4',
+            'status' => 'deny'
+        ]);
+        Status::create([
+            'id' => '5',
+            'status' => 'cancel'
+        ]);
+        Status::create([
+            'id' => '6',
+            'status' => 'expired'
         ]);
     }
 }
