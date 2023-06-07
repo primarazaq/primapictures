@@ -3,62 +3,9 @@
 
 <head>
     @include('components/head')
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="{{ config('midtrans.client_key') }}"></script>
 </head>
-<style>
-    [x-cloak] {
-        display: none;
-    }
-
-    .scroll {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-    }
-
-    /* iOS devices */
-    @supports (-webkit-overflow-scrolling: touch) {
-        .scroll {
-            -webkit-overflow-scrolling: touch;
-        }
-    }
-
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .scroll-behavior-smooth {
-        scroll-behavior: smooth;
-    }
-
-    .snap {
-        scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
-    }
-
-    .snap-y {
-        --scroll-snap-direction: y;
-    }
-
-    .snap-x {
-        --scroll-snap-direction: x;
-    }
-
-    .snap-mandatory {
-        --scroll-snap-constraint: mandatory;
-    }
-
-    .snap-start {
-        scroll-snap-align: start;
-    }
-</style>
 
 <body>
     <header
@@ -83,32 +30,16 @@
                         <ul class="relative font-bold">
                             {{ $kategori->nama }}
                         </ul>
-                        <form action="/order/{{ $id }}/formOrder/checkout" method="POST">
-                            @csrf
+                        {{-- <form action="/order/{{ $id }}/formOrder/checkout" method="POST">
+                            @csrf --}}
                             <ul>
-                                <div class="relative">
-                                    <div>
-                                        <select name="id_jasa" id="id_jasa"
-                                            class="flex items-center space-x-1 cursor-pointer text-sm w-52 mt-3 bg-white text-primary px-10 py-[2px] font-semibold tracking-[2px] text-[13px] rounded-full shadow-sm shadow-slate-600 ">
-                                            <option value="default">Pilih Paket</option>
-                                            @foreach ($jasa as $list)
-                                                <option value="{{ $list->id }}">{{ $loop->iteration }}.
-                                                    {{ $list->nama }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        <script>
-                                            $(document).ready(function() {
-                                                $('#id_jasa').change(function() {
-                                                    var pilihan = $(this).val();
-                                                    $('.listJasa').addClass(
-                                                        'hidden'); // Menambahkan class 'hidden' pada semua div dengan class 'jasa'
-                                                    $('#Jasa-' + pilihan).removeClass(
-                                                        'hidden'); // Menghapus class 'hidden' pada div dengan id 'jasa-pilihan'
-                                                });
-                                            });
-                                        </script>
-                                    </div>
+                                <div class="relative justify-start self-start text-left">
+                                
+                                        <p name="id_jasa" id="id_jasa"
+                                            class="flex space-x-1 text-sm mt-3 text-primary px-10 py-[2px] font-semibold tracking-[2px] text-[13px] ">
+                                            {{ $jasa->nama }}
+                                        </p>
+                             
                                 </div>
                             </ul>
                             <ul>
@@ -116,18 +47,10 @@
                                     Total Harga
                                 </p>
                                 <div class="listJasa" id="Jasa-default">
-                                    <p class="relative sm:text-xl lg:text-4xl font-bold gilroy text-left text-primary">
-                                        Rp xxx.xxx
+                                    <p class="relative sm:text-xl lg:text-4xl font-bold gilroy text-left text-red-600">
+                                        @currency($order->total_harga)
                                     </p>
                                 </div>
-                                @foreach ($jasa as $item)
-                                    <div class="hidden listJasa" id="Jasa-{{ $item->id }}">
-                                        <p
-                                            class="relative sm:text-xl lg:text-4xl font-bold gilroy text-left text-red-600">
-                                            @currency($item->harga)
-                                        </p>
-                                    </div>
-                                @endforeach
                             </ul>
 
                     </div>
@@ -141,21 +64,21 @@
                                 <label for="text" class="mb-3 block text-base font-medium text-[#07074D]">
                                     Nama Pemesan
                                 </label>
-                                <input type="text" name="nama_plg" id="nama_plg" placeholder="Nama Lengkap Pemesan"
+                                <input type="text" name="nama_plg" id="nama_plg" placeholder="Nama Lengkap Pemesan" value="{{ $order->nama_plg }}" readonly
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
                             <div class="mb-5">
                                 <label for="hp" class="mb-3 block text-base font-medium text-[#07074D]">
                                     Nomor HP Pemesan
                                 </label>
-                                <input type="number" name="hp_plg" id="hp_plg" placeholder="Nomor HP Pemesan"
+                                <input type="number" name="hp_plg" id="hp_plg" placeholder="Nomor HP Pemesan" value="{{ $order->hp_plg }}" readonly
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
                             <div class="mb-5">
                                 <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
                                     E-mail Pemesan
                                 </label>
-                                <input type="email" name="email_plg" id="email_plg" placeholder="E-mail Pemesan"
+                                <input type="email" name="email_plg" id="email_plg" placeholder="E-mail Pemesan" value="{{ $order->email_plg }}" readonly
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
                             <div class="mb-5">
@@ -163,32 +86,27 @@
                                     Tanggal dan Jam Acara
                                 </label>
                                 <input type="dateTime-local" name="tgl_acara" id="tgl_acara"
-                                    placeholder="Tanggal dan Jam Acara yang Hendak dipesan"
+                                    placeholder="Tanggal dan Jam Acara yang Hendak dipesan" value="{{ $order->tgl_acara }}" readonly
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
                             <div class="mb-5">
                                 <label for="text" class="mb-3 block text-base font-medium text-[#07074D]">
                                     Lokasi Acara
                                 </label>
-                                <select name="wilayah" id="wilayah"
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
-                                    <option>-- Dalam Kota Bandung / Luar Kota Bandung --</option>
-                                    <option value="dalam kota">Dalam Kota Bandung</option>
-                                    <option value="luar kota">Luar Kota Bandung</option>
-                                </select>
-                                <textarea name="lokasi"
-                                    class="resize h-32 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"></textarea>
+                                <input name="wilayah" id="wilayah" value="{{ $order->wilayah }}" readonly
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
+                                <input name="lokasi" value="{{ $order->lokasi }}" readonly
+                                    class=" h-32 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
                             </div>
                         </div>
                         <div class="relative mb-10 self-center">
-                            <button type="submit"
+                            <button id="pay-button"
                                 class=" w-fit mt-3 bg-primary text-white px-20 py-[5px] font-semibold inline-block tracking-[2px] text-[13px] uppercase rounded-full shadow-sm hover:shadow-md hover:bg-red-500 hover:text-white transform hover:scale-110 duration-500 ease-in-out shadow-black">
-                                Pesan
+                                Bayar
                             </button>
-                            </a>
                         </div>
                     </div>
-                    </form>
+                    {{-- </form> --}}
                 </div>
             </div>
         </div>
@@ -197,6 +115,31 @@
     </section>
 
     @include('components/footer')
+    <script type="text/javascript">
+        // For example trigger on button clicked, or any time you need
+        var payButton = document.getElementById('pay-button');
+        payButton.addEventListener('click', function () {
+          // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+          window.snap.pay('{{ $snapToken }}', {
+            onSuccess: function(result){
+              /* You may add your own implementation here */
+              alert("payment success!"); console.log(result);
+            },
+            onPending: function(result){
+              /* You may add your own implementation here */
+              alert("wating your payment!"); console.log(result);
+            },
+            onError: function(result){
+              /* You may add your own implementation here */
+              alert("payment failed!"); console.log(result);
+            },
+            onClose: function(){
+              /* You may add your own implementation here */
+              alert('you closed the popup without finishing the payment');
+            }
+          })
+        });
+    </script>
     <script>
         var images = [{
                 url: "https://source.unsplash.com/gKXKBY-C-Dk/1920x1080",

@@ -3,8 +3,6 @@
 
 <head>
     @include('components/head')
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="{{ config('midtrans.client_key') }}"></script>
 </head>
 
 <body>
@@ -113,7 +111,7 @@
                                         <p class="mt-2 text-xs">{{ $item->deskripsi }}</p>
                                     </div>
                                     <div class="self-end">
-                                        <a href="/order/formorder/{{ $item->id }}">
+                                        <a href="/order/{{ $item->id }}">
                                             <button
                                                 class="w-fit bg-primary text-white px-16 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black lg:w-60 lg:h-8 lg:text-lg">
                                                 Pesan

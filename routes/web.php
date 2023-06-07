@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('main');
 });
 Route::get('/order', [PesananController::class, 'index']);
-Route::get('/order/formorder/{id}', [PesananController::class, 'show']);
+Route::get('/order/{id}', [PesananController::class, 'show']);
+Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
 
-Route::post('/checkout', [OrderController::class, 'checkout']);
+Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
+
+Route::post('/order', [OrderController::class, 'checkout']);

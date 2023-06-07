@@ -10,6 +10,11 @@ class Jasa extends Model
     protected $table = "jasa";
     use HasFactory;
 
+    public function jasa()
+    {
+        return $this->hasOne(jasa::class, 'id');
+    }
+
     public function kategori()
     {
         return $this->belongsTo(Kategori::class, 'id_jasa');

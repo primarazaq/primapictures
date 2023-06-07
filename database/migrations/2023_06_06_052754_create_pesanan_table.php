@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_jasa')->references('id')->on('jasa');
+            $table->string('nama_plg');
+            $table->string('email_plg');
+            $table->string('hp_plg', 12);
+            $table->timestamp('tgl_acara');
+            $table->string('wilayah');
+            $table->text('lokasi');
+            $table->integer('qty');
+            $table->double('total_harga');
+            $table->text('snaptoken')->nullable();
             $table->timestamps();
         });
     }
