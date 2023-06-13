@@ -6,6 +6,61 @@
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_key') }}"></script>
 </head>
+<style>
+    [x-cloak] {
+        display: none;
+    }
+
+    .scroll {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    /* iOS devices */
+    @supports (-webkit-overflow-scrolling: touch) {
+        .scroll {
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .scroll-behavior-smooth {
+        scroll-behavior: smooth;
+    }
+
+    .snap {
+        scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
+    }
+
+    .snap-y {
+        --scroll-snap-direction: y;
+    }
+
+    .snap-x {
+        --scroll-snap-direction: x;
+    }
+
+    .snap-mandatory {
+        --scroll-snap-constraint: mandatory;
+    }
+
+    .snap-start {
+        scroll-snap-align: start;
+    }
+</style>
 
 <body>
     <header
@@ -30,8 +85,6 @@
                         <ul class="relative font-bold">
                             {{ $kategori->nama }}
                         </ul>
-                        {{-- <form action="/order/{{ $id }}/formOrder/checkout" method="POST">
-                            @csrf --}}
                             <ul>
                                 <div class="relative justify-start self-start text-left">
                                 
@@ -106,7 +159,6 @@
                             </button>
                         </div>
                     </div>
-                    {{-- </form> --}}
                 </div>
             </div>
         </div>
@@ -123,6 +175,7 @@
           window.snap.pay('{{ $snapToken }}', {
             onSuccess: function(result){
               /* You may add your own implementation here */
+              window.location.href = '/status-transaksi/{{ $order->id }}'
               alert("payment success!"); console.log(result);
             },
             onPending: function(result){
@@ -141,66 +194,34 @@
         });
     </script>
     <script>
-        var images = [{
-                url: "https://source.unsplash.com/gKXKBY-C-Dk/1920x1080",
-                thumb: "https://source.unsplash.com/gKXKBY-C-Dk/400x400",
-                original: "https://source.unsplash.com/gKXKBY-C-Dk"
+       var images = [{
+                url: "/image/wedding/1080/wedding (1).jpg", 
+                thumb: "/image/wedding/400/wedding (1).jpg" 
             },
             {
-                url: "https://source.unsplash.com/9UUoGaaHtNE/1920x1080",
-                thumb: "https://source.unsplash.com/9UUoGaaHtNE/400x400",
-                original: "https://source.unsplash.com/9UUoGaaHtNE"
+                url: "/image/wedding/1080/wedding (2).jpg", 
+                thumb: "/image/wedding/400/wedding (2).jpg" 
             },
             {
-                url: "https://source.unsplash.com/w2DsS-ZAP4U/1920x1080",
-                thumb: "https://source.unsplash.com/w2DsS-ZAP4U/400x400",
-                original: "https://source.unsplash.com/w2DsS-ZAP4U"
+                url: "/image/wedding/1080/wedding (3).jpg", 
+                thumb: "/image/wedding/400/wedding (3).jpg" 
             },
             {
-                url: "https://source.unsplash.com/cWOzOnSoh6Q/1920x1080",
-                thumb: "https://source.unsplash.com/cWOzOnSoh6Q/400x400",
-                original: "https://source.unsplash.com/cWOzOnSoh6Q"
+                url: "/image/wedding/1080/wedding (4).jpg", 
+                thumb: "/image/wedding/400/wedding (4).jpg" 
             },
             {
-                url: "https://source.unsplash.com/NodtnCsLdTE/1920x1080",
-                thumb: "https://source.unsplash.com/NodtnCsLdTE/400x400",
-                original: "https://source.unsplash.com/NodtnCsLdTE"
+                url: "/image/wedding/1080/wedding (5).jpg", 
+                thumb: "/image/wedding/400/wedding (5).jpg" 
             },
             {
-                url: "https://source.unsplash.com/eMzblc6JmXM/1920x1080",
-                thumb: "https://source.unsplash.com/eMzblc6JmXM/400x400",
-                original: "https://source.unsplash.com/eMzblc6JmXM"
+                url: "/image/wedding/1080/wedding (6).jpg", 
+                thumb: "/image/wedding/400/wedding (6).jpg" 
             },
             {
-                url: "https://source.unsplash.com/so5nsYDOdxw/1920x1080",
-                thumb: "https://source.unsplash.com/so5nsYDOdxw/400x400",
-                original: "https://source.unsplash.com/so5nsYDOdxw"
+                url: "/image/wedding/1080/wedding (7).jpg", 
+                thumb: "/image/wedding/400/wedding (7).jpg" 
             },
-            {
-                url: "https://source.unsplash.com/GtwiBmtJvaU/1920x1080",
-                thumb: "https://source.unsplash.com/GtwiBmtJvaU/400x400",
-                original: "https://source.unsplash.com/GtwiBmtJvaU"
-            },
-            {
-                url: "https://source.unsplash.com/YCPkW_r_6uA/1920x1080",
-                thumb: "https://source.unsplash.com/YCPkW_r_6uA/400x400",
-                original: "https://source.unsplash.com/YCPkW_r_6uA"
-            },
-            {
-                url: "https://source.unsplash.com/IbPxGLgJiMI/1920x1080",
-                thumb: "https://source.unsplash.com/IbPxGLgJiMI/400x400",
-                original: "https://source.unsplash.com/IbPxGLgJiMI"
-            },
-            {
-                url: "https://source.unsplash.com/Hd7vwFzZpH0/1920x1080",
-                thumb: "https://source.unsplash.com/Hd7vwFzZpH0/400x400",
-                original: "https://source.unsplash.com/Hd7vwFzZpH0"
-            },
-            {
-                url: "https://source.unsplash.com/0F7GRXNOG7g/1920x1080",
-                thumb: "https://source.unsplash.com/0F7GRXNOG7g/400x400",
-                original: "https://source.unsplash.com/0F7GRXNOG7g"
-            }
         ];
 
         window.ProductGallery = function($el) {
@@ -284,7 +305,7 @@
                         const img = new Image();
                         img.onload = () => resolve(img);
                         img.onerror = (err) => reject(err);
-                        img.src = url;
+                        img.src = require('./' + url);
                     });
                 }
             };

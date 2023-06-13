@@ -23,4 +23,5 @@ Route::get('/order/{id}', [PesananController::class, 'show']);
 Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
 Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
 
-
+Route::post('/status-pembayaran',[PembayaranController::class, 'checkout']);
+Route::get('/status-transaksi/{id}',[PembayaranController::class, 'statustransaksi']);

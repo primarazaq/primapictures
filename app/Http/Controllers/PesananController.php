@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use App\Models\Jasa;
 use App\Models\Pesanan;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -86,7 +87,10 @@ class PesananController extends Controller
         $order = Pesanan::create($pesanan);
         $snapToken = $this->snaptoken($order->id);
         Pesanan::where('id', $order->id)->update(['snaptoken' => $snapToken]);
-       
+        Transaksi::create([
+            'id_pesanan' => $order->id,
+            'status' => 7 //    waiting for payment
+        ]);
 
         return view('checkout', compact('snapToken', 'order', 'jasa', 'kategori'));
     }
@@ -94,7 +98,7 @@ class PesananController extends Controller
     public function snaptoken($id){
         $order = Pesanan::find($id);
         $jasaOrder = Jasa::find($order->id_jasa);
-        $harga = $order->qty * $jasaOrder->harga;
+        $kategori = Kategori::find($jasaOrder->id_kategori);
         
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -109,7 +113,16 @@ class PesananController extends Controller
         $params = array(
             'transaction_details' => array(
                 'order_id' => $order->id,
-                'gross_amount' => $harga,
+                'gross_amount' => $order->total_harga,
+            ),
+            'item_details' => array(
+                array(
+                    'id' => $jasaOrder->id,
+                    'price' => $jasaOrder->harga,
+                    'quantity' => $order->qty,
+                    'name' => $jasaOrder->nama,
+                    'category' => $kategori->nama,
+                )
             ),
             'customer_details' => array(
                 'first_name' => $order->nama_plg,
@@ -117,6 +130,9 @@ class PesananController extends Controller
                 'email' => $order->email_plg,
                 'phone' => $order->hp_plg,
             ),
+            'custom_field1' => $order->tgl_acara,
+            'custom_field2' => $order->wilayah,
+            'custom_field3' => $order->lokasi
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);

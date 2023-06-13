@@ -4,61 +4,6 @@
 <head>
     @include('components/head')
 </head>
-<style>
-    [x-cloak] {
-        display: none;
-    }
-
-    .scroll {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-    }
-
-    /* iOS devices */
-    @supports (-webkit-overflow-scrolling: touch) {
-        .scroll {
-            -webkit-overflow-scrolling: touch;
-        }
-    }
-
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .scroll-behavior-smooth {
-        scroll-behavior: smooth;
-    }
-
-    .snap {
-        scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
-    }
-
-    .snap-y {
-        --scroll-snap-direction: y;
-    }
-
-    .snap-x {
-        --scroll-snap-direction: x;
-    }
-
-    .snap-mandatory {
-        --scroll-snap-constraint: mandatory;
-    }
-
-    .snap-start {
-        scroll-snap-align: start;
-    }
-</style>
 
 <body>
     <header
@@ -177,7 +122,7 @@
                                     <option value="luar kota">Luar Kota Bandung</option>
                                 </select>
                                 <textarea name="lokasi"
-                                    class="resize h-32 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"></textarea>
+                                    class="resize h-32 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" placeholder="Alamat Acara"></textarea>
                             </div>
                         </div>
                         <div class="relative mb-10 self-center">
