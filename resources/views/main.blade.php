@@ -15,8 +15,8 @@
             <div class="flex flex-wrap">
                 <div class="w-full h-80 sm:h-[480px] lg:h-screen self-center px-4 relative z-0">
                     <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-                        <video class="min-w-full min-h-full absolute object-cover" src="video/video.mp4" type="video/mp4"
-                            autoplay muted loop></video>
+                        {{-- <video class="min-w-full min-h-full absolute object-cover" src="video/video.mp4" type="video/mp4"
+                            autoplay muted loop></video> --}}
                     </div>
                     <div
                         class="video-content relative space-y-0 text-center mt-36 sm:mt-52 sm:space-y-2 lg:mt-96 lg:space-y-5">

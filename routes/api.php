@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/status-pembayaran',[PembayaranController::class, 'checkout']);
+Route::post('/status-transaksi',[PembayaranController::class, 'checkout']);

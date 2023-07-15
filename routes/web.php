@@ -21,7 +21,9 @@ Route::get('/', function () {
 Route::get('/order', [PesananController::class, 'index']);
 Route::get('/order/{id}', [PesananController::class, 'show']);
 Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
+Route::get('/checkout/{order_id}', [PembayaranController::class, 'pending']);
+
 Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
 
-Route::post('/status-pembayaran',[PembayaranController::class, 'checkout']);
+// Route::post('/status-pembayaran',[PembayaranController::class, 'checkout']);
 Route::get('/status-transaksi/{id}',[PembayaranController::class, 'statustransaksi']);
