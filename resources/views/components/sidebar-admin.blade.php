@@ -1,9 +1,9 @@
 <div x-data="{ sidebarOpen: true }" class="flex overflow-x-hidden h-screen">
     <aside class="flex-shrink-0 w-72 border-r-2 shadow-2xl flex flex-col transition-all duration-300 ease-in-out" :class="{ '-ml-72': !sidebarOpen }">
       <div class="h-full bg-white">
-        <nav class=" h-full flex-1 flex flex-col text-black px-8 py-2 space-y-2 absolute">
+        <nav class=" h-full flex-1 flex flex-col text-black px-8 py-2 space-y-2 absolute animate-fade3">
             <div class="mb-2 ">
-                <img src="../image/logohitam.png" width="200" alt="" srcset="" class="lozad" />
+                <img src="../image/logohitam.png" width="200" alt="" srcset="" />
             </div>
             <hr class="border-black rounded-xl">
                 <ul class="space-y-4 translate-y-4 ">
