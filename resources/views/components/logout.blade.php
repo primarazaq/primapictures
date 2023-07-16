@@ -4,10 +4,10 @@
      }
   </style>
 <div x-data="{ logout: false }">
-    <button @click="logout =!logout" class="block relative bottom-0 p-2 rounded-full px-16 py-2 text-base font-normal text-white bg-primary" type="button">
+    <button @click="logout =!logout" class="block relative bottom-0 p-2 rounded-full px-16 py-2 text-base font-normal text-white bg-primary hover:shadow-md hover:border-1 hover:border-black hover:bg-white hover:text-primary transform hover:scale-105 duration-300 ease-in-out fill-white hover:fill-primary" type="button">
       
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        class="w-6 absolute fill-white" viewBox="0 0 96.943 96.943" style="enable-background:new 0 0 96.943 96.943;"
+        class="w-6 absolute" viewBox="0 0 96.943 96.943" style="enable-background:new 0 0 96.943 96.943;"
         xml:space="preserve">
         <g>
         <g>
@@ -19,7 +19,7 @@
         c0.375-0.375,0.586-0.885,0.586-1.414C96.943,47.941,96.73,47.433,96.355,47.058z"/>
         </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
         {{-- <img src="imgs/logout.png" alt="" class="w-6 absolute ml-11"> --}}
-        <p class="inline-block whitespace-nowrap ml-10 text-white">Logout</p>
+        <span class=" ml-10">Logout</span>
     </button>
 
     <div x-show="logout" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -45,18 +45,39 @@
             >
 
                 <div class="p-6 text-center">
-                    <img src="../../../../imgs/logoutImg.png" class="w-24 mx-auto" alt="">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg class="w-24 mx-auto fill-primary mb-10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 384.971 384.971" xml:space="preserve">
+                    <g>
+                        <g id="Sign_Out">
+                            <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03
+                                C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03
+                                C192.485,366.299,187.095,360.91,180.455,360.91z"/>
+                            <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279
+                                c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179
+                                c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"/>
+                        </g>
+                    </g>
+                    </svg>
+
                 <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin ingin keluar dari sistem?</h3>
-                  <div class="flex justify-center">
+                  <div class="flex justify-center space-x-4">
+                    <button @click="logout = false" type="button" class="px-16 text-black py-2 shadow-lg rounded-full font-normal bg-white hover:shadow-md hover:border-1 hover:border-black hover:bg-white hover:text-primary transform hover:scale-105 duration-300 ease-in-out">
+                        Tidak
+                    </button>
                     <form action="/logout" method="post">
                         @csrf
-                        <button @click="logout = false" type="submit" class="px-16 text-white py-2 bg-primary shadow-lg rounded-full">
-                            logout
+                        <button @click="logout = false" type="submit" class="px-10 text-white py-2 bg-primary shadow-lg rounded-full hover:shadow-xl hover:border-1 hover:border-black hover:text-white transform hover:scale-105 duration-300 ease-in-out">
+                            Ya, saya yakin
                         </button>
                     </form>
+                    
+
                   </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

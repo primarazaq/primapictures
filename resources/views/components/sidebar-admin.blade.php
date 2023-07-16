@@ -1,12 +1,12 @@
 <div x-data="{ sidebarOpen: true }" class="flex overflow-x-hidden h-screen">
     <aside class="flex-shrink-0 w-72 border-r-2 shadow-2xl flex flex-col transition-all duration-300 ease-in-out" :class="{ '-ml-72': !sidebarOpen }">
       <div class="h-full bg-white">
-        <nav class="flex-1 flex flex-col text-black px-8 py-2 space-y-2">
-            <div class="mb-2">
-                <img src="../image/logohitam.png" width="200" alt="" srcset="" />
+        <nav class=" h-full flex-1 flex flex-col text-black px-8 py-2 space-y-2 absolute">
+            <div class="mb-2 ">
+                <img src="../image/logohitam.png" width="200" alt="" srcset="" class="lozad" />
             </div>
             <hr class="border-black rounded-xl">
-                <ul class="space-y-4 translate-y-4">
+                <ul class="space-y-4 translate-y-4 ">
                     <li>
                         <a href="/admin/dashboard" class="{{ Request::is('admin/dashboard*') ? 'active' : 'inactive' }} flex hover:transition ease-in-out duration-300 items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:text-white hover:opacity-70">
                             <svg class="w-8 fill-black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"/><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></g></svg>
@@ -45,13 +45,16 @@
                             <p class="flex-1 ml-3 inline-flex whitespace-nowrap {{ Request::is('admin/riwayatpesanan*') ? 'text-white' : 'text-black' }}">Riwayat Pesanan</p>
                         </a>
                     </li>
-                    <li>
-                        <div class="mx-auto text-center">
-                            @include('components.logout')
-                        </div>
-                    </li>
                 </ul>
-        </nav>
+                </nav>
+                <div class="flex justify-center absolute bottom-4 left-8">
+                    <ul>
+                        <li>
+                             @include('components.logout')
+                        </li>
+                    </ul>
+                </div>
+    
       </div>
     </aside>
     <div class="flex-1">

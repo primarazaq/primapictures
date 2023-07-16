@@ -36,7 +36,7 @@
  </style>
 <body>
    @include('components.sidebar-admin')
-          <main class="p-6">
+          <main class="p-6 animate-fade">
             @yield('content')
           </main>
         </div>
