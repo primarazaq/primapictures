@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\LoginController;
+use App\Http\Middleware\RedirectIfAuthenticated;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +21,36 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main');
 });
+Route::get('/login', [LoginController::class, 'index'])->name('login')
+    ->middleware('guest');
+
+Route::post('/postLogin', [LoginController::class, 'postLogin']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::prefix('admin')->group(function(){
+
+        Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+        });
+
+        Route::get('/jadwalpemotretan', function () {
+        return view('admin.jadwalpemotretan');
+        });
+        Route::get('/kelolajasa', function () {
+        return view('admin.kelolajasa');
+        });
+        Route::get('/riwayatpesanan', function () {
+        return view('admin.riwayatpesanan');
+        });
+    });
+});
+
+
+// Route::get('/admin', function () {
+//     return view('admin.dashboard');
+// })->middleware('auth');
+
 Route::get('/order', [PesananController::class, 'index']);
 Route::get('/order/{id}', [PesananController::class, 'show']);
 Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
