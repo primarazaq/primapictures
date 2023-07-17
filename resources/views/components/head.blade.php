@@ -14,8 +14,12 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{{-- trix --}}
+<link rel="stylesheet" type="text/css" href="/css/trix.css">
+<script type="text/javascript" src="/js/trix.js"></script>
 
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 
 <style>
     html,
@@ -23,4 +27,32 @@
         width: 100vw;
         overflow-x: hidden;
     }
+
+    trix-editor {
+            height: 150px !important;
+            max-height: 150px !important;
+            overflow-y: auto !important;
+        }
 </style>
+
+<style>
+    trix-toolbar [data-trix-button-group="file-tools"]{
+        display:none;
+    }
+    /* trix-toolbar [data-trix-button-group="block-tools"]{
+        display:none;
+    } */
+</style>
+  {{-- <!--Datatables -->
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var table = $('#TBtaskComplt').DataTable({
+                    responsive: false
+                })
+                // .columns.adjust()
+                .responsive.recalc();
+        });
+    </script> --}}

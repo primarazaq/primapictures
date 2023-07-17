@@ -47,13 +47,14 @@
                     </li>
                 </ul>
                 </nav>
-                <div class="flex justify-center absolute bottom-4 left-8">
-                    <ul>
-                        <li>
-                             @include('components.logout')
-                        </li>
-                    </ul>
-                </div>
+                <div class="flex flex-col items-center h-full justify-end pb-4">
+                    <div class="mt-auto">
+                      @include('components.logout')
+                    </div>
+                  </div>
+                  
+                  
+                  
     
       </div>
     </aside>

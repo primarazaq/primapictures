@@ -34,6 +34,7 @@
     }
   
  </style>
+
 <body>
    @include('components.sidebar-admin')
           <main class="p-6 animate-fade">

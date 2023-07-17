@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JasaController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\LoginController;
@@ -37,9 +38,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/jadwalpemotretan', function () {
         return view('admin.jadwalpemotretan');
         });
-        Route::get('/kelolajasa', function () {
-        return view('admin.kelolajasa');
-        });
+        
+        Route::get('/kelolajasa', [JasaController::class, 'index']);
+        Route::get('/kelolajasa/{id}', [JasaController::class, 'show']);
+
+
         Route::get('/riwayatpesanan', function () {
         return view('admin.riwayatpesanan');
         });

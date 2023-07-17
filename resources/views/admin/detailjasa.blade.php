@@ -26,11 +26,12 @@
         </li>
     </ol>
 </nav>
-<div class=" text-gray-900">
+<div class=" text-gray-900 mb-5">
     <div class="flex justify-between">
-        <div class="mb-3 ml-3 font-extrabold text-xl">
-            <h3>Kategori Jasa</h3>
+        <div class="mb-3 ml-3 font-extrabold">
+            <h3>Tabel Buku</h3>
         </div>
+        @include('components.formCreate')
     </div>
     <!--Container-->
     <div class="w-full xl:w-auto mx-auto px-2">
@@ -38,36 +39,52 @@
         <!--Card-->
         <div id='recipients' class="p-8 lg:mt-0 rounded-lg shadow-lg bg-white border-2">
             <table id="TBtaskComplt" class="stripe hover text-center w-full "
-                style="padding-top: 1em;  padding-bottom: 1em; width: 100%; ">
+                style="padding-top: 1em;  padding-bottom: 1em;">
                 <thead>
                     <tr>
-                        <th data-priority="1" class="w-16">No</th>
+                        <th data-priority="1">No</th>
                         <th data-priority="2">Nama</th>
-                        <th data-priority="3" class="w-32">Action</th>
+                        <th data-priority="3">Harga</th>
+                        <th data-priority="4">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($kategori as $data)
+                    @foreach ($jasa as $data)
                         <tr class="bg-white border-b ">
+
                             <th scope="row" class="py-4 px-6">
                                 {{ $loop->iteration }}
                             </th>
-                            <td class="py-4 px-6 text-left">
+                            <td class="py-4 px-6  text-left">
                                 {{ $data->nama }}
                             </td>
                             <td class="py-4 px-6">
-                                <a href="/admin/kelolajasa/{{ $data->id }}">
-                                <button type="button" class="px-12 text-white py-1 bg-primary shadow-lg rounded-full hover:shadow-xl hover:border-1 hover:border-black hover:text-white transform hover:scale-105 duration-300 ease-in-out">
-                                    Lihat
-                                </button>
-                                </a>
+                                {{ $data->harga }}
+                            </td>
+                            <td class="py-4 px-6">
+                                <div class="flex mx-auto justify-center">
+                                    @include('components.formEdit')
+                                    @include('components.destroy')
+                                </div>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+        <!--/Card-->
     </div>
+</div>
+<div>      
+    <label for="deskripsi"
+            class="ml-4 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
+        <input id="deskripsi" class="inline-block w-5/6" type="hidden" name="deskripsi"
+            required>
+        @error('deskripsi')
+            <p>{{ $message }}</p>
+        @enderror
+        <trix-editor input="deskripsi" placeholder="Tambahkan respon baru..."
+            style="overflow-y:auto"></trix-editor>
 </div>
 @endsection
 
