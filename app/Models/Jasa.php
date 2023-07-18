@@ -10,6 +10,13 @@ class Jasa extends Model
     protected $table = "jasa";
     use HasFactory;
 
+    protected $fillable = [
+        'id_kategori',
+        'nama',
+        'deskripsi',
+        'harga',
+    ];
+
     public function jasa()
     {
         return $this->hasOne(jasa::class, 'id');

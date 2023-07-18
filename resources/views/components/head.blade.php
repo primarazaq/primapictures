@@ -43,16 +43,8 @@
         display:none;
     } */
 </style>
-  {{-- <!--Datatables -->
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-    <script>
-        $(document).ready(function() {
-
-            var table = $('#TBtaskComplt').DataTable({
-                    responsive: false
-                })
-                // .columns.adjust()
-                .responsive.recalc();
-        });
-    </script> --}}
+  	<!--Regular Datatables CSS-->
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<!--Responsive Extension Datatables CSS-->
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    

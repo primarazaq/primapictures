@@ -31,6 +31,10 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('admin')->group(function(){
 
+        Route::get('/', function () {
+            return redirect('/admin/dashboard');
+        });
+        
         Route::get('/dashboard', function () {
         return view('admin.dashboard');
         });
@@ -40,7 +44,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         });
         
         Route::get('/kelolajasa', [JasaController::class, 'index']);
+
         Route::get('/kelolajasa/{id}', [JasaController::class, 'show']);
+        
+        Route::post('/kelolajasa/{id}/create', [JasaController::class, 'store']);
+
+        Route::put('/kelolajasa/{id}/update', [JasaController::class, 'update']);
+
+        Route::delete('/kelolajasa/{id}/destroy', [JasaController::class, 'destroy']);
 
 
         Route::get('/riwayatpesanan', function () {

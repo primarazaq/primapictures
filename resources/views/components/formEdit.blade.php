@@ -32,16 +32,11 @@
                 x-transition:leave="transition ease-in duration-200 transform"
                 x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                class="inline-block w-full max-w-xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl">
+                class="inline-block w-full max-w-4xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl ">
                 <div class="flex items-center justify-between space-x-4">
-                    <div class="bg-blue-700 w-36 p-1 rounded-full text-white mb-3 mr-4 flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-white ml-2 mr-3" viewBox="0 0 512 512">
-                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                            <path
-                                d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
-                        </svg>
-                        <div class="font-extrabold">
-                            <p>Edit Buku</p>
+                    <div class="bg-primary w-40 p-1 rounded-full text-white mb-3 mr-5 px-4 flex">
+                        <div class="font-medium">
+                            <p> Ubah Jasa</p>
                         </div>
                     </div>
                     <button @click="formEdit = false"
@@ -54,43 +49,32 @@
                         </svg>
                     </button>
                 </div>
-                {{-- <form method="post" action="/admin/aturbuku/{{ $data->id_buku }}">
+                <form method="post" action="/admin/kelolajasa/{{ $id_kategori }}/update">
                     @method('put')
                     @csrf
                     <div class="p-5">
                         <div>
-                            <label for="id_buku"
-                                class="block w-fit text-sm font-medium text-gray-900 dark:text-gray-300">Id Buku</label>
-                            <input type="text" id="id_buku" name="id_buku"
-                                class="@error('id_buku') invalid:border-red-500 @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr "
-                                autofocus required value="{{ old('id_buku', $data->id_buku) }}">
-                            @error('id_buku')
-                                <div class="text-red-500 text-xs font-medium">
+                            <label for="nama"
+                                class="block w-fit text-sm font-medium text-gray-900 dark:text-gray-300">Nama Jasa</label>
+                            <input type="text" id="nama" name="nama"
+                                class="@error('nama') invalid:border-red @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr "
+                                autofocus required value="{{ old('nama', $data->nama) }}">
+                            @error('nama')
+                                <div class="text-red text-xs font-medium">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div>
-                            <label for="kategori"
+                            <input type="hidden" id="id_kategori" name="id_kategori"
+                                class="@error('id_kategori') invalid:border-red-500 @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr "
+                                value="{{ $id_kategori }}" hidden>
+                            <label for="namakategori"
                                 class="block w-fit text-sm font-medium text-gray-900 dark:text-gray-300">Kategori</label>
-                            <input type="text" id="kategori" name="kategori"
-                                class="@error('kategori') invalid:border-red-500 @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr "
-                                autofocus required value="{{ old('kategori', $data->kategori) }}">
-                            @error('kategori')
-                                <div class="text-red-500 text-xs font-medium">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div>
-                            <label for="nama_buku"
-                                class="block w-fit text-sm font-medium text-gray-900 dark:text-gray-300">Nama
-                                Buku</label>
-                            <input type="text" id="nama_buku" name="nama_buku"
-                                class="@error('nama_buku') invalid:border-red-500 @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr "
-                                autofocus required value="{{ old('nama_buku', $data->nama_buku) }}">
-                            @error('nama_buku')
-                                <div class="text-red-500 text-xs font-medium">
+                            <input type="text" id="namakategori"
+                                class="@error('id_kategori') invalid:border-red-500 @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr cursor-not-allowed" value="{{ $kategori->nama }}" readonly >
+                            @error('id_kategori')
+                                <div class="text-red text-xs font-medium">
                                     {{ $message }}
                                 </div>
                             @enderror
@@ -100,52 +84,39 @@
                                 class="block w-fit text-sm font-medium text-gray-900 dark:text-gray-300">Harga</label>
                             <input type="number" id="harga" name="harga"
                                 class="@error('harga') invalid:border-red-500 @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr "
-                                autofocus required value="{{ old('harga', $data->harga) }}">
+                                required value="{{ old('harga', $data->harga) }}">
                             @error('harga')
                                 <div class="text-red-500 text-xs font-medium">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
-                        <div>
-                            <label for="stok"
-                                class="block w-fit text-sm font-medium text-gray-900 dark:text-gray-300">Stok</label>
-                            <input type="number" id="stok" name="stok"
-                                class="@error('stok') invalid:border-red-500 @enderror mb-2 block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-mainclr focus:border-mainclr dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-mainclr dark:focus:border-mainclr"
-                                required value="{{ old('stok', $data->stok) }}">
-                            @error('stok')
-                                <div class="text-red-500 text-xs font-medium">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                        <div>      
+                            <label for="deskripsi-{{ $data->id }}"
+                                    class="text-sm font-medium text-gray-900 dark:text-gray-300" >Deskripsi</label>
+                                <input id="deskripsi-{{ $data->id }}" class="inline-block w-5/6" value="{{ old('deskripsi', $data->deskripsi) }}" type="hidden" name="deskripsi" required>
+                                @error('deskripsi')
+                                    <p>{{ $message }}</p>
+                                @enderror
+                                <trix-editor input="deskripsi-{{ $data->id }}" placeholder="Tambahkan respon baru..." style="overflow-y:auto"> </trix-editor>
+                                <input type="hidden" name="id" value="{{ $data->id }}">
                         </div>
-                        <div>
-                            <label for="id_penerbit"
-                                class="block w-fit text-sm font-medium text-gray-900 dark:text-gray-300">Penerbit</label>
-                            <div class="id_penerbit">
-                                <select name="id_penerbit" class="max-w-full w-96" required>
-                                    <option>Pilih Penerbit</option>
-                                    @foreach ($listpenerbit as $item)
-                                        <option value="{{ $item->id_penerbit }}"
-                                            @if ($data->id_penerbit == $item->id_penerbit) selected ="selected" @endif>
-                                            {{ $item->nama }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-
                     </div>
                     <!-- Modal footer -->
                     <div
                         class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200  dark:border-gray-600">
                         <button type="submit"
-                            class="text-white mx-auto bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-blue-500">Edit</button>
+                            class="text-white mx-auto bg-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-secondary">Simpan</button>
                     </div>
-                </form> --}}
+                </form>
 
             </div>
         </div>
     </div>
 </div>
+<script>
+    //nonaktif add file trix
+    document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault();
+    });
+</script>

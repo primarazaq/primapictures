@@ -3,7 +3,7 @@
       <div class="h-full bg-white">
         <nav class=" h-full flex-1 flex flex-col text-black px-8 py-2 space-y-2 absolute animate-fade3">
             <div class="mb-2 ">
-                <img src="../image/logohitam.png" width="200" alt="" srcset="" />
+                <img src="../../image/logohitam.png" width="200" alt="" srcset="" />
             </div>
             <hr class="border-black rounded-xl">
                 <ul class="space-y-4 translate-y-4 ">

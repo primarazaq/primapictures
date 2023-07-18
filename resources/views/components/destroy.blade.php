@@ -50,10 +50,9 @@
                             class="text-gray-50 mr-8 bg-gray-400 hover:bg-gray-100 rounded-3xl border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
                             Tidak
                         </button>
-                        <form action="/admin/kelolajasa/{{ $data->id }}" method="post">
+                        <form action="/admin/kelolajasa/{{ $data->id }}/destroy" method="post">
                             @method('delete')
                             @csrf
-                            <input type="hidden" name="id" value="{{ $data->id }}" hidden>
                             <button type="submit"
                                 class="inline-flex border-0 text-white bg-red focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-3xl text-sm items-center px-5 py-2.5 text-center mr-2">
                                 Ya, saya yakin
