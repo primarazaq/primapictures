@@ -24,5 +24,8 @@ class Pesanan extends Model
         'snaptoken',
     ];
 
+    public function transaksi() {
+        return $this->belongsTo(Transaksi::class, 'id_pesanan');
+    }
     
 }

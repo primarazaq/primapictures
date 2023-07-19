@@ -44,25 +44,29 @@
                 <thead>
                     <tr>
                         <th data-priority="1" class="w-16">No</th>
-                        <th data-priority="2">Nama</th>
-                        <th data-priority="3" class="w-32">Action</th>
+                        <th data-priority="2">No</th>
+                        <th data-priority="3">Nama Pelanggan</th>
+                        <th data-priority="4">Status</th>
+                        <th data-priority="5" class="w-32">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($kategori as $data)
+                    @foreach ($riwayat as $data)
                         <tr class="bg-white border-b ">
                             <th scope="row" class="py-4 px-6">
                                 {{ $loop->iteration }}
                             </th>
                             <td class="py-4 px-6 text-left">
-                                {{ $data->nama }}
+                                {{ $data->tgl_transaksi }}
+                            </td>
+                            <td class="py-4 px-6 text-left">
+                                {{ $data->nama_plg }}
+                            </td>
+                            <td class="py-4 px-6 text-left">
+                                {{ $data->status }}
                             </td>
                             <td class="py-4 px-6">
-                                <a href="/admin/kelolajasa/{{ $data->id }}">
-                                <button type="button" class="px-12 text-white py-1 bg-primary shadow-lg rounded-full hover:shadow-xl hover:border-1 hover:border-black hover:text-white transform hover:scale-105 duration-300 ease-in-out">
-                                    Lihat
-                                </button>
-                                </a>
+                                
                             </td>
                         </tr>
                     @endforeach

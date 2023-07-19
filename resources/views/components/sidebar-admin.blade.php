@@ -1,6 +1,6 @@
 <div x-data="{ sidebarOpen: true }" class="flex overflow-x-hidden h-screen">
-    <aside class="flex-shrink-0 w-72 border-r-2 shadow-2xl flex flex-col transition-all duration-300 ease-in-out" :class="{ '-ml-72': !sidebarOpen }">
-      <div class="h-full bg-white">
+    <aside class="flex-shrink-0 w-72 border-r-2 flex flex-col transition-all duration-300 ease-in-out" :class="{ '-ml-72': !sidebarOpen }">
+      <div class="fixed h-full w-72 bg-white shadow-2xl">
         <nav class=" h-full flex-1 flex flex-col text-black px-8 py-2 space-y-2 absolute animate-fade3">
             <div class="mb-2 ">
                 <img src="../../image/logohitam.png" width="200" alt="" srcset="" />
@@ -59,11 +59,13 @@
       </div>
     </aside>
     <div class="flex-1">
-      <header class="flex items-center p-4 text-semibold text-white bg-primary justify-between pr-8">
+      <header class="flex items-center p-4 text-semibold text-white bg-primary justify-between pr-8 topscreen w-full">
         <button class="p-1 mr-4" @click="sidebarOpen = !sidebarOpen">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        Selamat Datang, Admin!
+        <p class="fixed right-4">
+            Selamat Datang, Admin!
+        </p>
       </header>

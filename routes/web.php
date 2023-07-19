@@ -54,9 +54,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('/kelolajasa/{id}/destroy', [JasaController::class, 'destroy']);
 
 
-        Route::get('/riwayatpesanan', function () {
-        return view('admin.riwayatpesanan');
-        });
+        Route::get('/riwayatpesanan', [PesananController::class, 'riwayat']);
     });
 });
 

@@ -14,4 +14,8 @@ class Transaksi extends Model
         'id_pesanan',
         'status',
     ];
+
+    public function pesanan(){
+        return $this->belongsTo(Pesanan::class);
+    }
 }

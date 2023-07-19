@@ -141,9 +141,14 @@ class PesananController extends Controller
     }
 
     public function riwayat(){
-        $pesanan = Pesanan::all();
-        
+        $riwayat = DB::table('pesanan as a')
+                    ->select('a.id','a.nama_plg','a.email_plg','a.hp_plg','a.tgl_acara','a.wilayah','a.lokasi','a.qty','a.total_harga','d.status','c.nama','c.harga','b.created_at as tgl_transaksi')
+                    // ->whereNot('b.status','7')
+                    ->join('transaksi as b', 'b.id_pesanan' ,'=', 'a.id')
+                    ->join('jasa as c', 'c.id' ,'=', 'a.id_jasa')
+                    ->join('status as d', 'd.id' ,'=', 'b.status')
+                    ->get();
 
-        return view('admin.riwayatpesanan');
+        return view('admin.riwayatpesanan', compact('riwayat'));
     }
 }
