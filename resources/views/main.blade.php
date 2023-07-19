@@ -15,8 +15,8 @@
             <div class="flex flex-wrap">
                 <div class="w-full h-80 sm:h-[480px] lg:h-screen self-center px-4 relative z-0">
                     <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-                        {{-- <video class="min-w-full min-h-full absolute object-cover" src="video/video.mp4" type="video/mp4"
-                            autoplay muted loop></video> --}}
+                        <video class="min-w-full min-h-full absolute object-cover" src="video/video.mp4" type="video/mp4"
+                            autoplay muted loop></video>
                     </div>
                     <div
                         class="video-content relative space-y-0 text-center mt-36 sm:mt-52 sm:space-y-2 lg:mt-96 lg:space-y-5">
@@ -130,7 +130,7 @@
             </div>
         </div>
     </section>
-    <section id="services" class="pt-8 bg-secondary scroll-mt-10 lg:scroll-mt-16">
+    <section id="services" class="pt-8 bg-gray-100 scroll-mt-10 lg:scroll-mt-16">
         <div class="container-xl">
             <p data-aos="fade-down" data-aos-duration="2000"
                 class="relative gilroy sm:text-2xl font-bold text-center text-primary mb-8 lg:text-4xl lg:py-3">
@@ -140,7 +140,7 @@
                 <div
                     class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
                     <div data-aos="zoom-out" data-aos-duration="500"
-                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:text-left">
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-gray-100 mb-5 lg:text-left">
                         <img src="image/vector1.png" alt=""
                             class="inline-block pb-3 w-12 h-auto sm:w-auto lg:-translate-y-4 transition-transform hover:scale-110 hover:rotate-12 hover:transition hover:duration-300 hover:ease-in-out">
 
@@ -156,7 +156,7 @@
                 <div
                     class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
                     <div data-aos="zoom-out" data-aos-duration="600"
-                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 sm:-mt-8 lg:text-left">
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-gray-100 mb-5 sm:-mt-8 lg:text-left">
                         <img src="image/vector2.png" alt=""
                             class="inline-block pb-3 w-14 h-auto sm:w-auto transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
 
@@ -173,7 +173,7 @@
                 <div
                     class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
                     <div data-aos="zoom-out" data-aos-duration="700"
-                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-1 sm:mt-4 lg:text-left">
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-gray-100 mb-5 lg:-mt-1 sm:mt-4 lg:text-left">
                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             class="w-12 h-12 inline-block relative sm:w-20 sm:h-20 -translate-y-1 sm:-translate-y-4 transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out"
@@ -199,10 +199,10 @@
                     </div>
                 </div>
 
-                <div
+                {{-- <div
                     class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
                     <div data-aos="zoom-out" data-aos-duration="800"
-                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:text-left">
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-gray-200 mb-5 lg:text-left">
                         <img src="image/vector3.png" alt=""
                             class="inline-block pb-3 w-14 h-auto sm:w-auto transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
 
@@ -219,7 +219,7 @@
                 <div
                     class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
                     <div data-aos="zoom-out" data-aos-duration="900"
-                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 lg:-mt-4 lg:text-left">
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-gray-200 mb-5 lg:-mt-4 lg:text-left">
                         <img src="image/vector4.png" alt=""
                             class="inline-block pb-3 w-14 h-auto sm:w-auto transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
 
@@ -235,7 +235,7 @@
                 <div
                     class="transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out">
                     <div data-aos="zoom-out" data-aos-duration="1000"
-                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-secondary mb-5 pb-5 lg:mt-2 sm:mt-6 lg:text-left">
+                        class="relative w-full h-full justify-between px-5 text-center items-center z-0 bg-gray-200 mb-5 pb-5 lg:mt-2 sm:mt-6 lg:text-left">
                         <img src="image/vector5.png" alt=""
                             class="inline-block pb-3 w-14 h-auto sm:w-auto transition-transform hover:scale-110 hover:rotate-6 hover:transition hover:duration-300 hover:ease-in-out">
 
@@ -246,11 +246,11 @@
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                         </p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
-    <section id="gallery" class="pt-2 lg:py-14 sm:py-10 lg:scroll-mt-16">
+    {{-- <section id="gallery" class="pt-2 lg:py-14 sm:py-10 lg:scroll-mt-16">
         <div class="container-xl">
             <p data-aos="fade-down" data-aos-duration="2000"
                 class="relative gilroy sm:text-2xl font-bold text-center text-primary mb-5 lg:text-4xl">
@@ -265,7 +265,7 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section> --}}
     @include('components/footer')
 
 </body>

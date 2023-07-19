@@ -1,3 +1,10 @@
+<style>
+    .nav-text{
+        translate: -25px;
+    }
+
+    </style>
+
 <div class="container lg:container-xl">
     <div class="flex items-center md:w-screen md:max-w-auto lg:w-screen lg:max-w-[1900px] justify-between relative">
         <div class="px-4 -mt-10">
@@ -28,8 +35,8 @@
                             class="text-base text-black py-2 mx-8 flex lg:text-white nav-text">Services</a>
                     </li>
                     <li class="group">
-                        <a href="#gallery"
-                            class="text-base text-black py-2 mx-8 flex lg:text-white nav-text">Gallery</a>
+                        <a href="/login"
+                            class="text-base text-black py-2 mx-8 flex lg:text-white nav-text">Login</a>
                     </li>
                     <li class="group flex justify-center items-center relative">
                         <a href="/order">

@@ -139,4 +139,11 @@ class PesananController extends Controller
 
         return $snapToken;
     }
+
+    public function riwayat(){
+        $pesanan = Pesanan::all();
+        
+
+        return view('admin.riwayatpesanan');
+    }
 }
