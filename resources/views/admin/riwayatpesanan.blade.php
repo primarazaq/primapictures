@@ -23,7 +23,7 @@
                         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                         clip-rule="evenodd"></path>
                 </svg>
-                Kelola Jasa
+                Riwayat Pesanan
             </div>
         </li>
     </ol>
@@ -31,7 +31,7 @@
 <div class=" text-gray-900">
     <div class="flex justify-between">
         <div class="mb-3 ml-3 font-extrabold text-xl">
-            <h3>Kategori Jasa</h3>
+            <h3>Riwayat Pesanan</h3>
         </div>
     </div>
     <!--Container-->
@@ -39,15 +39,17 @@
 
         <!--Card-->
         <div id='recipients' class="p-8 lg:mt-0 rounded-lg shadow-lg bg-white border-2">
-            <table id="TBtaskComplt" class="stripe hover text-center w-full "
+            <table id="riwayat" class="stripe hover text-center w-full "
                 style="padding-top: 1em;  padding-bottom: 1em; width: 100%; ">
                 <thead>
                     <tr>
                         <th data-priority="1" class="w-16">No</th>
-                        <th data-priority="2">No</th>
-                        <th data-priority="3">Nama Pelanggan</th>
-                        <th data-priority="4">Status</th>
-                        <th data-priority="5" class="w-32">Action</th>
+                        <th data-priority="2" class="w-52">Tanggal Transaksi</th>
+                        <th data-priority="3" class="w-32">Kategori Jasa</th>
+                        <th data-priority="4">Nama Pelanggan</th>
+                        <th data-priority="5" class="w-52">Metode Pembayaran</th>
+                        <th data-priority="6" class="w-40">Status</th>
+                        <th data-priority="7" class="w-32">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,17 +58,66 @@
                             <th scope="row" class="py-4 px-6">
                                 {{ $loop->iteration }}
                             </th>
-                            <td class="py-4 px-6 text-left">
+                            <td class="py-4 px-6 text-center">
                                 {{ $data->tgl_transaksi }}
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                {{ $data->kategori }}
                             </td>
                             <td class="py-4 px-6 text-left">
                                 {{ $data->nama_plg }}
                             </td>
-                            <td class="py-4 px-6 text-left">
-                                {{ $data->status }}
+                            <td class="py-4 px-6 text-center">
+                                {{-- {{ $data->nama_plg }} --}}
+                            </td>
+                            <td class="py-4 px-6 text-center flex justify-center">
+                                @switch($data->status)
+                                    @case('success')
+                                    <div class="bg-success py-1 w-28 rounded-2xl text-white">
+                                        <div class="text-center">
+                                            <p>Success</p>
+                                        </div>
+                                    </div>
+                                        @break
+                                    @case('settlement')
+                                    <div class="bg-success py-1 w-28 rounded-2xl text-white">
+                                        <div class="text-center">
+                                            <p>Success</p>
+                                        </div>
+                                    </div>
+                                        @break  
+                                    @case('pending')
+                                    <div class="bg-gray-200 py-1 w-28 rounded-2xl text-primary">
+                                        <div class="text-center">
+                                            <p>Pending</p>
+                                        </div>
+                                    </div>
+                                    @break  
+                                    @case('deny')
+                                    <div class="bg-red py-1 w-28 rounded-2xl text-white">
+                                        <div class="text-center">
+                                            <p>Failed</p>
+                                        </div>
+                                    </div>
+                                    @break  
+                                    @case('cancel')
+                                    <div class="bg-red py-1 w-28 rounded-2xl text-white">
+                                        <div class="text-center">
+                                            <p>Failed</p>
+                                        </div>
+                                    </div>
+                                    @break  
+                                    @case('expired')
+                                    <div class="bg-red py-1 w-28 rounded-2xl text-white">
+                                        <div class="text-center">
+                                            <p>Failed</p>
+                                        </div>
+                                    </div>
+                                    @break  
+                                @endswitch
                             </td>
                             <td class="py-4 px-6">
-                                
+                                @include('components.detailRiwayat')
                             </td>
                         </tr>
                     @endforeach
@@ -75,5 +126,18 @@
         </div>
     </div>
 </div>
+<!--Datatables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        var table = $('#riwayat').DataTable({
+                responsive: false
+            })
+            // .columns.adjust()
+            .responsive.recalc();
+    });
+</script>
 @endsection
 

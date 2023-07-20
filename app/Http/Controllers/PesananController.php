@@ -142,11 +142,13 @@ class PesananController extends Controller
 
     public function riwayat(){
         $riwayat = DB::table('pesanan as a')
-                    ->select('a.id','a.nama_plg','a.email_plg','a.hp_plg','a.tgl_acara','a.wilayah','a.lokasi','a.qty','a.total_harga','d.status','c.nama','c.harga','b.created_at as tgl_transaksi')
-                    // ->whereNot('b.status','7')
+                    ->select('a.id','b.id as id_transaksi','e.nama as kategori' ,'a.nama_plg','a.email_plg','a.hp_plg','a.tgl_acara','a.wilayah','a.lokasi','a.qty','a.total_harga','b.payment_type','d.status','c.nama','c.harga','b.created_at as tgl_transaksi')
+                    ->whereNot('b.status','7')
                     ->join('transaksi as b', 'b.id_pesanan' ,'=', 'a.id')
                     ->join('jasa as c', 'c.id' ,'=', 'a.id_jasa')
                     ->join('status as d', 'd.id' ,'=', 'b.status')
+                    ->join('kategori as e', 'e.id' ,'=', 'c.id_kategori')
+                    ->orderBy('b.created_at')
                     ->get();
 
         return view('admin.riwayatpesanan', compact('riwayat'));

@@ -22,6 +22,7 @@ module.exports = {
         primary: '#38573e',
         secondary: '#4d6953',
         red: '#e01414',
+        success: '#5fe35f',
       },
     },
   },

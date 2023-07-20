@@ -17,32 +17,38 @@ class PembayaranController extends Controller
             switch ($request->transaction_status) {
                 case 'capture':
                     Transaksi::where('id_pesanan', $request->order_id)->update([
-                        'status' => 1
+                        'status' => 1,
+                        'payment_type' => $request->payment_type
                     ]);
                     break;
                 case 'settlement':
                     Transaksi::where('id_pesanan', $request->order_id)->update([
-                        'status' => 2
+                        'status' => 2,
+                        'payment_type' => $request->payment_type
                     ]);
                     break;
                 case 'pending':
                     Transaksi::where('id_pesanan', $request->order_id)->update([
-                        'status' => 3
+                        'status' => 3,
+                        'payment_type' => $request->payment_type
                     ]);
                     break;
                 case 'deny':
                     Transaksi::where('id_pesanan', $request->order_id)->update([
-                        'status' => 4
+                        'status' => 4,
+                        'payment_type' => $request->payment_type
                     ]);
                     break;
                 case 'cancel':
                     Transaksi::where('id_pesanan', $request->order_id)->update([
-                        'status' => 5
+                        'status' => 5,
+                        'payment_type' => $request->payment_type
                     ]);
                     break;
                 case 'expired':
                     Transaksi::where('id_pesanan', $request->order_id)->update([
-                        'status' => 6
+                        'status' => 6,
+                        'payment_type' => $request->payment_type
                     ]);
                     break;
                 
