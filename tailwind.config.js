@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       animation: {
         'fade' : 'fade 2s ease',
-        'fade3' : 'fade 3.5s ease'
+        'fade3' : 'fade 0.5s ease'
       },
       keyframes: {
         fade: {
