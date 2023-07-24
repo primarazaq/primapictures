@@ -213,3 +213,7 @@ body {
         background-color: #38573e !important;
         /*bg-indigo-500*/
     }
+
+    .dataTables_wrapper {
+        position: static !important;
+    }

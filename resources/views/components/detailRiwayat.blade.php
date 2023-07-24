@@ -308,9 +308,9 @@
 }
   </style>
 <div x-data="{ detailRiwayat: false }">
-    <button @click="detailRiwayat =!detailRiwayat" class="block relative bottom-0 p-2 rounded-full px-12 py-1 text-base font-normal text-white bg-primary hover:shadow-md hover:border-1 hover:border-black hover:bg-white hover:text-primary transform hover:scale-105 duration-300 ease-in-out fill-white hover:fill-primary" type="button">
-        <span>Lihat</span>
-    </button>
+  <button @click="detailRiwayat =!detailRiwayat" class="bottom-0 p-2 rounded-full px-12 py-1 text-base font-normal text-white bg-primary hover:shadow-md hover:border-1 hover:border-black hover:text-white hover:scale-105 duration-300 ease-in-out hover:bg-secondary" type="button">
+    <span>Lihat</span>
+</button>
 
     <div x-show="detailRiwayat" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex overflow-x-hidden fixed w-full md:inset-0 justify-center items-center">

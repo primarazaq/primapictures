@@ -58,7 +58,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 <a href="/admin/kelolajasa/{{ $data->id }}">
-                                <button type="button" class="px-12 text-white py-1 bg-primary shadow-lg rounded-full hover:shadow-xl hover:border-1 hover:border-black hover:text-white transform hover:scale-105 duration-300 ease-in-out">
+                                <button type="button" class="px-12 text-white py-1 bg-primary shadow-lg rounded-full hover:shadow-xl hover:border-1 hover:border-black hover:text-white hover:scale-105 duration-300 ease-in-out hover:bg-secondary">
                                     Lihat
                                 </button>
                                 </a>

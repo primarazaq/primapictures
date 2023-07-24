@@ -46,8 +46,8 @@
                         <th data-priority="1" class="w-16">No</th>
                         <th data-priority="2" class="w-52">Tanggal Transaksi</th>
                         <th data-priority="3" class="w-32">Kategori Jasa</th>
-                        <th data-priority="4">Nama Pelanggan</th>
-                        <th data-priority="5" class="w-52">Metode Pembayaran</th>
+                        <th data-priority="4" class="w-52">Nama Pelanggan</th>
+                        <th data-priority="5" class="w-40">Metode Pembayaran</th>
                         <th data-priority="6" class="w-40">Status</th>
                         <th data-priority="7" class="w-32">Action</th>
                     </tr>
