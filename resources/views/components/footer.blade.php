@@ -83,5 +83,9 @@
              hamburger.classList.toggle('hamburger-active');
              navMenu.classList.toggle('hidden');
          })
-     </script>
+
+         </script>
+         <script
+  type="text/javascript"
+  src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
  </footer>

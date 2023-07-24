@@ -110,6 +110,21 @@
                                 <input type="dateTime-local" name="tgl_acara" id="tgl_acara"
                                     placeholder="Tanggal dan Jam Acara yang Hendak dipesan"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    <script>
+                                        // Mendapatkan elemen input date
+                                        const dateInput = document.getElementById("tgl_acara");
+                                      
+                                        // Mendapatkan tanggal dan waktu saat ini
+                                        const now = new Date();
+                                      
+                                        // Konversi tanggal dan waktu saat ini menjadi format yang dapat dikenali oleh input date
+                                        const nowString = now.toISOString().slice(0, 16);
+                                      
+                                        // Tetapkan nilai atribut min pada elemen input date
+                                        dateInput.setAttribute("min", nowString);
+                                      
+                                       
+                                      </script>
                             </div>
                             <div class="mb-5">
                                 <label for="text" class="mb-3 block text-base font-medium text-[#07074D]">
