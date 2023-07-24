@@ -3,14 +3,15 @@
         display: none !important;
      }
 
-     /**
- * Extracted from: SweetAlert
- * Modified by: Istiak Tridip
- */
-.success-checkmark {
-  width: 80px;
-  height: 115px;
-  margin: 0 auto;
+     .no-hover:hover {
+    background-color: initial !important;
+    /* tambahkan properti lain sesuai kebutuhan */
+  }
+
+    .success-checkmark {
+      width: 80px;
+      height: 115px;
+      margin: 0 auto;
 
   .check-icon {
     width: 80px;
@@ -377,7 +378,7 @@
                 {{-- <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin ingin keluar dari sistem?</h3>
                  --}}
                  <div>
-                  <table class="w-full flex justify-center mt-7 ">
+                  <table class="w-full flex justify-center mt-7 no-hover">
                     <tbody class="text-start text-sm">
                       <tr>
                         <td>Tanggal Transaksi</td>

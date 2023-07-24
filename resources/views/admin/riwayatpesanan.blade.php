@@ -70,7 +70,7 @@
                             <td class="py-4 px-6 text-center">
                                 {{-- {{ $data->nama_plg }} --}}
                             </td>
-                            <td class="py-4 px-6 text-center flex justify-center">
+                            <td class="py-4 px-6 text-center flex justify-center items-center">
                                 @switch($data->status)
                                     @case('success')
                                     <div class="bg-success py-1 w-28 rounded-2xl text-white">

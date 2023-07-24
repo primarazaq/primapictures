@@ -4,6 +4,7 @@ use App\Http\Controllers\JasaController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 use Illuminate\Support\Facades\Route;
@@ -39,9 +40,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('admin.dashboard');
         });
 
-        Route::get('/jadwalpemotretan', function () {
-        return view('admin.jadwalpemotretan');
-        });
+        Route::get('/jadwalpemotretan', [JadwalController::class, 'jadwal']);
         
         Route::get('/kelolajasa', [JasaController::class, 'index']);
 
