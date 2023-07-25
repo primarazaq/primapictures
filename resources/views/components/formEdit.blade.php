@@ -6,7 +6,7 @@
     }
 </style>
 <div x-data="{ formEdit: false }">
-    <button @click="formEdit =!formEdit" class="block bg-primary p-2 mr-3 rounded-lg text-white"
+    <button @click="formEdit =!formEdit" class="block bg-primary hover:bg-secondary p-2 mr-3 rounded-lg text-white transition-all"
         style="height:36px; weight:49px; !important" type="button">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-white" viewBox="0 0 512 512">
             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->

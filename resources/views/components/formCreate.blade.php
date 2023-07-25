@@ -8,7 +8,7 @@
 <div x-data="{ formCreate: false }">
     <div class="inline-flex mr-16">
         <button @click="formCreate =!formCreate"
-            class="bg-primary w-48 -mr-16 p-1 justify-self-end rounded-full hover:bg-secondary text-white">
+            class="bg-primary transition-all w-48 -mr-16 p-1 justify-self-end rounded-full hover:bg-secondary text-white">
             + Tambah Jasa
         </button>
     </div>

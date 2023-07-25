@@ -68,7 +68,7 @@
                     </button>
                     <form action="/logout" method="post">
                         @csrf
-                        <button @click="logout = false" type="submit" class="px-10 text-white py-2 bg-primary shadow-lg rounded-full hover:shadow-xl hover:border-1 hover:border-black hover:text-white transform hover:scale-105 duration-300 ease-in-out">
+                        <button @click="logout = false" type="submit" class="px-10 text-white py-2 bg-primary hover:bg-secondary shadow-lg rounded-full hover:shadow-xl hover:border-1 hover:border-black hover:text-white transform hover:scale-105 duration-300 ease-in-out">
                             Ya, saya yakin
                         </button>
                     </form>

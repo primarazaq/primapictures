@@ -53,10 +53,17 @@ class PesananController extends Controller
     {
         $jasa = Kategori::find($id)->jasa;
         $kategori = Kategori::find($id)->first();
-        // dd($kategori);
+        $jadwal = DB::table('pesanan as a')
+        ->select('a.tgl_acara')
+        ->where('b.status','1')->orWhere('b.status','2')
+        ->join('transaksi as b', 'b.id_pesanan' ,'=', 'a.id')
+        ->orderBy('a.tgl_acara')
+        ->get();
+        // dd($jadwal);
         return view('formOrder', [
             'jasa' => $jasa,
             'kategori' => $kategori,
+            'jadwal' => $jadwal,
             'id' => $id
         ]);
     }

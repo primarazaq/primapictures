@@ -123,7 +123,30 @@
                                         // Tetapkan nilai atribut min pada elemen input date
                                         dateInput.setAttribute("min", nowString);
                                       
-                                       
+                                       // Ambil elemen input datepicker
+const datepicker = document.getElementById('tgl_acara');
+
+// Data dari collection $jadwal (diambil dari @php)
+const blockedDates = @json($jadwal);
+
+// Fungsi untuk memeriksa apakah tanggal berada pada tanggal yang harus dikunci
+function isDateBlocked(selectedDate) {
+  return blockedDates.some(date => {
+    const parts = date.tgl_acara.split(" ");
+    return parts[0] === selectedDate.split("T")[0];
+  });
+}
+
+// Fungsi untuk menangani event ketika pengguna mencoba memilih tanggal
+datepicker.addEventListener('change', function(event) {
+  const selectedDate = event.target.value; // Nilai tanggal yang dipilih oleh pengguna
+  if (isDateBlocked(selectedDate)) {
+    // Jika tanggal berada pada tanggal yang harus dikunci, berikan notifikasi atau kembalikan nilai tanggal ke nilai sebelumnya
+    alert("Maaf, tanggal ini sudah dipesan oleh pelanggan lain. Silakan pilih di tanggal lain ya..");
+    event.target.value = ""; // Mengembalikan nilai tanggal ke nilai sebelumnya (menjadi tanggal kosong)
+  }
+});
+
                                       </script>
                             </div>
                             <div class="mb-5">
