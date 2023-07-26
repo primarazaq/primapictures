@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama_plg');
             $table->string('email_plg');
             $table->string('hp_plg', 12);
-            $table->timestamp('tgl_acara');
+            $table->dateTime('tgl_acara');
             $table->string('wilayah');
             $table->text('lokasi');
             $table->integer('qty');

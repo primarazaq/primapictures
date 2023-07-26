@@ -70,6 +70,7 @@ class PesananController extends Controller
 
     public function order(Request $request)
     {
+        // dd($request->tgl_acara);
         $jasa = Jasa::find($request->id_jasa)->jasa;
         $kategori = Kategori::find($jasa->id_kategori);
         if ($request->qty) {
