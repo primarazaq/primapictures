@@ -1,7 +1,7 @@
 @extends('admin.admin')
 @section('content')
 
-<nav class="flex bg-white mb-4 text-black py-3 px-5 rounded-lg" aria-label="Breadcrumb">
+<nav class="flex bg-white mb-4 text-black py-3 px-5 rounded-lg justify-between" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
             <a href="" class=" text-black hover:text-primary inline-flex items-center">
@@ -25,23 +25,43 @@
             </div>
         </li>
     </ol>
+    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li>
+            <div class="flex items-center">
+                <a href="{{ url('/admin/dashboard/cetak-dokumen') }}" target="_blank">
+                <button id="btnPrint" class="flex space-x-3 relative bottom-0 p-2 rounded-full px-6 py-2 text-base font-normal text-white bg-primary hover:shadow-md hover:border-1 hover:border-black hover:bg-white hover:text-primary transform hover:scale-105 duration-300 ease-in-out fill-white hover:fill-primary" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5zm-3 0h.008v.008H15V10.5z" />
+                  </svg>
+     
+                <span>Cetak Dokumen</span>
+                </button></a>
+                {{-- <script>
+                    const btnPrint = document.getElementById('btnPrint');
+                    btnPrint.addEventListener('click', () => {
+                      window.print();
+                    });
+                  </script> --}}
+            </div>
+        </li>
+    </ol>
 </nav>
 <div class="flex flex-row space-x-4">
     <div class="h-52 basis-1/4 bg-white p-8 rounded-2xl shadow-xl">
         <h2 class="text-xl font-bold mb-2 text-gray-800 text-center">Pendapatan Hari ini</h2>
-        <p class="text-gray-700 mt-14 text-4xl font-bold">@currency($Day->pendapatan)</p>
+        <p class="text-gray-700 mt-14 lg:text-4xl font-bold md:text-lg">@currency($Day->pendapatan)</p>
     </div>
     <div class="h-52 basis-1/4 bg-white p-8 rounded-2xl shadow-xl">
         <h2 class="text-xl font-bold mb-2 text-gray-800 text-center">Pendapatan Bulan ini</h2>
-        <p class="text-gray-700 mt-14 text-4xl font-bold">@currency($Month->pendapatan)</p>
+        <p class="text-gray-700 mt-14 lg:text-4xl font-bold md:text-lg">@currency($Month->pendapatan)</p>
     </div>
     <div class="h-52 basis-1/4 bg-white p-8 rounded-2xl shadow-xl">
         <h2 class="text-xl font-bold mb-2 text-gray-800 text-center">Pendapatan Tahun ini</h2>
-        <p class="text-gray-700 mt-14 text-4xl font-bold">@currency($Year->pendapatan)</p>
+        <p class="text-gray-700 mt-14 lg:text-4xl font-bold md:text-lg">@currency($Year->pendapatan)</p>
     </div>
     <div class="h-52 basis-1/4 bg-white p-8 rounded-2xl shadow-xl">
         <h2 class="text-xl font-bold mb-2 text-gray-800 text-center">Pendapatan Keseluruhan</h2>
-        <p class="text-gray-700 mt-14 text-4xl font-bold">@currency($Total->pendapatan)</p>
+        <p class="text-gray-700 mt-14 lg:text-4xl font-bold md:text-lg">@currency($Total->pendapatan)</p>
     </div>
 </div>
 {{-- <div>

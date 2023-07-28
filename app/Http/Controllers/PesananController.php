@@ -74,7 +74,7 @@ class PesananController extends Controller
         $jasa = Jasa::find($request->id_jasa)->jasa;
         $kategori = Kategori::find($jasa->id_kategori);
         if ($request->qty) {
-            # code untuk yang bisa memilih jumlah pesanan
+            $request['total_harga'] = $request['qty'] * $jasa->harga;
         } else {
             $request['qty'] = 1;
             $request['total_harga'] = $request['qty'] * $jasa->harga;
@@ -156,7 +156,7 @@ class PesananController extends Controller
                     ->join('jasa as c', 'c.id' ,'=', 'a.id_jasa')
                     ->join('status as d', 'd.id' ,'=', 'b.status')
                     ->join('kategori as e', 'e.id' ,'=', 'c.id_kategori')
-                    ->orderBy('b.created_at')
+                    ->orderByDesc('b.created_at')
                     ->get();
 
         return view('admin.riwayatpesanan', compact('riwayat'));

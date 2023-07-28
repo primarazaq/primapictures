@@ -65,7 +65,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <p class="fixed right-4">
+        <p class="fixed right-6">
             Selamat Datang, Admin!
         </p>
       </header>

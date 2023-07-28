@@ -39,6 +39,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         
         Route::get('/dashboard', [KeuanganController::class, 'index']);
 
+        Route::get('/dashboard/cetak-dokumen', [KeuanganController::class, 'cetak']);
+
         Route::get('/jadwalpemotretan', [JadwalController::class, 'jadwal']);
         
         Route::get('/kelolajasa', [JasaController::class, 'index']);
