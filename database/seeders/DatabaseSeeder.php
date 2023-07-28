@@ -32,18 +32,18 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Personal',
             'deskripsi' => 'menangkap esensi diri anda dengan keindahan dan kreativitas yang menawan untuk kebutuhan pribadimu'
         ]);
-        Kategori::create([
-            'nama' => 'Photo Product',
-            'deskripsi' => 'membantu produk anda menjadi sorotan utama dengan visual yang menarik dan profesional'
-        ]);
-        Kategori::create([
-            'nama' => 'Design',
-            'deskripsi' => 'menghadirkan konsep dengan estetika visual yang kuat dan memperkuat pesan desainmu melalui gambar yang menarik'
-        ]);
-        Kategori::create([
-            'nama' => 'Editing',
-            'deskripsi' => 'menciptakan karya yang mengagumkan  dari foto atau videomu sesuai kebutuhan anda dengan keahlian editing profesional'
-        ]);
+        // Kategori::create([
+        //     'nama' => 'Photo Product',
+        //     'deskripsi' => 'membantu produk anda menjadi sorotan utama dengan visual yang menarik dan profesional'
+        // ]);
+        // Kategori::create([
+        //     'nama' => 'Design',
+        //     'deskripsi' => 'menghadirkan konsep dengan estetika visual yang kuat dan memperkuat pesan desainmu melalui gambar yang menarik'
+        // ]);
+        // Kategori::create([
+        //     'nama' => 'Editing',
+        //     'deskripsi' => 'menciptakan karya yang mengagumkan  dari foto atau videomu sesuai kebutuhan anda dengan keahlian editing profesional'
+        // ]);
         Jasa::create([
             'id_kategori' => '1',
             'nama' => 'Paket Prewed + Wedding + Cetak + Frame 16RP',
@@ -79,6 +79,10 @@ class DatabaseSeeder extends Seeder
         Status::create([
             'id' => '6',
             'status' => 'expired'
+        ]);
+        Status::create([
+            'id' => '7',
+            'status' => 'waiting'
         ]);
     }
 }

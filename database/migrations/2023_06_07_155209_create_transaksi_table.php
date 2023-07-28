@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_pesanan')->references('id')->on('pesanan');
             $table->foreignId('status')->references('id')->on('status');
+            $table->string('payment_type');
             $table->timestamps();
         });
     }
