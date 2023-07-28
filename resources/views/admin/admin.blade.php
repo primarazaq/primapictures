@@ -35,11 +35,12 @@
   
  </style>
 
-<body>
+<body class="flex flex-col min-h-screen">
    @include('components.sidebar-admin')
-          <main class="p-6 animate-fade3 mt-14">
+         <main class="flex-grow p-6 h-full animate-fade3 mt-14">
             @yield('content')
           </main>
+          @include('admin.footer-admin')
         </div>
     </div>
 </body>

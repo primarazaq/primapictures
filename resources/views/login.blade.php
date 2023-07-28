@@ -24,9 +24,9 @@
           <div class="mb-4 text-lg">
             <input class="rounded-lg border-primary bg-white px-6 py-2 text-left shadow-lg backdrop-blur-md" type="password" name="password" placeholder="password" />
           </div>
-          <p for="pesan" class="text-xs text-center">Ingin segera memesan ? <a href="#" class="text-primary">klik disini!</a></p>
+          <p for="pesan" class="text-xs text-center">Ingin segera memesan ? <a href="/order" class="text-primary">klik disini!</a></p>
           <div class="mt-8 flex justify-center text-lg text-black">
-            <button type="submit" class="rounded-3xl bg-primary px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-white">Login</button>
+            <button type="submit" class="rounded-3xl bg-primary px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-white hover:text-primary">Login</button>
           </div>
         </form>
       </div>

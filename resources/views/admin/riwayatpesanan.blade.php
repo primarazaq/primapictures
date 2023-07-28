@@ -71,50 +71,19 @@
                                 {{-- {{ $data->nama_plg }} --}}
                             </td>
                             <td class="py-4 px-6 text-center flex justify-center items-center">
-                                @switch($data->status)
-                                    @case('success')
-                                    <div class="bg-success py-1 w-28 rounded-2xl text-white">
-                                        <div class="text-center">
-                                            <p>Success</p>
-                                        </div>
+                                @if ($data->status == "success" || $data->status == "settlement")
+                                <div class="bg-success py-1 w-28 rounded-2xl text-white">
+                                    <div class="text-center">
+                                        <p>Success</p>
                                     </div>
-                                        @break
-                                    @case('settlement')
-                                    <div class="bg-success py-1 w-28 rounded-2xl text-white">
-                                        <div class="text-center">
-                                            <p>Success</p>
-                                        </div>
+                                </div>
+                                @else
+                                <div class="bg-red py-1 w-28 rounded-2xl text-white">
+                                    <div class="text-center">
+                                        <p>Failed</p>
                                     </div>
-                                        @break  
-                                    @case('pending')
-                                    <div class="bg-gray-200 py-1 w-28 rounded-2xl text-primary">
-                                        <div class="text-center">
-                                            <p>Pending</p>
-                                        </div>
-                                    </div>
-                                    @break  
-                                    @case('deny')
-                                    <div class="bg-red py-1 w-28 rounded-2xl text-white">
-                                        <div class="text-center">
-                                            <p>Failed</p>
-                                        </div>
-                                    </div>
-                                    @break  
-                                    @case('cancel')
-                                    <div class="bg-red py-1 w-28 rounded-2xl text-white">
-                                        <div class="text-center">
-                                            <p>Failed</p>
-                                        </div>
-                                    </div>
-                                    @break  
-                                    @case('expired')
-                                    <div class="bg-red py-1 w-28 rounded-2xl text-white">
-                                        <div class="text-center">
-                                            <p>Failed</p>
-                                        </div>
-                                    </div>
-                                    @break  
-                                @endswitch
+                                </div>
+                                @endif
                             </td>
                             <td class="py-4 px-6">
                                 @include('components.detailRiwayat')

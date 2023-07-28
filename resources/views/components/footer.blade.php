@@ -69,9 +69,9 @@
                  hambchild3.classList.remove('bg-black');
                  $(".logo").attr("src", logo1);
                  $(".nav-text").removeClass("lg:text-black");
-                 $(".nav-text").addClass("lg:text-white");
+                 $(".nav-text").removeClass("underlink");
                  $(".nav-text").removeClass("lg:hover:text-primary");
-                 // $(".nav-text").removeClass("underlink");
+                 $(".nav-text").addClass("lg:text-white");
              }
          }
 
@@ -85,7 +85,4 @@
          })
 
          </script>
-         <script
-  type="text/javascript"
-  src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
  </footer>

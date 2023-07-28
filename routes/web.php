@@ -5,6 +5,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\KeuanganController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 use Illuminate\Support\Facades\Route;
@@ -36,9 +37,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return redirect('/admin/dashboard');
         });
         
-        Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-        });
+        Route::get('/dashboard', [KeuanganController::class, 'index']);
 
         Route::get('/jadwalpemotretan', [JadwalController::class, 'jadwal']);
         
