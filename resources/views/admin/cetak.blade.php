@@ -127,9 +127,12 @@
     @include('admin.footer-admin')
 </div>
 <script>
-    const btnPrint = document.getElementById('btnPrint');
-    btnPrint.addEventListener('click', () => {
-      window.print();
-    });
-  </script>
+    // Fungsi untuk mencetak otomatis saat halaman selesai dimuat
+    function cetakOtomatis() {
+        window.print();
+    }
+
+    // Tambahkan event listener untuk memicu cetakOtomatis saat halaman selesai dimuat
+    window.addEventListener('load', cetakOtomatis);
+</script>
 </html>

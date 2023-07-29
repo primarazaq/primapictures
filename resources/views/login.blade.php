@@ -7,8 +7,8 @@
 
 <body>
 <!-- component -->
-<div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style="background-image:url('image/foto6.jpg')">
-    <div class="rounded-xl bg-white px-16 py-10 shadow-lg backdrop-blur-sm max-sm:px-8">
+<div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat " style="background-image:url('image/main(2).webp')">
+    <div class="rounded-xl bg-white bg-opacity-80 px-16 py-10 shadow-lg backdrop-blur-sm max-sm:px-8">
       <div class="text-black">
         <div class="mb-8 flex flex-col items-center">
           <img src="image/logohitam.png" width="200" alt="" srcset="" />

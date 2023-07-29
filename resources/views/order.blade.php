@@ -10,34 +10,34 @@
         class="bg-white fixed top-0 left-0 w-full h-[69px] flex items-center border-b-2 z-50 transition duration-500 ease-in-out">
         @include('components/navbar-order')
     </header>
-    <section class="container my-20 mx-auto">
+    <section class="2xl:my-16 2xl:mb-28 w-full 2xl:h-96 md:my-0 md:mb-3 md:h-72 lg:my-10 my-8 mb-0">
 
-        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <div id="default-carousel" class="relative w-full duration-1000  " data-carousel="slide">
             <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden rounded-lg md:h-96 mx-2">
+            <div class="relative h-48 overflow-hidden rounded-lg sm:h-64  md:h-96 lg:h-[400px] 2xl:h-[550px] mx-2">
                 <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="image/banner1.webp"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="image/banner3.webp"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="image/banner2.webp"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="image/banner4.webp"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 5 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="image/banner5.webp"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
             </div>
@@ -82,21 +82,45 @@
             </button>
         </div>
     </section>
-    <section>
 
-        <div class="lg:grid lg:grid-cols-3 lg:gap-10 lg:p-20 sm:grid sm:grid-cols-2 sm:gap-5 sm:p-10">
+    <section class="md:mt-0 px-4 sm:px-2 md:px-0 mt-0 mb-10">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-10 lg:p-20 sm:grid sm:grid-cols-1 sm:gap-5 sm:p-10">
             @foreach ($kategori as $item)
-                <div class="rounded-full m-h-64 p-2">
+                <div class="rounded-full p-2">
                     <div x-data="{ open: false }"
                         class="w-full bg-white shadow-md shadow-slate-600 rounded-lg overflow-hidden">
                         <div @mouseover="open = true" class="relative">
-                            <img :class="{
-                                'transform': open,
-                                '-translate-x-16': open,
-                                'scale-110': open
-                            }"
-                                class="h-full w-full object-cover transition-transform duration-500"
-                                src="image/foto6.jpg" alt="Gambar">
+                            
+                            @switch($item->nama)
+                                @case('Wedding')
+                                <img :class="{
+                                    'transform': open,
+                                    '-translate-x-16': open,
+                                    'scale-110': open
+                                }"
+                                class="md:h-96 h-60 sm:h-80 w-full object-cover transition-transform duration-500"
+                                src="image/wedding/wedding.webp" alt="Gambar">
+                                    @break
+                                @case('Event')
+                                <img :class="{
+                                    'transform': open,
+                                    '-translate-x-16': open,
+                                    'scale-110': open
+                                }"
+                                class="md:h-96 h-60 sm:h-80 w-full object-cover transition-transform duration-500"
+                                src="image/event/event.webp" alt="Gambar">
+                                    @break
+                                @case('Personal')
+                                <img :class="{
+                                    'transform': open,
+                                    '-translate-x-16': open,
+                                    'scale-110': open
+                                }"
+                                class="md:h-96 h-60 sm:h-80 w-full object-cover transition-transform duration-500"
+                                src="image/personal/personal.webp" alt="Gambar">
+                                @break
+                                    
+                            @endswitch
 
                             <div x-show="open"
                                 x-transition:enter="transition-transform transition-opacity ease-out duration-300"
@@ -105,12 +129,12 @@
                                 x-transition:leave="transition ease-in duration-300"
                                 x-transition:leave-end="opacity-0 transform translate-x-56"
                                 @mouseover.away="open = false" class="absolute inset-0 flex items-center justify-end">
-                                <div class="p-4 bg-white h-full ml-56 flex flex-col justify-between">
+                                <div class="p-4 bg-white h-full md:ml-96 sm:ml-[600px] ml-0 flex flex-col justify-between">
                                     <div>
-                                        <h3 class="text-sm font-semibold">{{ $item->nama }}</h3>
-                                        <p class="mt-2 text-xs">{{ $item->deskripsi }}</p>
+                                        <h3 class="text-sm font-semibold text-center">{{ $item->nama }}</h3>
+                                        <p class="mt-2 text-xs ">{{ $item->deskripsi }}</p>
                                     </div>
-                                    <div class="self-end">
+                                    <div class="self-center">
                                         <a href="/order/{{ $item->id }}">
                                             <button
                                                 class="w-fit bg-primary text-white px-16 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black lg:w-60 lg:h-8 lg:text-lg">

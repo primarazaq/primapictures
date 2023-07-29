@@ -22,6 +22,7 @@ class PesananController extends Controller
     public function show($id)
     {
         try {
+            $kategori = Kategori::find($id);
             $jasa = Kategori::find($id)->jasa;
             $jasaLowest = DB::table('jasa')
                 ->select('nama', 'deskripsi', 'harga')
@@ -36,8 +37,8 @@ class PesananController extends Controller
                 throw new \Exception('Data tidak ditemukan');
             }
 
-
             return view('orderDetail', [
+                'kategori' => $kategori,
                 'jasa' => $jasa,
                 'jasaLow' => $jasaLowest,
                 'jasaHigh' => $jasaHighest,
@@ -79,7 +80,10 @@ class PesananController extends Controller
             $request['qty'] = 1;
             $request['total_harga'] = $request['qty'] * $jasa->harga;
         }
-        
+
+        if ($request['wilayah'] == 'luar kota') {
+            $request['total_harga'] = $request['total_harga'] + 1000000;
+        }
         $pesanan = $request->validate([
             'id_jasa' => 'required',
             'nama_plg' => 'required',
@@ -92,6 +96,8 @@ class PesananController extends Controller
             'total_harga' => 'required'
         ]);
 
+        
+        $id = $jasa->id_kategori;
         $order = Pesanan::create($pesanan);
         $snapToken = $this->snaptoken($order->id);
         Pesanan::where('id', $order->id)->update(['snaptoken' => $snapToken]);
@@ -100,7 +106,7 @@ class PesananController extends Controller
             'status' => 7 //    waiting for payment
         ]);
 
-        return view('checkout', compact('snapToken', 'order', 'jasa', 'kategori'));
+        return view('checkout', compact('id','snapToken', 'order', 'jasa', 'kategori'));
     }
 
     public function snaptoken($id){

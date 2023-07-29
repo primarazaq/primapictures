@@ -68,25 +68,84 @@
         @include('components/navbar-order')
     </header>
     <section class="container my-40 mx-auto">
-        <div class=" flex lg:flex-row">
-            <div class="lg:basis-1/4 -mt-24 sm:mt-10 lg:-mt-20 overflow-hidden">
+                 {{-- breadcrumb --}}
+    <nav class="flex bg-white mb-4 text-xs lg:text-sm -translate-y-20 text-black py-3 px-5 rounded-lg" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+                <a href="/order" class=" text-black hover:text-primary inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                      </svg>
+                      
+                    Home
+                </a>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center hover:text-primary">
+                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </li>
+            <a href="/order/{{ $id }}">
+                <p class="hover:text-primary">
+                    {{ $kategori->nama }}
+                </p>
+            </a>
+            <li aria-current="page">
+                <div class="flex items-center hover:text-primary">
+                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </li>
+            <a href="/order/{{ $id }}/formOrder">
+                <p class="hover:text-primary">
+                    Order
+                </p>
+            </a>
+            <li aria-current="page">
+                <div class="flex items-center hover:text-primary">
+                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </li>
+            <a href="">
+                <p class="hover:text-primary">
+                    Checkout
+                </p>
+            </a>
+        </ol>
+    </nav>
+        <div class="flex-col px-4 flex lg:flex-row">
+            <div class="lg:basis-1/4 -mt-24 lg:-mt-20 overflow-hidden">
                 <div class="col-span-12 md:col-span-6 md:mr-2">
                     <div class="transition-all duration-100 ease-in-out w-full" x-data="ProductGallery($el)">
                         <ul
-                            class="flex flex-grow-1 flex-nowrap overflow-x-scroll whitespace-nowrap snap snap-x snap-mandatory no-scrollbar scroll-behavior-smooth mb-6">
+                            class="flex flex-grow-1 flex-nowrap overflow-x-scroll whitespace-nowrap snap snap-x snap-mandatory no-scrollbar scroll-behavior-smooth mb-2">
                             <template x-for="(image, i) in images" :key="image">
                                 <li class="relative w-full h-full flex-shrink-0 snap-start">
                                     <span href="#">
-                                        <img :src="image.url" class="rounded-lg max-h-[350px] max-w-[350px]">
+                                        <img :src="image.url" class="rounded-lg lg:max-h-[350px] lg:max-w-[350px]">
                                     </span>
                                 </li>
                             </template>
                         </ul>
-                        <ul class="relative font-bold">
+                        <ul class="relative font-bold text-center">
                             {{ $kategori->nama }}
                         </ul>
                             <ul>
-                                <div class="relative justify-start self-start text-left">
+                                <div class="relative justify-start self-start text-left border-b">
                                 
                                         <p name="id_jasa" id="id_jasa"
                                             class="flex space-x-1 text-sm mt-3 text-primary px-10 py-[2px] font-semibold tracking-[2px] text-[13px] ">
@@ -96,11 +155,11 @@
                                 </div>
                             </ul>
                             <ul>
-                                <p class="relative sm:text-xl lg:text-lg font-bold gilroy text-left text-black sm:pt-5">
+                                <p class="relative text-xl lg:text-lg font-bold gilroy text-center lg:text-left text-black sm:pt-5">
                                     Total Harga
                                 </p>
                                 <div class="listJasa" id="Jasa-default">
-                                    <p class="relative sm:text-xl lg:text-4xl font-bold gilroy text-left text-red-600">
+                                    <p class="relative text-xl lg:text-4xl font-bold gilroy text-center lg:text-left text-red">
                                         @currency($order->total_harga)
                                     </p>
                                 </div>
@@ -109,8 +168,8 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:basis-3/4 w-full h-80 self-left px-4 relative z-0 lg:flex lg:flex-col mb-60">
-                <div class="absolute w-full h-full sm:px-6 lg:px-4 -mt-10 lg:-mt-24">
+            <div class="lg:basis-3/4 w-full h-[450px] lg:h-80 self-left relative z-0 lg:flex lg:flex-col mb-60">
+                <div class="relative w-full h-full sm:px-6 lg:px-4  lg:-mt-24">
                     <div class="flex flex-col justify-start mt-5 space-x-6">
                         <div class="relative">
                             <div class="mb-5">
@@ -194,35 +253,34 @@
         });
     </script>
     <script>
-       var images = [{
-                url: "/image/wedding/1080/wedding (1).jpg", 
-                thumb: "/image/wedding/400/wedding (1).jpg" 
-            },
-            {
-                url: "/image/wedding/1080/wedding (2).jpg", 
-                thumb: "/image/wedding/400/wedding (2).jpg" 
-            },
-            {
-                url: "/image/wedding/1080/wedding (3).jpg", 
-                thumb: "/image/wedding/400/wedding (3).jpg" 
-            },
-            {
-                url: "/image/wedding/1080/wedding (4).jpg", 
-                thumb: "/image/wedding/400/wedding (4).jpg" 
-            },
-            {
-                url: "/image/wedding/1080/wedding (5).jpg", 
-                thumb: "/image/wedding/400/wedding (5).jpg" 
-            },
-            {
-                url: "/image/wedding/1080/wedding (6).jpg", 
-                thumb: "/image/wedding/400/wedding (6).jpg" 
-            },
-            {
-                url: "/image/wedding/1080/wedding (7).jpg", 
-                thumb: "/image/wedding/400/wedding (7).jpg" 
-            },
-        ];
+      switch ({{ $id }}) {
+            case 1:
+                var images = [
+                {
+                    url: "/image/wedding/wedding.webp", 
+                    thumb: "/image/wedding/wedding.webp" 
+                },
+                ];
+            break;
+            case 2:
+                var images = [
+                    {
+                        url: "/image/event/event1.webp", 
+                        thumb: "/image/event/event1.webp" 
+                    },
+                ];
+            break;
+            case 3:
+            var images = [
+                    {
+                        url: "/image/personal/personal1.webp", 
+                        thumb: "/image/personal/personal1.webp" 
+                    },
+                ];
+            break;
+        
+            
+        }
 
         window.ProductGallery = function($el) {
             return {

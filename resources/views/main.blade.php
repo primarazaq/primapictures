@@ -15,8 +15,8 @@
             <div class="flex flex-wrap">
                 <div class="w-full h-80 sm:h-[480px] lg:h-screen self-center px-4 relative z-0">
                     <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-                        {{-- <video class="min-w-full min-h-full absolute object-cover" src="video/video.mp4" type="video/mp4"
-                            autoplay muted loop></video> --}}
+                        <video class="min-w-full min-h-full absolute object-cover" src="video/primapicturesvideo.mp4" type="video/mp4"
+                            autoplay muted loop></video>
                     </div>
                     <div
                         class="video-content relative space-y-0 text-center mt-36 sm:mt-52 sm:space-y-2 lg:mt-96 lg:space-y-5">
@@ -58,12 +58,12 @@
             </div>
             <div class="flex flex-col lg:basis-1/2 -mt-16 sm:mt-10 lg:-mt-20 overflow-hidden">
 
-                <img src="image/foto1.png"
-                    class="w-full h-40 sm:h-72 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out"
+                <img src="image/main(1).webp"
+                    class="w-full h-40 sm:h-72 lg:h-[350px] opacity-80 self-center relative z-0 overflow-hidden object-cover object-bottom transition-transform hover:opacity-100 hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out"
                     alt="">
 
-                <img src="image/foto2.png"
-                    class="w-full h-40 sm:h-72 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out"
+                <img src="image/main(2).webp"
+                    class="w-full h-40 sm:h-72 lg:h-[350px] opacity-80 self-center relative z-0 overflow-hidden object-cover transition-transform hover:opacity-100 hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out"
                     alt="">
 
             </div>
@@ -92,12 +92,12 @@
             </div>
             <div class="flex flex-col lg:basis-1/2 -mt-24 sm:mt-10 lg:-mt-20 overflow-hidden">
 
-                <img src="image/foto1.png"
-                    class="w-full h-40 sm:h-72 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out"
+                <img src="image/main(3).webp"
+                    class="w-full h-40 sm:h-72 lg:h-[350px] opacity-80 self-center relative z-0 overflow-hidden object-cover transition-transform hover:scale-110 hover:opacity-100 hover:transition hover:duration-1000 hover:ease-in-out"
                     alt="">
 
-                <img src="image/foto2.png"
-                    class="w-full h-40 sm:h-72 lg:h-[350px] self-center relative z-0 overflow-hidden object-cover transition-transform hover:scale-110 hover:transition hover:duration-1000 hover:ease-in-out"
+                <img src="image/main(4).webp"
+                    class="w-full h-40 sm:h-72 lg:h-[350px] opacity-80 self-center relative z-0 overflow-hidden object-cover transition-transform hover:scale-110 hover:opacity-100 hover:transition hover:duration-1000 hover:ease-in-out"
                     alt="">
 
             </div>
@@ -124,9 +124,9 @@
                 </div>
             </div>
             <div class="overflow-hidden">
-                <div class="absolute bg-primary w-full h-60 opacity-60 z-40 lg:h-[700px] sm:h-80"></div>
-                <img src="image/foto6.jpg"
-                    class="relative w-full h-60 self-center z-0 object-cover lg:h-[700px] sm:h-80" />
+                <div class="absolute bg-black w-full h-60 opacity-50 z-40 lg:h-[700px] sm:h-80"></div>
+                <img src="image/banner.webp"
+                    class="relative w-full h-60 self-center z-0 opca object-cover lg:h-[700px] sm:h-80" />
             </div>
         </div>
     </section>
