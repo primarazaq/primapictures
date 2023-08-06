@@ -23,4 +23,15 @@ class JadwalController extends Controller
 
         return view('admin.jadwalpemotretan', compact('jadwal'));
     }
+
+    public function nonaktifjadwal(){
+        $jadwal = DB::table('pesanan as a')
+        ->select('a.tgl_acara')
+        ->where('b.status','1')->orWhere('b.status','2')
+        ->join('transaksi as b', 'b.id_pesanan' ,'=', 'a.id')
+        ->orderBy('a.tgl_acara')
+        ->get();
+
+        return $jadwal;
+    }
 }

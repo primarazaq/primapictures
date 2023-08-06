@@ -8,6 +8,7 @@ use App\Models\Pesanan;
 use App\Models\Transaksi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Controllers\JadwalController;
 
 class PesananController extends Controller
 {
@@ -50,17 +51,19 @@ class PesananController extends Controller
         }
     }
 
+
+
     public function showForm($id)
     {
         $jasa = Kategori::find($id)->jasa;
         $kategori = Kategori::find($id)->first();
-        $jadwal = DB::table('pesanan as a')
-        ->select('a.tgl_acara')
-        ->where('b.status','1')->orWhere('b.status','2')
-        ->join('transaksi as b', 'b.id_pesanan' ,'=', 'a.id')
-        ->orderBy('a.tgl_acara')
-        ->get();
-        // dd($jadwal);
+
+        // Buat instance JadwalController
+        $jadwalController = new JadwalController();
+
+        // Panggil method nonaktifjadwal()
+        $jadwal = $jadwalController->nonaktifjadwal();
+
         return view('formOrder', [
             'jasa' => $jasa,
             'kategori' => $kategori,

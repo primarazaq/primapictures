@@ -66,51 +66,51 @@ class KeuanganController extends Controller
     ->orderBy('kategori.id')
     ->get();
 
-$ordersByMonthAndCategory = collect();
+    $ordersByMonthAndCategory = collect();
 
-foreach ($ordersCountByMonth as $order) {
-    $month = Carbon::createFromDate(null, $order->bulan, null)->format('F');
-    $category = $order->nama_kategori;
-    $serviceName = $order->nama_jasa;
-    $servicePrice = $order->harga;
-    $pesananCount = $order->pesanan_count;
-    $totalHargaJasa = $order->total_harga_jasa;
+    foreach ($ordersCountByMonth as $order) {
+        $month = Carbon::createFromDate(null, $order->bulan, null)->format('F');
+        $category = $order->nama_kategori;
+        $serviceName = $order->nama_jasa;
+        $servicePrice = $order->harga;
+        $pesananCount = $order->pesanan_count;
+        $totalHargaJasa = $order->total_harga_jasa;
 
-    // Menambahkan total harga di dalam kategori
-    $totalHarga = $totalHargaJasa;
-    $totalHargaByCategory = $ordersByMonthAndCategory
-        ->where('bulan', $month)
-        ->where('nama_kategori', $category)
-        ->pluck('total_harga')
-        ->first();
-    $totalHarga += $totalHargaByCategory ?? 0;
+        // Menambahkan total harga di dalam kategori
+        $totalHarga = $totalHargaJasa;
+        $totalHargaByCategory = $ordersByMonthAndCategory
+            ->where('bulan', $month)
+            ->where('nama_kategori', $category)
+            ->pluck('total_harga')
+            ->first();
+        $totalHarga += $totalHargaByCategory ?? 0;
 
-    // Menambahkan jumlah pesanan di dalam data jasa
-    $data = [
-        'nama_jasa' => $serviceName,
-        'harga' => $servicePrice,
-        'pesanan_count' => $pesananCount,
-        'total_harga' => $totalHarga,
-    ];
+        // Menambahkan jumlah pesanan di dalam data jasa
+        $data = [
+            'nama_jasa' => $serviceName,
+            'harga' => $servicePrice,
+            'pesanan_count' => $pesananCount,
+            'total_harga' => $totalHarga,
+        ];
 
-    $categoryData = [
-        'nama_kategori' => $category,
-        'bulan' => $month,
-        'data_jasa' => $data,
-    ];
+        $categoryData = [
+            'nama_kategori' => $category,
+            'bulan' => $month,
+            'data_jasa' => $data,
+        ];
 
-    $ordersByMonthAndCategory->push($categoryData);
-}
-
-// Menambahkan pesanan_count_total untuk setiap kategori
-$ordersByMonthAndCategory = $ordersByMonthAndCategory->map(function ($categoryData) use ($ordersByMonthAndCategory) {
-    $category = $categoryData['nama_kategori'];
-    $pesananCountTotal = $ordersByMonthAndCategory->where('nama_kategori', $category)->sum('data_jasa.pesanan_count');
-    $categoryData['pesanan_count_total'] = $pesananCountTotal;
-    return $categoryData;
-});
-
-    // dd($ordersByMonthAndCategory);
-        return view('admin.cetak', compact('ordersByMonthAndCategory'));
+        $ordersByMonthAndCategory->push($categoryData);
     }
+
+    // Menambahkan pesanan_count_total untuk setiap kategori
+    $ordersByMonthAndCategory = $ordersByMonthAndCategory->map(function ($categoryData) use ($ordersByMonthAndCategory) {
+        $category = $categoryData['nama_kategori'];
+        $pesananCountTotal = $ordersByMonthAndCategory->where('nama_kategori', $category)->sum('data_jasa.pesanan_count');
+        $categoryData['pesanan_count_total'] = $pesananCountTotal;
+        return $categoryData;
+    });
+
+        // dd($ordersByMonthAndCategory);
+            return view('admin.cetak', compact('ordersByMonthAndCategory'));
+        }
 }
