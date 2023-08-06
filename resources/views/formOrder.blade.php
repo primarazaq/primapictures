@@ -86,7 +86,7 @@
                                                 </option>
                                             @endforeach
                                         </select>
-                                        <script>
+                                        <script type="module">
                                             $(document).ready(function() {
                                                 $('#id_jasa').change(function() {
                                                     var pilihan = $(this).val();

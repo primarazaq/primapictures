@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playfair+Display&display=swap"
     rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script type="text/javascript" src="/js/jquery.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="/css/trix.css">
 <script type="text/javascript" src="/js/trix.js"></script>
 {{-- <link rel="stylesheet" type="text/css" href="/build/assets/app.8f3fc3c7.css">
-<script type="text/javascript" src="/build/assets/app.6aacf429.js"></script> --}}
+<script type="text/javascript" src="/build/assets/app.c277d8ae.js"></script> --}}
 
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 

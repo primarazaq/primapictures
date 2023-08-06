@@ -117,10 +117,11 @@
                     orang-orang di dalamnya sudah berubah. Itulah momen yang menjadikannya abadi
                 </p>
                 <div data-aos="fade" data-aos-duration="3000">
+                    <a href="/order">
                     <button
                         class="w-fit mt-8 bg-white text-primary px-3 py-[2px] font-semibold inline-block tracking-[2px] text-[7px] uppercase rounded-full shadow-sm hover:shadow-md transform hover:scale-110 duration-500 ease-in-out shadow-black lg:w-60 lg:h-8 lg:text-lg">
                         ORDER SEKARANG
-                    </button>
+                    </button></a>
                 </div>
             </div>
             <div class="overflow-hidden">
@@ -148,7 +149,7 @@
                             Wedding
                         </p>
                         <p class="relative text-[10px] sm:text-sm text-center sm:text-left lowercase text-black">
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            sentuhan artistik dan keindahan visual yang mengabadikan momen pernikahan anda
                         </p>
 
                     </div>
@@ -164,7 +165,7 @@
                             Event
                         </p>
                         <p class="relative text-[10px] sm:text-sm text-center sm:text-left lowercase text-black">
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            mengabadikan momen berharga dari setiap acara atau kegiatanmu
                         </p>
 
                     </div>
@@ -193,7 +194,7 @@
                             Personal
                         </p>
                         <p class="relative text-[10px] sm:text-sm text-center sm:text-left lowercase text-black">
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            menangkap esensi diri anda dengan keindahan dan kreativitas yang menawan untuk kebutuhan pribadimu
                         </p>
 
                     </div>

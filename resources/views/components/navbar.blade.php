@@ -1,9 +1,4 @@
-<style>
-    .nav-text{
-        translate: -25px;
-    }
 
-    </style>
 
 <div class="container lg:container-xl">
     <div class="flex items-center md:w-screen md:max-w-auto lg:w-screen lg:max-w-[1900px] justify-between relative">

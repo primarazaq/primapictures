@@ -87,7 +87,7 @@
         <div class="lg:grid lg:grid-cols-3 lg:gap-10 lg:p-20 sm:grid sm:grid-cols-1 sm:gap-5 sm:p-10">
             @foreach ($kategori as $item)
                 <div class="rounded-full p-2">
-                    <div x-data="{ open: false }"
+                    <div x-data="{ open: false }" x-init="open = window.matchMedia('(max-width: 640px)').matches"
                         class="w-full bg-white shadow-md shadow-slate-600 rounded-lg overflow-hidden">
                         <div @mouseover="open = true" class="relative">
                             
@@ -129,7 +129,7 @@
                                 x-transition:leave="transition ease-in duration-300"
                                 x-transition:leave-end="opacity-0 transform translate-x-56"
                                 @mouseover.away="open = false" class="absolute inset-0 flex items-center justify-end">
-                                <div class="p-4 bg-white h-full md:ml-96 sm:ml-[600px] ml-0 flex flex-col justify-between">
+                                <div class="p-4 bg-white h-full md:ml-96 sm:ml-[600px] ml-96 flex flex-col justify-between">
                                     <div>
                                         <h3 class="text-sm font-semibold text-center">{{ $item->nama }}</h3>
                                         <p class="mt-2 text-xs ">{{ $item->deskripsi }}</p>

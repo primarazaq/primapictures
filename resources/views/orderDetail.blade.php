@@ -203,7 +203,7 @@
                                         </option>
                                     @endforeach
                                 </select>
-                                <script>
+                                <script type="module">
                                     $(document).ready(function() {
                                         $('#pilihan').change(function() {
                                             var pilihan = $(this).val();
