@@ -3,7 +3,7 @@
          <div
              class="flex relative w-full h-40 self-center items-center px-4 pt-14 lg:px-32 lg:justify-between lg:pt-0 sm:px-14">
              <div>
-                 <img src="/../image/logoputih.png" alt="" class="w-36 h-fit lg:w-52">
+                 <img src="/../image/logoputih.png" alt="" class="w-36 h-36 lg:w-52 lg:h-fit">
                  <p class="relative w-48 mt-4 text-[9px] text-left text-white lg:text-[14px]">
                      Jl. Rumah Sakit No.48A, Kota Bandung, Jawa Barat, Indonesia.
                  </p>
@@ -85,4 +85,6 @@
          })
 
          </script>
+         <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+         integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
  </footer>
