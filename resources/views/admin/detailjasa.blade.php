@@ -47,6 +47,101 @@
     </ol>
 </nav>
 <div class=" text-gray-900 mb-5">
+
+    @if (session()->has('add'))
+    <div class="mb-4">
+        <div id="alert-2" class="flex justify-between px-6 py-2 mt-2 bg-green-100 bg-opacity-50 rounded-lg alert-del" role="alert">
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="sr-only">Info</span>
+                <p  class=" text-sm ml-2 items-center font-medium text-green-800 inline-flex"> 
+                {{ session('add') }}
+                </p>
+            </div>
+            <div class=" text-xs items-center font-medium text-green-800 inline-flex">
+                <button type="button" class=" ml-5 -mx-5 -my-1.5  text-green-800 rounded-lg p-1.5  h-8 w-8" data-dismiss-target="#alert-2" aria-label="Close">
+                  <span class="sr-only">Close</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <script>
+                var closeButton = document.querySelector('#alert-2 [aria-label="Close"]');
+                closeButton.addEventListener('click', function () {
+                    var alert = closeButton.closest('.alert-del');
+                    alert.classList.add('opacity-0');
+                    setTimeout(function () {
+                        alert.classList.add('hidden');
+                    }, 300);
+                });
+            </script>
+        </div>
+    </div>
+    @elseif(session()->has('edit'))
+    <div class="mb-4">
+        <div id="alert-2" class="flex justify-between px-6 py-2 mt-2 bg-green-100 bg-opacity-50 rounded-lg alert-del" role="alert">
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  
+                <span class="sr-only">Info</span>
+                <p  class=" text-sm ml-2 items-center font-medium text-green-800 inline-flex"> 
+                  {{ session('edit') }}
+                </p>
+            </div>
+            <div class=" text-xs items-center font-medium text-green-800 inline-flex">
+                <button type="button" class=" ml-5 -mx-5 -my-1.5  text-green-800 rounded-lg p-1.5  h-8 w-8" data-dismiss-target="#alert-2" aria-label="Close">
+                  <span class="sr-only">Close</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <script>
+                var closeButton = document.querySelector('#alert-2 [aria-label="Close"]');
+                closeButton.addEventListener('click', function () {
+                    var alert = closeButton.closest('.alert-del');
+                    alert.classList.add('opacity-0');
+                    setTimeout(function () {
+                        alert.classList.add('hidden');
+                    }, 300);
+                });
+            </script>
+        </div>
+    </div>
+    @elseif(session()->has('destroy'))
+    <div class="mb-4">
+        <div id="alert-2" class="flex justify-between px-6 py-2 mt-2 bg-green-100 bg-opacity-50 rounded-lg alert-del" role="alert">
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                
+                <span class="sr-only">Info</span>
+                <p  class=" text-sm ml-2 items-center font-medium text-green-800 inline-flex"> 
+                {{ session('destroy') }}
+                </p>
+            </div>
+            <div class=" text-xs items-center font-medium text-green-800 inline-flex">
+                <button type="button" class=" ml-5 -mx-5 -my-1.5  text-green-800 rounded-lg p-1.5  h-8 w-8" data-dismiss-target="#alert-2" aria-label="Close">
+                  <span class="sr-only">Close</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <script>
+                var closeButton = document.querySelector('#alert-2 [aria-label="Close"]');
+                closeButton.addEventListener('click', function () {
+                    var alert = closeButton.closest('.alert-del');
+                    alert.classList.add('opacity-0');
+                    setTimeout(function () {
+                        alert.classList.add('hidden');
+                    }, 300);
+                });
+            </script>
+        </div>
+    </div>
+    @endif
+
     <div class="flex justify-between">
         <div class="mb-3 ml-3 font-extrabold text-xl">
             <h4>{{ $kategori->nama }}</h4>

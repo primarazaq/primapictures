@@ -172,6 +172,42 @@
                 <div class="relative w-full h-full sm:px-6 lg:px-4  lg:-mt-24">
                     <div class="flex flex-col justify-start mt-5 space-x-6">
                         <div class="relative">
+                            <div class="mb-5 -mt-3">
+                                
+                                <div id="alert" class="flex justify-center px-6 py-2 mt-2 bg-green-100 bg-opacity-50 rounded-lg alert-del" role="alert">
+                                    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-green-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                    <span class="sr-only">Info</span>
+                                    <p  class=" text-xs ml-2 items-center font-medium text-green-800 inline-flex"> 
+                                      Pesanan anda berhasil diproses! Segera selesaikan pembayaran anda dalam &nbsp;<span id="timer" class="font-bold"></span>
+                                    </p>
+                                    <script>
+                                        // Waktu awal dalam detik (30 menit)
+                                        var countdownTime = 30 * 60;
+                                        var timerDisplay = document.getElementById('timer');
+                                
+                                        // Fungsi untuk mengupdate timer setiap detik
+                                        function updateTimer() {
+                                            var minutes = Math.floor(countdownTime / 60);
+                                            var seconds = countdownTime % 60;
+                                
+                                            // Tampilkan timer pada halaman
+                                            timerDisplay.innerHTML = minutes + " menit " + seconds + " detik";
+                                
+                                            // Kurangi waktu mundur sebanyak 1 detik
+                                            countdownTime--;
+                                
+                                            // Jika waktu habis (0 detik), arahkan pengguna kembali ke halaman utama
+                                            if (countdownTime < 0) {
+                                                alert("Waktu pembayaran sudah habis! Lakukan pemesanan kembali!");
+                                                window.location.href = '/';
+                                            }
+                                        }
+                                
+                                        // Panggil fungsi updateTimer setiap 1 detik (1000 ms)
+                                        var timerInterval = setInterval(updateTimer, 1000);
+                                    </script>
+                                </div>
+                            </div>
                             <div class="mb-5">
                                 <label for="text" class="mb-3 block text-base font-medium text-[#07074D]">
                                     Nama Pemesan
@@ -206,7 +242,7 @@
                                     Lokasi Acara
                                 </label>
                                 <input name="wilayah" id="wilayah" value="{{ $order->wilayah }}" readonly
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
+                                    class=" w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
                                 <input name="lokasi" value="{{ $order->lokasi }}" readonly
                                     class=" h-32 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
                             </div>

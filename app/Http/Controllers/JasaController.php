@@ -31,7 +31,7 @@ class JasaController extends Controller
         $id = $jasa['id_kategori'];
         Jasa::create($jasa);
 
-        return redirect('/admin/kelolajasa/'.$id)->with('success', 'Jasa berhasil disimpan');
+        return redirect('/admin/kelolajasa/'.$id)->with('add', 'Data berhasil ditambahkan !');
     }
 
     public function update(Request $request){
@@ -44,7 +44,7 @@ class JasaController extends Controller
         $id = $request['id'];
         Jasa::where('id', $id)->update($jasa);
 
-        return redirect('/admin/kelolajasa/'.$jasa['id_kategori'])->with('success', 'Jasa berhasil diperbaharui');
+        return redirect('/admin/kelolajasa/'.$jasa['id_kategori'])->with('edit', 'Data berhasil diperbaharui !');
     }
 
     public function destroy($id){
@@ -52,6 +52,6 @@ class JasaController extends Controller
         $kategori = $jasa['id_kategori'];
         Jasa::where('id', $id)->delete();
 
-        return redirect('/admin/kelolajasa/'.$kategori)->with('success', 'Jasa berhasil dihapus');
+        return redirect('/admin/kelolajasa/'.$kategori)->with('destroy', 'Data berhasil dihapus !');
     }
 }

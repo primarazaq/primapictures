@@ -24,7 +24,7 @@ class LoginController extends Controller
         }
  
         return back()->with(
-            'loginError', 'Login Gagal!');
+            'loginError', 'Login Gagal! Periksa username dan password anda kembali !');
     }
 
     public function logout(){

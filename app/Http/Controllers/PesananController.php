@@ -74,87 +74,94 @@ class PesananController extends Controller
 
     public function order(Request $request)
     {
-        // dd($request->tgl_acara);
-        $jasa = Jasa::find($request->id_jasa)->jasa;
-        $kategori = Kategori::find($jasa->id_kategori);
-        if ($request->qty) {
-            $request['total_harga'] = $request['qty'] * $jasa->harga;
-        } else {
-            $request['qty'] = 1;
-            $request['total_harga'] = $request['qty'] * $jasa->harga;
+        try {
+            $jasa = Jasa::find($request->id_jasa)->jasa;
+            $kategori = Kategori::find($jasa->id_kategori);
+            if ($request->qty) {
+                $request['total_harga'] = $request['qty'] * $jasa->harga;
+            } else {
+                $request['qty'] = 1;
+                $request['total_harga'] = $request['qty'] * $jasa->harga;
+            }
+
+            if ($request['wilayah'] == 'luar kota') {
+                $request['total_harga'] = $request['total_harga'] + 1000000;
+            }
+            $pesanan = $request->validate([
+                'id_jasa' => 'required',
+                'nama_plg' => 'required',
+                'email_plg' => 'required',
+                'hp_plg' => 'required',
+                'tgl_acara' => 'required',
+                'wilayah' => 'required',
+                'lokasi' => 'required',
+                'qty' => 'required',
+                'total_harga' => 'required'
+            ]);
+
+            $id = $jasa->id_kategori;
+            $order = Pesanan::create($pesanan);
+            $snapToken = $this->snaptoken($order->id);
+            Pesanan::where('id', $order->id)->update(['snaptoken' => $snapToken]);
+            Transaksi::create([
+                'id_pesanan' => $order->id,
+                'status' => 7 //    waiting for payment
+            ]);
+
+            return view('checkout', compact('id', 'snapToken', 'order', 'jasa', 'kategori'));
+        } catch (\Exception $e) {
+            return back()->withErrors(['errorOrder' => 'Pesanan anda gagal diproses ! coba lagi !']);
         }
-
-        if ($request['wilayah'] == 'luar kota') {
-            $request['total_harga'] = $request['total_harga'] + 1000000;
-        }
-        $pesanan = $request->validate([
-            'id_jasa' => 'required',
-            'nama_plg' => 'required',
-            'email_plg' => 'required',
-            'hp_plg' => 'required',
-            'tgl_acara' => 'required',
-            'wilayah' => 'required',
-            'lokasi' => 'required',
-            'qty' => 'required',
-            'total_harga' => 'required'
-        ]);
-
-        
-        $id = $jasa->id_kategori;
-        $order = Pesanan::create($pesanan);
-        $snapToken = $this->snaptoken($order->id);
-        Pesanan::where('id', $order->id)->update(['snaptoken' => $snapToken]);
-        Transaksi::create([
-            'id_pesanan' => $order->id,
-            'status' => 7 //    waiting for payment
-        ]);
-
-        return view('checkout', compact('id','snapToken', 'order', 'jasa', 'kategori'));
     }
 
+
     public function snaptoken($id){
-        $order = Pesanan::find($id);
-        $jasaOrder = Jasa::find($order->id_jasa);
-        $kategori = Kategori::find($jasaOrder->id_kategori);
-        
-        // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = config('midtrans.server_key');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
-        // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
-        // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
+        try{
+            $order = Pesanan::find($id);
+            $jasaOrder = Jasa::find($order->id_jasa);
+            $kategori = Kategori::find($jasaOrder->id_kategori);
+            
+            // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = config('midtrans.server_key');
+            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+            \Midtrans\Config::$isProduction = false;
+            // Set sanitization on (default)
+            \Midtrans\Config::$isSanitized = true;
+            // Set 3DS transaction for credit card to true
+            \Midtrans\Config::$is3ds = true;
 
 
-        $params = array(
-            'transaction_details' => array(
-                'order_id' => $order->id,
-                'gross_amount' => $order->total_harga,
-            ),
-            'item_details' => array(
-                array(
-                    'id' => $jasaOrder->id,
-                    'price' => $jasaOrder->harga,
-                    'quantity' => $order->qty,
-                    'name' => $jasaOrder->nama,
-                    'category' => $kategori->nama,
-                )
-            ),
-            'customer_details' => array(
-                'first_name' => $order->nama_plg,
-                'last_name' => '',
-                'email' => $order->email_plg,
-                'phone' => $order->hp_plg,
-            ),
-            'custom_field1' => $order->tgl_acara,
-            'custom_field2' => $order->wilayah,
-            'custom_field3' => $order->lokasi
-        );
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => $order->id,
+                    'gross_amount' => $order->total_harga,
+                ),
+                'item_details' => array(
+                    array(
+                        'id' => $jasaOrder->id,
+                        'price' => $jasaOrder->harga,
+                        'quantity' => $order->qty,
+                        'name' => $jasaOrder->nama,
+                        'category' => $kategori->nama,
+                    )
+                ),
+                'customer_details' => array(
+                    'first_name' => $order->nama_plg,
+                    'last_name' => '',
+                    'email' => $order->email_plg,
+                    'phone' => $order->hp_plg,
+                ),
+                'custom_field1' => $order->tgl_acara,
+                'custom_field2' => $order->wilayah,
+                'custom_field3' => $order->lokasi
+            );
 
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return $snapToken;
+            return $snapToken;
+        } catch (\Exception $e) {
+            return back()->withErrors(['errorOrder' => 'Pesanan anda gagal diproses ! coba lagi !']);
+            }
     }
 
     public function riwayat(){
