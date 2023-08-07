@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
+            $table->string('email');
+            $table->string('verification_code')->nullable();
+            $table->integer('login_attempts')->default(0);
+            $table->timestamp('last_login_attempt')->nullable();
+            $table->timestamp('blocked_until')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -22,10 +22,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-
-Route::post('/postLogin', [LoginController::class, 'postLogin']);
+Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('post.login');
+Route::get('/verify', [LoginController::class, 'verifyForm'])->name('verify.form');
+Route::post('/verify', [LoginController::class, 'verify'])->name('verify');
 Route::post('/logout', [LoginController::class, 'logout']);
+
+// Route::post('/postLogin', [LoginController::class, 'postLogin']);
+// Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('admin')->group(function(){
