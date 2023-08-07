@@ -102,7 +102,8 @@ class PesananController extends Controller
             $id = $jasa->id_kategori;
             $order = Pesanan::create($pesanan);
             $snapToken = $this->snaptoken($order->id);
-            Pesanan::where('id', $order->id)->update(['snaptoken' => $snapToken]);
+            $ipAddress = $request->ip();
+            Pesanan::where('id', $order->id)->update(['snaptoken' => $snapToken,'ip_address'=> $ipAddress]);
             Transaksi::create([
                 'id_pesanan' => $order->id,
                 'status' => 7 //    waiting for payment

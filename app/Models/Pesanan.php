@@ -22,6 +22,7 @@ class Pesanan extends Model
         'qty',
         'total_harga',
         'snaptoken',
+        'ip_address',
     ];
 
     public function transaksi() {

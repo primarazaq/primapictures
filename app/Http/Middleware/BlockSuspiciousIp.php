@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use App\Models\Pesanan;
+use Illuminate\Support\Facades\DB;
+
+class BlockSuspiciousIp
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     */
+    public function handle(Request $request, Closure $next)
+    {
+        $ipAddress = $request->ip();
+
+        // Hitung jumlah transaksi dengan IP address yang sama dalam periode waktu tertentu (misalnya, 24 jam)
+        $threshold = 10; // Jumlah transaksi maksimum sebelum dianggap mencurigakan
+        $period = now()->subDay(); // Ubah periode sesuai dengan kebutuhan Anda
+
+        $suspiciousIpCount = Pesanan::where('ip_address', $ipAddress)
+            ->where('created_at', '>=', $period)
+            ->count();
+
+        if ($suspiciousIpCount >= $threshold) {
+            // Blokir akses IP address yang mencurigakan
+            return response()->view('404', [], 404);
+        }
+
+        return $next($request);
+    }
+}

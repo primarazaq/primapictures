@@ -21,11 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
-Route::get('/login', [LoginController::class, 'index'])->name('login')
-    ->middleware('guest');
+
+
 
 Route::post('/postLogin', [LoginController::class, 'postLogin']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -63,12 +60,27 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //     return view('admin.dashboard');
 // })->middleware('auth');
 
-Route::get('/order', [PesananController::class, 'index']);
-Route::get('/order/{id}', [PesananController::class, 'show']);
-Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
+
+
+Route::group(['middleware' => ['block.suspicious.ip']], function () {
+    // Route yang memerlukan deteksi transaksi mencurigakan\
+    Route::get('/', function () {
+        return view('main');
+    });
+    Route::get('/login', [LoginController::class, 'index'])->name('login')
+        ->middleware('guest');
+    Route::get('/order', [PesananController::class, 'index']);
+    Route::get('/order/{id}', [PesananController::class, 'show']);
+    Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
+    Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
+    Route::get('/status-transaksi/{id}',[PembayaranController::class, 'statustransaksi']);
+});
+
+
+
+
 Route::get('/checkout/{order_id}', [PembayaranController::class, 'pending']);
 
-Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
-
-// Route::post('/status-pembayaran',[PembayaranController::class, 'checkout']);
-Route::get('/status-transaksi/{id}',[PembayaranController::class, 'statustransaksi']);
+Route::fallback(function () {
+    return view('404');
+});

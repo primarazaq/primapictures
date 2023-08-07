@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('qty');
             $table->double('total_harga');
             $table->text('snaptoken')->nullable();
+            $table->string('ip_address')->nullable();
             $table->timestamps();
         });
     }
