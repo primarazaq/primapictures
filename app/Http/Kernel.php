@@ -28,6 +28,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'block.suspicious.ip' => \App\Http\Middleware\BlockSuspiciousIp::class,
+        'verify.verification_code' => \App\Http\Middleware\VerifyVerificationCode::class,
+        'block.failed.login' => \App\Http\Middleware\BlockFailedLoginAttempts::class,
     ];
     
 

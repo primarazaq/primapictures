@@ -23,10 +23,8 @@ class User extends Authenticatable
         'password',
         'email',
         'verification_code',
-        'login_attempts',
-        'verification_attempts',
-        'last_login_attempt',
-        'blocked_until',
+        'created_at',
+        'updated_at',
     ];
 
     /**

@@ -22,16 +22,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('post.login');
-Route::get('/verify', [LoginController::class, 'verifyForm'])->name('verify.form');
-Route::post('/verify', [LoginController::class, 'verify'])->name('verify');
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::group(['middleware' => ['block.suspicious.ip']], function () {
+    // Route yang memerlukan deteksi transaksi mencurigakan\
+    Route::get('/', function () {
+        return view('main');
+    });
+    
+    Route::get('/order', [PesananController::class, 'index']);
+    Route::get('/order/{id}', [PesananController::class, 'show']);
+    Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
+    Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
+    Route::get('/status-transaksi/{id}',[PembayaranController::class, 'statustransaksi']);
+    
+});
 
-// Route::post('/postLogin', [LoginController::class, 'postLogin']);
-// Route::post('/logout', [LoginController::class, 'logout']);
+Route::group(['middleware' => ['block.failed.login']], function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login')
+        ->middleware('guest');
+    Route::post('/postLogin', [LoginController::class, 'postLogin'])->name('post.login');
+    Route::get('/verify', [LoginController::class, 'verifyForm'])->name('verify.form');
+    Route::post('/verify', [LoginController::class, 'verify'])->name('verify');
+    Route::post('/logout', [LoginController::class, 'logout']);
+});
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::prefix('admin')->group(function(){
+Route::middleware(['auth', 'verified','verify.verification_code'])->prefix('admin')->group(function () {
+    
 
         Route::get('/', function () {
             return redirect('/admin/dashboard');
@@ -55,7 +70,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
         Route::get('/riwayatpesanan', [PesananController::class, 'riwayat']);
-    });
+ 
 });
 
 
@@ -64,20 +79,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // })->middleware('auth');
 
 
-
-Route::group(['middleware' => ['block.suspicious.ip']], function () {
-    // Route yang memerlukan deteksi transaksi mencurigakan\
-    Route::get('/', function () {
-        return view('main');
-    });
-    Route::get('/login', [LoginController::class, 'index'])->name('login')
-        ->middleware('guest');
-    Route::get('/order', [PesananController::class, 'index']);
-    Route::get('/order/{id}', [PesananController::class, 'show']);
-    Route::get('/order/{id}/formOrder', [PesananController::class, 'showForm']);
-    Route::post('/order/{id}/formOrder/checkout', [PesananController::class, 'order']);
-    Route::get('/status-transaksi/{id}',[PembayaranController::class, 'statustransaksi']);
-});
 
 
 
