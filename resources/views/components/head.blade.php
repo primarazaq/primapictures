@@ -13,7 +13,8 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {{-- trix --}}
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+{{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
 <link rel="stylesheet" type="text/css" href="/css/trix.css">
 <script type="text/javascript" src="/js/trix.js"></script>
 {{-- <link rel="stylesheet" type="text/css" href="/build/assets/app.8f3fc3c7.css">

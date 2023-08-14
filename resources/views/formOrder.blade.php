@@ -78,8 +78,8 @@
                                 <div class="relative">
                                     <div>
                                         <select name="id_jasa" id="id_jasa"
-                                            class="flex items-center space-x-1 cursor-pointer text-sm w-full mt-3 bg-white text-primary px-10 py-[2px] font-semibold tracking-[2px] text-[13px] rounded-full shadow-sm shadow-slate-600 ">
-                                            <option value="default">Pilih Paket</option>
+                                            class="flex items-center space-x-1 cursor-pointer text-sm w-full mt-3 bg-white text-primary px-10 py-[2px] font-semibold tracking-[2px] text-[13px] rounded-full shadow-sm shadow-slate-600 " required>
+                                            <option value="default" >Pilih Paket</option>
                                             @foreach ($jasa as $list)
                                                 <option value="{{ $list->id }}" data-kategori="{{ $kategori->id }}">{{ $loop->iteration }}.
                                                     {{ $list->nama }}
@@ -178,21 +178,21 @@
                                     Nama Pemesan
                                 </label>
                                 <input type="text" name="nama_plg" id="nama_plg" placeholder="Nama Lengkap Pemesan"
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" />
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" required/>
                             </div>
                             <div class="mb-5">
                                 <label for="hp" class="mb-3 block text-base font-medium text-[#07074D]">
                                     Nomor HP Pemesan
                                 </label>
                                 <input type="number" name="hp_plg" id="hp_plg" placeholder="Nomor HP Pemesan"
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" />
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" required/>
                             </div>
                             <div class="mb-5">
                                 <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
                                     E-mail Pemesan 
                                 </label>
                                 <input type="email" name="email_plg" id="email_plg" placeholder="E-mail Pemesan"
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" />
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" required/>
                             </div>
                             <div class="mb-5">
                                 <label for="datetime" class="mb-3 flex text-base justify-between font-medium text-[#07074D]">
@@ -202,7 +202,7 @@
                                 </label>
                                 <input type="dateTime-local" name="tgl_acara" id="tgl_acara"
                                     placeholder="Tanggal dan Jam Acara yang Hendak dipesan"
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" />
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" required/>
                                     <script>
                                         // Mendapatkan elemen input date
                                         const dateInput = document.getElementById("tgl_acara");
@@ -253,13 +253,13 @@
                                       </p>
                                 </label>
                                 <select name="wilayah" id="wilayah"
-                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md">
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" required>
                                     <option>-- Dalam Kota Bandung / Luar Kota Bandung --</option>
                                     <option value="dalam kota">Dalam Kota Bandung</option>
                                     <option value="luar kota">Luar Kota Bandung</option>
                                 </select>
                                 <textarea name="lokasi"
-                                    class="resize h-32 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" placeholder="Alamat Acara"></textarea>
+                                    class="resize h-32 w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-primary focus:shadow-md" placeholder="Alamat Acara" required></textarea>
                             </div>
                         </div>
                         <div class="relative mb-10 self-center">

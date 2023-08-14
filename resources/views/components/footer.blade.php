@@ -28,7 +28,7 @@
              <p class="text-[8px] mt-1 lg:text-xs lg:pt-2">© Copyright 2023 Primapictures. All Rights Reserved</p>
          </div>
      </div>
-
+     
      <script type="module">
          AOS.init();
 
