@@ -13,6 +13,12 @@
         color: white;
         padding: 10px;
     }
+
+    tfoot{
+        background-color: #4d6953;
+        color: white;
+        padding: 10px;
+    }
 </style>
 <body>
     <div class="w-full px-2">
@@ -121,6 +127,28 @@
 
         </div>
     </div>
+
+    <div class="w-full px-4 mt-4">
+        <table class="w-full">
+            <tfoot>
+                <tr>
+                    <th class="pl-4">Pendapatan Total Tahun Ini</th>
+                    <td class="text-right px-4 font-black">
+                        @php
+                            $totalYear = 0; // Inisialisasi variabel total pendapatan tahun ini
+                            foreach ($ordersByMonthAndCategory->groupBy('bulan') as $orders) {
+                                foreach ($orders as $item) {
+                                    $totalYear += $item['data_jasa']['total_harga']; // Menambahkan nilai total_harga pada setiap iterasi
+                                }
+                            }
+                        @endphp
+                        @currency($totalYear)
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
 </body>
 <div class="fixed bottom-0 w-full ">
 
