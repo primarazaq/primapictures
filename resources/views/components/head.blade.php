@@ -17,10 +17,10 @@
 {{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
 <link rel="stylesheet" type="text/css" href="/css/trix.css">
 <script type="text/javascript" src="/js/trix.js"></script>
-{{-- <link rel="stylesheet" type="text/css" href="/build/assets/app.8f3fc3c7.css">
-<script type="text/javascript" src="/build/assets/app.c277d8ae.js"></script> --}}
+<link rel="stylesheet" type="text/css" href="/build/assets/app.4307c7d7.css">
+<script type="text/javascript" src="/build/assets/app.145e1a4c.js"></script>
 
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+{{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
 
 <style>
