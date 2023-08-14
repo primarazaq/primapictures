@@ -56,8 +56,8 @@ class PesananController extends Controller
     public function showForm($id)
     {
         $jasa = Kategori::find($id)->jasa;
-        $kategori = Kategori::find($id)->first();
-
+        $kategori = Kategori::find($id);
+        
         // Buat instance JadwalController
         $jadwalController = new JadwalController();
 

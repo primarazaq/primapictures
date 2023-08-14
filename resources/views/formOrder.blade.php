@@ -81,7 +81,7 @@
                                             class="flex items-center space-x-1 cursor-pointer text-sm w-full mt-3 bg-white text-primary px-10 py-[2px] font-semibold tracking-[2px] text-[13px] rounded-full shadow-sm shadow-slate-600 ">
                                             <option value="default">Pilih Paket</option>
                                             @foreach ($jasa as $list)
-                                                <option value="{{ $list->id }}">{{ $loop->iteration }}.
+                                                <option value="{{ $list->id }}" data-kategori="{{ $kategori->id }}">{{ $loop->iteration }}.
                                                     {{ $list->nama }}
                                                 </option>
                                             @endforeach
@@ -90,6 +90,7 @@
                                             $(document).ready(function() {
                                                 $('#id_jasa').change(function() {
                                                     var pilihan = $(this).val();
+                                                    var kategori = $('#id_jasa option:selected').data('kategori');
 
                                                     // Memeriksa jika jasa yang dipilih memiliki ID "1" (wedding)
                                                     if (pilihan === '1') {
