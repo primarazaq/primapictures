@@ -50,11 +50,11 @@
               @csrf
               <label for="username" class="text-sm">Username</label>
             <div class="mb-2 text-lg">
-              <input class="rounded-lg border-primary bg-white px-6 py-2 text-left shadow-lg backdrop-blur-md" type="text" name="username" placeholder="username" autofocus/>
+              <input class="rounded-lg border-primary bg-white px-6 py-2 text-left shadow-lg backdrop-blur-md" type="text" name="username" placeholder="username" autofocus required/>
             </div>
             <label for="password" class="text-sm">Password</label>
             <div class="mb-4 text-lg">
-              <input class="rounded-lg border-primary bg-white px-6 py-2 text-left shadow-lg backdrop-blur-md" type="password" name="password" placeholder="password" />
+              <input class="rounded-lg border-primary bg-white px-6 py-2 text-left shadow-lg backdrop-blur-md" type="password" name="password" placeholder="password" required/>
             </div>
             <p for="pesan" class="text-xs text-center">Ingin segera memesan ? <a href="/order" class="text-primary">klik disini!</a></p>
             <div class="mt-8 flex justify-center text-lg text-black">

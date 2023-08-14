@@ -194,7 +194,7 @@
                     </div>
                   </div>
                     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin ingin
-                        menghapus buku ini?</h3>
+                        menghapus jasa ini?</h3>
                     <div class="flex justify-center">
                         <button @click="destroy = false" type="button"
                             class="text-gray-800 mr-8 bg-gray-100 rounded-3xl border border-gray-200 shadow-lg text-sm font-medium px-5 py-2.5  hover:shadow-md hover:bg-white hover:text-primary transform hover:scale-105 duration-300 ease-in-out">

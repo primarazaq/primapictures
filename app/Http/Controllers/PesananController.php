@@ -38,7 +38,7 @@ class PesananController extends Controller
                 throw new \Exception('Data tidak ditemukan');
             }
 
-            return view('orderDetail', [
+            return view('descJasa', [
                 'kategori' => $kategori,
                 'jasa' => $jasa,
                 'jasaLow' => $jasaLowest,

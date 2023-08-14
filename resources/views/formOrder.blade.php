@@ -90,6 +90,23 @@
                                             $(document).ready(function() {
                                                 $('#id_jasa').change(function() {
                                                     var pilihan = $(this).val();
+
+                                                    // Memeriksa jika jasa yang dipilih memiliki ID "1" (wedding)
+                                                    if (pilihan === '1') {
+                                                        // Mendapatkan elemen input date
+                                                        const dateInput = document.getElementById("tgl_acara");
+
+                                                        // Mendapatkan tanggal dan waktu saat ini
+                                                        const now = new Date();
+                                                        now.setDate(now.getDate() + 15); // Menambahkan 15 hari ke tanggal saat ini
+
+                                                        // Konversi tanggal dan waktu saat ini menjadi format yang dapat dikenali oleh input date
+                                                        const nowString = now.toISOString().slice(0, 16);
+
+                                                        // Tetapkan nilai atribut min pada elemen input date
+                                                        dateInput.setAttribute("min", nowString);
+                                                    }
+
                                                     $('.listJasa').addClass(
                                                         'hidden'); // Menambahkan class 'hidden' pada semua div dengan class 'jasa'
                                                     $('#Jasa-' + pilihan).removeClass(
@@ -191,6 +208,7 @@
                                       
                                         // Mendapatkan tanggal dan waktu saat ini
                                         const now = new Date();
+                                        now.setDate(now.getDate() + 1);
                                       
                                         // Konversi tanggal dan waktu saat ini menjadi format yang dapat dikenali oleh input date
                                         const nowString = now.toISOString().slice(0, 16);

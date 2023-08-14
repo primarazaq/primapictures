@@ -68,7 +68,7 @@
                                 {{ $data->nama_plg }}
                             </td>
                             <td class="py-4 px-6 text-center">
-                                {{-- {{ $data->nama_plg }} --}}
+                                {{ $data->payment_type }}
                             </td>
                             <td class="py-4 px-6 text-center flex justify-center items-center">
                                 @if ($data->status == "success" || $data->status == "settlement")
