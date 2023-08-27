@@ -23,7 +23,7 @@ class VerifyVerificationCode
 
         if ($user && $user->verification_code) {
 
-            if (Carbon::parse($user['updated_at'])->addMinutes(1)->isPast()) {
+            if (Carbon::parse($user['updated_at'])->addMinutes(5)->isPast()) {
                 // Verification code has expired, reset it
                 User::find($user->id)->update(['verification_code' => null]);
                 
